@@ -114,8 +114,9 @@ export default function PortfolioCarousel() {
                 <Image
                   src={currentItem.image || "/placeholder.svg"}
                   alt={currentItem.title}
-                  fill
-                  className="object-contain rounded-lg"
+                  height={600}
+                  width={300}
+                  className="w-full h-full"
                   priority
                 />
               </div>
