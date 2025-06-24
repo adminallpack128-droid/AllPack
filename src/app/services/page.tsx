@@ -3,11 +3,10 @@ import { Badge } from "../Components/Ui/badge"
 import { Card, CardContent } from "../Components/Ui/card"
 import { ArrowRight, Package, Palette, Shield, Truck, Users, Award, CheckCircle, Eye } from "lucide-react"
 import Image from "next/image"
-import Link from "next/link"
 
 export default function Service() {
   const fertilizerBags = [
-    {
+    {   
       id: 1,
       name: "Printed Fertilizer Bag",
       image: "/fertilizer1.webp",
@@ -206,9 +205,7 @@ export default function Service() {
                 Offering you a complete choice of products which include Animal Feed Packaging Bag, Animal Feed Bag and
                 Plain Animal Feed Bag.
               </p>
-              <Link href="#" className="text-blue-600 hover:text-blue-800 font-medium">
-                View More
-              </Link>
+              
             </div>
 
             <div className="flex flex-row gap-8 mb-8">
@@ -243,9 +240,6 @@ export default function Service() {
                 Prominent & Leading Manufacturer from Indore, we offer Agricultural Packaging Bag, 25 Kg Agricultural
                 Bag and 1 kg fertilizer Packaging Pouch.
               </p>
-              <Link href="#" className="text-blue-600 hover:text-blue-800 font-medium">
-                View More
-              </Link>
             </div>
 
             <div className="flex flex-row gap-6 mb-8">
@@ -279,9 +273,6 @@ export default function Service() {
               <p className="text-gray-600 mb-2">
                 Prominent & Leading Manufacturer from Indore, we offer 25kg NPK fertilizer Bag and PP Woven Bag.
               </p>
-              <Link href="#" className="text-blue-600 hover:text-blue-800 font-medium">
-                View More
-              </Link>
             </div>
 
             <div className="flex flex-row gap-6 mb-8">

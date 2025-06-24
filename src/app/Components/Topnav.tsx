@@ -1,9 +1,10 @@
 "use client";
-import { ArrowRight, Menu, X } from "lucide-react";
+import {  Menu, X } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react"
 import { Button } from "./Ui/button";
+import QuoteButtonWithPopup from "./getQuotePopup";
 
 
 
@@ -15,6 +16,7 @@ export default function Topnav(){
         <div className="container mx-auto px-4 lg:px-6">
           <div className="flex h-16 items-center justify-between">
             <div className="flex items-center space-x-2">
+                 <Link href="/">
               <Image
                 src="/AllPackLogo.jpg"
                 alt="logo"
@@ -23,6 +25,7 @@ export default function Topnav(){
                 priority
                 className="h-full w-full object-cover hover:opacity-75 transition-transform duration-500 group-hover:scale-110 cursor-pointer"
               />
+              </Link>
             </div>
 
             {/* Desktop Navigation */}
@@ -55,10 +58,14 @@ export default function Topnav(){
 
             <div className="flex items-center space-x-4">
               {/* Desktop Get Quote Button */}
-              <Button className="hidden md:flex text-lg bg-gradient-to-r from-orange-500 to-orange-600 hover:from-orange-600 hover:to-orange-700 text-white">
+              {/* <Button className="hidden md:flex text-lg bg-gradient-to-r from-orange-500 to-orange-600 hover:from-orange-600 hover:to-orange-700 text-white">
                 Get Quote
                 <ArrowRight className="ml-2 h-4 w-4" />
-              </Button>
+              </Button> */}
+               <QuoteButtonWithPopup
+                className="hidden md:flex text-lg bg-gradient-to-r from-orange-500 to-orange-600 hover:from-orange-600 hover:to-orange-700 text-white"
+                size="lg"
+              />
 
               {/* Mobile Menu Button */}
               <Button
@@ -111,10 +118,10 @@ export default function Topnav(){
                 >
                   Contact
                 </Link>
-                <Button className="mt-4 text-lg bg-gradient-to-r from-orange-500 to-orange-600 hover:from-orange-600 hover:to-orange-700 text-white">
-                  Get Quote
-                  <ArrowRight className="ml-2 h-4 w-4" />
-                </Button>
+                <QuoteButtonWithPopup
+                className="hidden md:flex text-lg bg-gradient-to-r from-orange-500 to-orange-600 hover:from-orange-600 hover:to-orange-700 text-white"
+                size="lg"
+              />
               </nav>
             </div>
           )}
