@@ -23,8 +23,6 @@ export default function QuoteDialog({ children, className }: SimpleQuoteDialogPr
     setIsSubmitting(true)
     setSubmitStatus("idle")
 
-    console.log("Quote request data:", { mobileNumber })
-
     try {
       // Transform data for API
       const apiData = {
