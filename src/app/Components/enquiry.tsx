@@ -22,9 +22,6 @@ export default function InquirySection() {
     e.preventDefault() // Fixed: Prevent default form submission
     setIsSubmitting(true) // Fixed: Set loading state
     setSubmitStatus("idle")
-
-    console.log("Form data being submitted:", formData)
-
     try {
       // Transform data to match API expectations
       const apiData = {
@@ -35,8 +32,6 @@ export default function InquirySection() {
         projectDetails: `Phone: ${formData.phone}\n\nRequirement Details:\n${formData.requirement}`,
         submittedAt: new Date().toISOString(),
       }
-
-      console.log("API data being sent:", apiData)
 
       const response = await fetch("/api/contact", {
         method: "POST",
