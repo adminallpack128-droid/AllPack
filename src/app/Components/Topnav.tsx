@@ -1,14 +1,169 @@
 "use client";
-import { Menu, X } from "lucide-react";
-import Image from "next/image";
-import Link from "next/link";
-import { useState } from "react";
-import { Button } from "./Ui/button";
-import QuoteButtonWithPopup from "./getQuotePopup";
-import QuoteButtonWithDialog from "./getQuotePopup";
+import { Menu, X, ChevronDown, ChevronRight } from "lucide-react"
+import Image from "next/image"
+import Link from "next/link"
+import { useState, useRef, useEffect } from "react"
+import { Button } from "./Ui/button"
+import QuoteButtonWithPopup from "./getQuotePopup"
+import QuoteButtonWithDialog from "./getQuotePopup"
+
+interface SubMenuItem {
+  name: string
+  href: string
+  subItems?: SubMenuItem[]
+}
+
+interface MenuItem {
+  name: string
+  href: string
+  subItems?: SubMenuItem[]
+}
 
 export default function Topnav() {
-  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
+  const [activeDropdown, setActiveDropdown] = useState<string | null>(null)
+  const [activeSubDropdown, setActiveSubDropdown] = useState<string | null>(null)
+  const [mobileActiveMenu, setMobileActiveMenu] = useState<string | null>(null)
+  const [mobileActiveSubMenu, setMobileActiveSubMenu] = useState<string | null>(null)
+  const timeoutRef = useRef<NodeJS.Timeout | null>(null)
+
+  const menuItems: MenuItem[] = [
+    {
+      name: "Home",
+      href: "/",
+    },
+    {
+      name: "Our Products",
+      href: "/products",
+      subItems: [
+        {
+          name: "Fertilizer Bags",
+          href: "/products/fertilizer-bags",
+          subItems: [
+            { name: "Printed Fertilizer Bag", href: "/products/fertilizer-bags/printed" },
+            { name: "Plain PP Fertilizer Bag", href: "/products/fertilizer-bags/plain-pp" },
+            { name: "Dap Fertilizer Bag", href: "/products/fertilizer-bags/dap" },
+            { name: "White Fertilizer Packaging Bag", href: "/products/fertilizer-bags/white" },
+            { name: "25Kg Fertilizer Bag", href: "/products/fertilizer-bags/25kg" },
+          ],
+        },
+        {
+          name: "Feed Bags",
+          href: "/products/feed-bags",
+          subItems: [
+            { name: "Animal Feed Packaging Bag", href: "/products/feed-bags/animal-feed-packaging" },
+            { name: "Animal Feed Bag", href: "/products/feed-bags/animal-feed" },
+            { name: "Plain Animal Feed Bag", href: "/products/feed-bags/plain-animal-feed" },
+          ],
+        },
+        {
+          name: "Agricultural Bags",
+          href: "/products/agricultural-bags",
+          subItems: [
+            { name: "Agricultural Packaging Bag", href: "/products/agricultural-bags/packaging" },
+            { name: "25 Kg Agricultural Bag", href: "/products/agricultural-bags/25kg" },
+            { name: "1 kg fertilizer Packaging Pouch", href: "/products/agricultural-bags/1kg-pouch" },
+          ],
+        },
+        {
+          name: "PP Bags",
+          href: "/products/pp-bags",
+          subItems: [
+            { name: "25kg NPK fertilizer Bag", href: "/products/pp-bags/25kg-npk" },
+            { name: "PP Woven Bag", href: "/products/pp-bags/woven" },
+          ],
+        },
+        {
+          name: "Loop Handle Bags",
+          href: "/products/loop-handle-bags",
+          subItems: [
+            { name: "10Kg Loop Handle Bag", href: "/products/loop-handle-bags/10kg" },
+            { name: "5Kg Loop Handle Non Woven Bag", href: "/products/loop-handle-bags/5kg-non-woven" },
+          ],
+        },
+        {
+          name: "Fertilizer Packaging Bag",
+          href: "/products/fertilizer-packaging",
+          subItems: [{ name: "Fertilizer Standy Pouch", href: "/products/fertilizer-packaging/standy-pouch" }],
+        },
+        {
+          name: "BOPP Laminated Woven Bags",
+          href: "/products/bopp-laminated",
+          subItems: [{ name: "Pvc Packaging Pouch", href: "/products/bopp-laminated/pvc-pouch" }],
+        },
+        {
+          name: "Organic Fertilizer",
+          href: "/products/organic-fertilizer",
+          subItems: [
+            { name: "25kg Water Soluble Fertilizer Bag", href: "/products/organic-fertilizer/25kg-water-soluble" },
+            { name: "Npk Fertilizer", href: "/products/organic-fertilizer/npk" },
+          ],
+        },
+      ],
+    },
+    {
+      name: "Services",
+      href: "/services",
+      subItems: [
+        { name: "Custom Design Services", href: "/services/custom-design" },
+        { name: "Product Development", href: "/services/product-development" },
+        { name: "Regulatory Compliance", href: "/services/regulatory-compliance" },
+        { name: "Production & Delivery", href: "/services/production-delivery" },
+      ],
+    },
+    {
+      name: "About",
+      href: "/about",
+      subItems: [
+        { name: "Our Story", href: "/about/story" },
+        { name: "Our Team", href: "/about/team" },
+        { name: "Certifications", href: "/about/certifications" },
+        { name: "Quality Assurance", href: "/about/quality" },
+      ],
+    },
+    {
+      name: "Contact",
+      href: "/contact",
+    },
+  ]
+
+  const handleMouseEnter = (menuName: string) => {
+    if (timeoutRef.current) {
+      clearTimeout(timeoutRef.current)
+    }
+    setActiveDropdown(menuName)
+  }
+
+  const handleMouseLeave = () => {
+    timeoutRef.current = setTimeout(() => {
+      setActiveDropdown(null)
+      setActiveSubDropdown(null)
+    }, 150)
+  }
+
+  const handleSubMouseEnter = (subMenuName: string) => {
+    if (timeoutRef.current) {
+      clearTimeout(timeoutRef.current)
+    }
+    setActiveSubDropdown(subMenuName)
+  }
+
+  useEffect(() => {
+    return () => {
+      if (timeoutRef.current) {
+        clearTimeout(timeoutRef.current)
+      }
+    }
+  }, [])
+
+  const toggleMobileMenu = (menuName: string) => {
+    setMobileActiveMenu(mobileActiveMenu === menuName ? null : menuName)
+    setMobileActiveSubMenu(null)
+  }
+
+  const toggleMobileSubMenu = (subMenuName: string) => {
+    setMobileActiveSubMenu(mobileActiveSubMenu === subMenuName ? null : subMenuName)
+  }
 
   return (
     <header className="sticky top-0 z-50 w-full border-b bg-gray-900/95 backdrop-blur-md">
@@ -29,44 +184,70 @@ export default function Topnav() {
 
           {/* Desktop Navigation */}
           <nav className="hidden md:flex items-center space-x-8">
-            <Link
-              href="/"
-              className="text-lg font-medium text-gray-300 hover:text-orange-500 transition-colors"
-            >
-              Home
-            </Link>
-            <Link
-              href="/product"
-              className="text-lg font-medium text-gray-300 hover:text-orange-500 transition-colors"
-            >
-              Our Products
-            </Link>
-            <Link
-              href="/services"
-              className="text-lg font-medium text-gray-300 hover:text-orange-500 transition-colors"
-            >
-              Services
-            </Link>
-            <Link
-              href="#about"
-              className="text-lg font-medium text-gray-300 hover:text-orange-500 transition-colors"
-            >
-              About
-            </Link>
-            <Link
-              href="#contact"
-              className="text-lg font-medium text-gray-300 hover:text-orange-500 transition-colors"
-            >
-              Contact
-            </Link>
+            {menuItems.map((item) => (
+              <div
+                key={item.name}
+                className="relative"
+                onMouseEnter={() => item.subItems && handleMouseEnter(item.name)}
+                onMouseLeave={handleMouseLeave}
+              >
+                <Link
+                  href={item.href}
+                  className="flex items-center text-lg font-medium text-gray-300 hover:text-orange-500 transition-colors"
+                >
+                  {item.name}
+                  {item.subItems && <ChevronDown className="ml-1 h-4 w-4" />}
+                </Link>
+
+                {/* Dropdown Menu */}
+                {item.subItems && activeDropdown === item.name && (
+                  <div className="absolute top-full left-0 mt-2 w-64 bg-white rounded-lg shadow-xl border border-gray-200 py-2 z-50">
+                    {item.subItems.map((subItem) => (
+                      <div
+                        key={subItem.name}
+                        className="relative"
+                        onMouseEnter={() => subItem.subItems && handleSubMouseEnter(subItem.name)}
+                      >
+                        <Link
+                          href={subItem.href}
+                          className="flex items-center justify-between px-4 py-2 text-gray-700 hover:bg-orange-50 hover:text-orange-600 transition-colors"
+                        >
+                          <span>{subItem.name}</span>
+                          {subItem.subItems && <ChevronRight className="h-4 w-4" />}
+                        </Link>
+
+                        {/* Sub-dropdown Menu */}
+                        {subItem.subItems && activeSubDropdown === subItem.name && (
+                          <div className="absolute top-0 left-full ml-1 w-64 bg-white rounded-lg shadow-xl border border-gray-200 py-2 z-50">
+                            {subItem.subItems.map((subSubItem) => (
+                              <Link
+                                key={subSubItem.name}
+                                href={subSubItem.href}
+                                className="block px-4 py-2 text-gray-700 hover:bg-orange-50 hover:text-orange-600 transition-colors"
+                              >
+                                {subSubItem.name}
+                              </Link>
+                            ))}
+                            <div className="border-t border-gray-100 mt-2 pt-2">
+                              <Link
+                                href={subItem.href}
+                                className="block px-4 py-2 text-orange-600 font-medium hover:bg-orange-50 transition-colors"
+                              >
+                                VIEW ALL →
+                              </Link>
+                            </div>
+                          </div>
+                        )}
+                      </div>
+                    ))}
+                  </div>
+                )}
+              </div>
+            ))}
           </nav>
 
           <div className="flex items-center space-x-4">
             {/* Desktop Get Quote Button */}
-            {/* <Button className="hidden md:flex text-lg bg-gradient-to-r from-orange-500 to-orange-600 hover:from-orange-600 hover:to-orange-700 text-white">
-                Get Quote
-                <ArrowRight className="ml-2 h-4 w-4" />
-              </Button> */}
             <QuoteButtonWithPopup
               className="hidden md:flex text-lg bg-gradient-to-r from-orange-500 to-orange-600 hover:from-orange-600 hover:to-orange-700 text-white"
               size="lg"
@@ -79,11 +260,7 @@ export default function Topnav() {
               className="md:hidden text-white hover:text-orange-500"
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
             >
-              {isMobileMenuOpen ? (
-                <X className="h-6 w-6" />
-              ) : (
-                <Menu className="h-6 w-6" />
-              )}
+              {isMobileMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
             </Button>
           </div>
         </div>
@@ -91,52 +268,103 @@ export default function Topnav() {
         {/* Mobile Navigation Menu */}
         {isMobileMenuOpen && (
           <div className="md:hidden border-t border-gray-800">
-            <nav className="flex flex-col space-y-4 px-4 py-6 bg-gray-900">
-              <Link
-                href="/"
-                className="text-lg font-medium text-gray-300 hover:text-orange-500 transition-colors"
-                onClick={() => setIsMobileMenuOpen(false)}
-              >
-                Home
-              </Link>
-              <Link
-                href="/product"
-                className="text-lg font-medium text-gray-300 hover:text-orange-500 transition-colors"
-                onClick={() => setIsMobileMenuOpen(false)}
-              >
-                Our Products
-              </Link>
-              <Link
-                href="/services"
-                className="text-lg font-medium text-gray-300 hover:text-orange-500 transition-colors"
-                onClick={() => setIsMobileMenuOpen(false)}
-              >
-                Services
-              </Link>
-              <Link
-                href="#about"
-                className="text-lg font-medium text-gray-300 hover:text-orange-500 transition-colors"
-                onClick={() => setIsMobileMenuOpen(false)}
-              >
-                About
-              </Link>
-              <Link
-                href="#contact"
-                className="text-lg font-medium text-gray-300 hover:text-orange-500 transition-colors"
-                onClick={() => setIsMobileMenuOpen(false)}
-              >
-                Contact
-              </Link>
-              <QuoteButtonWithDialog
-                size="lg"
-                className="bg-gradient-to-r from-orange-500 to-orange-600 hover:from-orange-600 hover:to-orange-700 text-white"
-              >
-                Get Quote Now
-              </QuoteButtonWithDialog>
+            <nav className="flex flex-col px-4 py-6 bg-gray-900 max-h-96 overflow-y-auto">
+              {menuItems.map((item) => (
+                <div key={item.name} className="space-y-2">
+                  <div className="flex items-center justify-between">
+                    <Link
+                      href={item.href}
+                      className="text-lg font-medium text-gray-300 hover:text-orange-500 transition-colors"
+                      onClick={() => !item.subItems && setIsMobileMenuOpen(false)}
+                    >
+                      {item.name}
+                    </Link>
+                    {item.subItems && (
+                      <Button
+                        variant="ghost"
+                        size="sm"
+                        className="text-gray-300 hover:text-orange-500 p-1"
+                        onClick={() => toggleMobileMenu(item.name)}
+                      >
+                        <ChevronDown
+                          className={`h-4 w-4 transition-transform ${
+                            mobileActiveMenu === item.name ? "rotate-180" : ""
+                          }`}
+                        />
+                      </Button>
+                    )}
+                  </div>
+
+                  {/* Mobile Submenu */}
+                  {item.subItems && mobileActiveMenu === item.name && (
+                    <div className="ml-4 space-y-2 border-l-2 border-orange-500 pl-4">
+                      {item.subItems.map((subItem) => (
+                        <div key={subItem.name} className="space-y-1">
+                          <div className="flex items-center justify-between">
+                            <Link
+                              href={subItem.href}
+                              className="text-gray-400 hover:text-orange-500 transition-colors"
+                              onClick={() => !subItem.subItems && setIsMobileMenuOpen(false)}
+                            >
+                              {subItem.name}
+                            </Link>
+                            {subItem.subItems && (
+                              <Button
+                                variant="ghost"
+                                size="sm"
+                                className="text-gray-400 hover:text-orange-500 p-1"
+                                onClick={() => toggleMobileSubMenu(subItem.name)}
+                              >
+                                <ChevronDown
+                                  className={`h-3 w-3 transition-transform ${
+                                    mobileActiveSubMenu === subItem.name ? "rotate-180" : ""
+                                  }`}
+                                />
+                              </Button>
+                            )}
+                          </div>
+
+                          {/* Mobile Sub-submenu */}
+                          {subItem.subItems && mobileActiveSubMenu === subItem.name && (
+                            <div className="ml-4 space-y-1 border-l border-gray-600 pl-3">
+                              {subItem.subItems.map((subSubItem) => (
+                                <Link
+                                  key={subSubItem.name}
+                                  href={subSubItem.href}
+                                  className="block text-sm text-gray-500 hover:text-orange-500 transition-colors py-1"
+                                  onClick={() => setIsMobileMenuOpen(false)}
+                                >
+                                  {subSubItem.name}
+                                </Link>
+                              ))}
+                              <Link
+                                href={subItem.href}
+                                className="block text-sm text-orange-500 font-medium hover:text-orange-400 transition-colors py-1"
+                                onClick={() => setIsMobileMenuOpen(false)}
+                              >
+                                VIEW ALL →
+                              </Link>
+                            </div>
+                          )}
+                        </div>
+                      ))}
+                    </div>
+                  )}
+                </div>
+              ))}
+
+              <div className="mt-6 pt-4 border-t border-gray-700">
+                <QuoteButtonWithDialog
+                  size="lg"
+                  className="w-full bg-gradient-to-r from-orange-500 to-orange-600 hover:from-orange-600 hover:to-orange-700 text-white"
+                >
+                  Get Quote Now
+                </QuoteButtonWithDialog>
+              </div>
             </nav>
           </div>
         )}
       </div>
     </header>
-  );
+  )
 }

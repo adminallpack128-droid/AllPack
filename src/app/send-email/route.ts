@@ -4,6 +4,7 @@ import { Resend } from 'resend';
 
 const resend = new Resend('re_hxyQ33tX_Ke85x16FsHsXAKoB9NBAfZuo');
 export async function POST(req: NextRequest) {
+  console.log('Received request to send email');
   try {
     const data = await req.json();
 

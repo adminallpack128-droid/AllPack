@@ -2,21 +2,15 @@ import { Button } from "./Components/Ui/button"
 import {
   ArrowRight,
   CheckCircle,
-  Download,
   Eye,
-  Facebook,
-  Instagram,
-  Linkedin,
-  Mail,
-  MapPin,
   Phone,
-  Twitter,
 } from "lucide-react"
 import Image from "next/image"
 import { Card, CardContent } from "./Components/Ui/card"
 import { Badge } from "./Components/Ui/badge"
 import PortfolioCarousel from "./Components/portfolio-carousel"
-import ContactForm from "./Components/contact"
+import Link from "next/link"
+import InquirySection from "./Components/enquiry"
 
 export default function Component() {
   const portfolioItems = [
@@ -80,7 +74,7 @@ export default function Component() {
                 Creative
                 <span className="bg-gradient-to-r from-orange-500 to-orange-600 bg-clip-text text-transparent">
                   {" "}
-                  Package Designs
+                  Packaging Products
                 </span>
                 <br />
                 That Sell
@@ -91,6 +85,7 @@ export default function Component() {
               </p>
 
               <div className="flex flex-col sm:flex-row gap-4">
+                <Link href="/product">
                 <Button
                   size="lg"
                   className="bg-gradient-to-r from-orange-500 to-orange-600 hover:from-orange-600 hover:to-orange-700 text-white"
@@ -98,9 +93,10 @@ export default function Component() {
                   View Portfolio
                   <Eye className="ml-2 h-5 w-5" />
                 </Button>
-                <Button size="lg" variant="outline" className="border-2 border-gray-300 text-gray-700 hover:bg-gray-50">
-                  <Download className="mr-2 h-5 w-5" />
-                  Download Catalog
+                </Link>
+                <Button size="lg" variant="outline" className="border-2 border-gray-300 text-gray-700 hover:bg-gray-50 text-md">
+                 <Phone className="w-5 h-5 text-green-600" />
+                  <span className="ml-2">Call +91 8975040173</span>
                 </Button>
               </div>
 
@@ -193,13 +189,13 @@ export default function Component() {
       </section>
 
       {/* Portfolio Carousel Section */}
-      <section id="portfolio" className="py-20 bg-white">
+      <section id="portfolio" className="py-8 bg-white">
         <div className="container mx-auto px-4 lg:px-[5rem]">
-          <div className="text-center space-y-4 mb-16">
-            <Badge variant="secondary" className="bg-orange-100 text-orange-700">
+          <div className="text-center space-y-4 mb-3">
+            {/* <Badge variant="secondary" className="bg-orange-100 text-orange-700">
               Portfolio Showcase
-            </Badge>
-            <h2 className="text-3xl lg:text-5xl font-bold text-gray-900">Our Packaging Solutions</h2>
+            </Badge> */}
+            <h2 className="text-2xl lg:text-4xl font-bold text-gray-900">Our Packaging Solutions</h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
               Explore our comprehensive range of packaging designs from small pouches to large industrial bags, each
               crafted with precision and attention to detail.
@@ -207,10 +203,12 @@ export default function Component() {
           </div>
 
           <PortfolioCarousel />
-
+        </div>
+      </section>
+        <div className="container mx-auto px-4 lg:px-[5rem]">
           {/* Additional Portfolio Grid */}
-          <div className="mt-20">
-            <h3 className="text-2xl font-bold text-gray-900 mb-8 text-center">Individual Designs</h3>
+          <div className="border-t border-gray-500 pt-8 border-dashed">
+            <h2 className="text-4xl font-bold text-gray-900 mb-8 text-center">Individual Designs</h2>
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
               {portfolioItems.map((item) => (
                 <Card
@@ -258,133 +256,21 @@ export default function Component() {
             </div>
           </div>
 
-          <div className="text-center mt-12">
+          <div className="text-center mt-8 mb-5 ">
+            <Link href="/product">
             <Button
               variant="outline"
               size="lg"
-              className="border-2 border-orange-500 text-orange-600 hover:bg-orange-50"
+              className="border-2 border-orange-500 text-orange-600 hover:bg-orange-50 text-lg cursor-pointer"
             >
-              View All Designs
+              View All Products
               <ArrowRight className="ml-2 h-5 w-5" />
             </Button>
+            </Link>
           </div>
         </div>
-      </section>
 
-      {/* Testimonials Section */}
-      {/* <section className="py-20 bg-white">
-        <div className="container mx-auto px-4 lg:px-[5rem]">
-          <div className="text-center space-y-4 mb-16">
-            <Badge variant="secondary" className="bg-orange-100 text-orange-700">
-              Testimonials
-            </Badge>
-            <h2 className="text-3xl lg:text-5xl font-bold text-gray-900">What Clients Say</h2>
-          </div>
-
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {[
-              {
-                name: "Rajesh Kumar",
-                role: "Managing Director, Hindustan Pesticides",
-                content:
-                  "Outstanding packaging designs that perfectly represent our agricultural products. The attention to detail and regulatory compliance is exceptional.",
-                rating: 5,
-              },
-              {
-                name: "Priya Sharma",
-                role: "Marketing Head, AgriTech Solutions",
-                content:
-                  "Professional, creative, and always delivers on time. The packaging designs have significantly improved our product visibility in the market.",
-                rating: 5,
-              },
-              {
-                name: "Amit Patel",
-                role: "Founder, GreenGrow Fertilizers",
-                content:
-                  "Excellent understanding of agricultural packaging requirements. The designs are both attractive and informative for our customers.",
-                rating: 5,
-              },
-            ].map((testimonial, index) => (
-              <Card key={index} className="border-0 shadow-lg hover:shadow-xl transition-shadow duration-300">
-                <CardContent className="p-6">
-                  <div className="flex items-center mb-4">
-                    {[...Array(testimonial.rating)].map((_, i) => (
-                      <Star key={i} className="h-5 w-5 text-orange-400 fill-current" />
-                    ))}
-                  </div>
-                  <Quote className="h-8 w-8 text-gray-300 mb-4" />
-                  <p className="text-gray-600 mb-6 italic">&quot;{testimonial.content}&quot;</p>
-                  <div className="flex items-center">
-                    <div className="w-12 h-12 bg-gradient-to-r from-orange-500 to-orange-600 rounded-full flex items-center justify-center text-white font-semibold mr-4">
-                      {testimonial.name
-                        .split(" ")
-                        .map((n) => n[0])
-                        .join("")}
-                    </div>
-                    <div>
-                      <div className="font-semibold text-gray-900">{testimonial.name}</div>
-                      <div className="text-sm text-gray-500">{testimonial.role}</div>
-                    </div>
-                  </div>
-                </CardContent>
-              </Card>
-            ))}
-          </div>
-        </div>
-      </section> */}
-
-      {/* Contact Section */}
-      <section id="contact" className="py-6 bg-gradient-to-br from-gray-900 to-gray-800 text-white">
-        <div className="container mx-auto px-4 lg:px-[5rem]">
-          <div className="grid lg:grid-cols-2 gap-12 items-center">
-            <div className="space-y-8">
-              <div className="space-y-4">
-                <Badge variant="secondary" className="bg-orange-500/20 text-orange-300 hover:bg-orange-500/30">
-                  Get In Touch
-                </Badge>
-                <h2 className="text-3xl lg:text-5xl font-bold">Ready to Create Amazing Packaging?</h2>
-                <p className="text-xl text-gray-300">
-                  Let&apos;s discuss your packaging design needs and create something that makes your product stand out
-                  on the shelf and communicate effectively with your customers.
-                </p>
-              </div>
-
-              <div className="space-y-4">
-                <div className="flex items-center space-x-3">
-                  <Mail className="h-5 w-5 text-orange-400" />
-                  <span>illusiondesign128@gmail.com</span>
-                </div>
-                <div className="flex items-center space-x-3">
-                  <Phone className="h-5 w-5 text-orange-400" />
-                  <span>+91 89750 40173</span>
-                </div>
-                <div className="flex items-center space-x-3">
-                  <MapPin className="h-5 w-5 text-orange-400" />
-                  <span>Katrj Pune, India</span>
-                </div>
-              </div>
-
-              <div className="flex space-x-4">
-                <Button variant="secondary" size="icon" className="bg-white/10 hover:bg-white/20 text-white">
-                  <Instagram className="h-5 w-5" />
-                </Button>
-                <Button variant="secondary" size="icon" className="bg-white/10 hover:bg-white/20 text-white">
-                  <Facebook className="h-5 w-5" />
-                </Button>
-                <Button variant="secondary" size="icon" className="bg-white/10 hover:bg-white/20 text-white">
-                  <Twitter className="h-5 w-5" />
-                </Button>
-                <Button variant="secondary" size="icon" className="bg-white/10 hover:bg-white/20 text-white">
-                  <Linkedin className="h-5 w-5" />
-                </Button>
-              </div>
-            </div>
-            <ContactForm />
-            
-          </div>
-        </div>
-      </section>
-
+     <InquirySection />
     
     </div>
   )

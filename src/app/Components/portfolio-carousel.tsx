@@ -107,10 +107,10 @@ export default function PortfolioCarousel() {
       {/* Main Carousel */}
       <Card className="overflow-hidden border-0 shadow-2xl bg-gradient-to-br from-white to-gray-50">
         <CardContent className="p-0">
-          <div className="grid lg:grid-cols-2 min-h-[600px]">
+          <div className="grid lg:grid-cols-2 ">
             {/* Image Section */}
-            <div className="relative bg-gradient-to-br from-gray-100 to-gray-200 flex items-center justify-center p-8">
-              <div className="relative w-full h-full max-w-lg">
+            <div className="relative bg-gradient-to-br from-gray-100 to-gray-200 flex items-center justify-center p-6">
+              <div className="relative w-full h-full max-w-md">
                 <Image
                   src={currentItem.image || "/placeholder.svg"}
                   alt={currentItem.title}
@@ -141,10 +141,10 @@ export default function PortfolioCarousel() {
             </div>
 
             {/* Content Section */}
-            <div className="p-8 lg:p-12 flex flex-col justify-center space-y-6">
+            <div className="p-6 lg:p-12 flex flex-col justify-center space-y-6">
               <div className="space-y-4">
                 <div className="flex items-center justify-between">
-                  <Badge variant="secondary" className="bg-orange-100 text-orange-700">
+                  <Badge variant="secondary" className="bg-orange-100 text-orange-700 text-lg">
                     {currentItem.category}
                   </Badge>
                   <Button
