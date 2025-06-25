@@ -16,33 +16,53 @@ export default function InquirySection() {
     requirement: "",
   })
   const [isSubmitting, setIsSubmitting] = useState(false)
-  
+  const [submitStatus, setSubmitStatus] = useState<"idle" | "success" | "error">("idle")
 
-  const handleSubmit = async () => {
-    // e.preventDefault()
-    // setIsSubmitting(true)
-    console.log("formData", formData)
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault() // Fixed: Prevent default form submission
+    setIsSubmitting(true) // Fixed: Set loading state
+    setSubmitStatus("idle")
+
+    console.log("Form data being submitted:", formData)
+
     try {
-      // This would typically call your email service API
-      const response = await fetch('http://localhost:3001/api/send-email', {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(formData),
-      });
-console.log("sdfs",response)
-      if (response.ok) {
-        alert("Thank you! Your inquiry has been submitted successfully. We'll get back to you soon.")
-        resetForm();
-      } else {
-       alert("Error While submitting Form.")
+      // Transform data to match API expectations
+      const apiData = {
+        firstName: formData.name.split(" ")[0] || formData.name,
+        lastName: formData.name.split(" ").slice(1).join(" ") || "",
+        email: formData.email,
+        company: "", // Not collected in this form
+        projectDetails: `Phone: ${formData.phone}\n\nRequirement Details:\n${formData.requirement}`,
+        submittedAt: new Date().toISOString(),
       }
-    // eslint-disable-next-line @typescript-eslint/no-unused-vars
+
+      console.log("API data being sent:", apiData)
+
+      const response = await fetch("/api/contact", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(apiData),
+      })
+
+      console.log("Response status:", response.status)
+      const result = await response.json()
+      console.log("Response data:", result)
+
+      if (response.ok && result.success) {
+        setSubmitStatus("success")
+        resetForm()
+      } else {
+        console.error("API Error:", result)
+        setSubmitStatus("error")
+      }
     } catch (error) {
-      alert("Error While submitting Form.")
+      console.error("Network Error:", error)
+      setSubmitStatus("error")
     } finally {
-      setIsSubmitting(false);
+      setIsSubmitting(false)
     }
-    // Show success message
   }
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
@@ -52,15 +72,20 @@ console.log("sdfs",response)
     })
   }
 
-   const resetForm = () => {
+  const resetForm = () => {
     setFormData({
       name: "",
       email: "",
       phone: "",
       requirement: "",
     })
-    setTimeout(() => 3000)
+    // Clear success message after 5 seconds
+    setTimeout(() => setSubmitStatus("idle"), 5000)
   }
+
+  // Form validation
+  const isFormValid = formData.name && formData.email && formData.phone && formData.requirement
+
   return (
     <section className="relative py-5 bg-gradient-to-br from-orange-50 via-orange-25 to-amber-50 overflow-hidden">
       {/* Background Pattern */}
@@ -72,7 +97,7 @@ console.log("sdfs",response)
       </div>
 
       <div className="container mx-auto px-4 lg:px-[5rem] relative">
-        <div className="max-w-3/4 mx-auto">
+        <div className="max-w-4xl mx-auto">
           {/* Header */}
           <div className="text-center mb-6">
             <div className="flex items-center justify-center mb-6">
@@ -87,7 +112,7 @@ console.log("sdfs",response)
           </div>
 
           {/* Form */}
-          <div className=" bg-gradient-to-br from-gray-100 to-gray-200 rounded-2xl p-8 border border-gray-200 shadow-xl">
+          <div className="bg-gradient-to-br from-gray-100 to-gray-200 rounded-2xl p-8 border border-gray-200 shadow-xl">
             <form onSubmit={handleSubmit} className="space-y-6">
               {/* Contact Info Row */}
               <div className="grid md:grid-cols-3 gap-4 text-lg">
@@ -99,11 +124,11 @@ console.log("sdfs",response)
                     id="name"
                     name="name"
                     type="text"
-                    placeholder="Enter your name"
+                    placeholder="Enter your full name"
                     value={formData.name}
                     onChange={handleChange}
                     required
-                    className="bg-white/90 border-white/30 focus:border-orange-500 focus:ring-orange-500 text-gray-900 placeholder-gray-500"
+                    className="bg-white/90 border-gray-300 focus:border-orange-500 focus:ring-orange-500 text-gray-900 placeholder-gray-500"
                   />
                 </div>
                 <div>
@@ -118,7 +143,7 @@ console.log("sdfs",response)
                     value={formData.email}
                     onChange={handleChange}
                     required
-                    className="bg-white/90 border-white/30 focus:border-orange-500 focus:ring-orange-500 text-gray-900 placeholder-gray-500"
+                    className="bg-white/90 border-gray-300 focus:border-orange-500 focus:ring-orange-500 text-gray-900 placeholder-gray-500"
                   />
                 </div>
                 <div>
@@ -133,7 +158,7 @@ console.log("sdfs",response)
                     value={formData.phone}
                     onChange={handleChange}
                     required
-                    className="bg-white/90 border-white/30 focus:border-orange-500 focus:ring-orange-500 text-gray-900 placeholder-gray-500"
+                    className="bg-white/90 border-gray-300 focus:border-orange-500 focus:ring-orange-500 text-gray-900 placeholder-gray-500"
                   />
                 </div>
               </div>
@@ -151,16 +176,35 @@ console.log("sdfs",response)
                   onChange={handleChange}
                   required
                   rows={5}
-                  className="bg-white/90 border-white/30 focus:border-orange-500 focus:ring-orange-500 text-gray-900 placeholder-gray-500 resize-none"
+                  className="bg-white/90 border-gray-300 focus:border-orange-500 focus:ring-orange-500 text-gray-900 placeholder-gray-500 resize-none"
                 />
               </div>
+
+              {/* Status Messages */}
+              {submitStatus === "success" && (
+                <div className="bg-green-100 border border-green-400 text-green-700 px-4 py-3 rounded-lg flex items-center">
+                  <span className="mr-2">✅</span>
+                  <div>
+                    <strong>Success!</strong> Your inquiry has been submitted successfully. We&apos;ll get back to you soon.
+                  </div>
+                </div>
+              )}
+
+              {submitStatus === "error" && (
+                <div className="bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded-lg flex items-center">
+                  <span className="mr-2">❌</span>
+                  <div>
+                    <strong>Error!</strong> Failed to submit your inquiry. Please try again or contact us directly.
+                  </div>
+                </div>
+              )}
 
               {/* Submit Button */}
               <div className="text-center">
                 <Button
                   type="submit"
-                  disabled={isSubmitting}
-                  className="bg-gradient-to-r from-orange-500 to-orange-600 hover:from-orange-600 hover:to-orange-700 text-white font-bold py-4 px-12 rounded-lg text-lg shadow-lg hover:shadow-xl transition-all duration-300 disabled:opacity-50"
+                  disabled={!isFormValid || isSubmitting}
+                  className="bg-gradient-to-r from-orange-500 to-orange-600 hover:from-orange-600 hover:to-orange-700 text-white font-bold py-4 px-12 rounded-lg text-lg shadow-lg hover:shadow-xl transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed"
                 >
                   {isSubmitting ? (
                     <div className="flex items-center space-x-2">

@@ -38,7 +38,7 @@ export default function ContactForm() {
     setIsSubmitting(true);
     try {
       // This would typically call your email service API
-      const response = await fetch('http://localhost:3001/api/send-email', {
+      const response = await fetch('/api/contact', {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(formData),
