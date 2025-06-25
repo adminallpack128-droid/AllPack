@@ -20,6 +20,7 @@ export default function QuoteButtonWithDialog({
   children = "Get Quote",
 }: QuoteButtonProps) {
   return (
+    console.log("childen", children),
     <QuoteDialog className={className}>
       <Button className={className} size={size} variant={variant}>
         {children}

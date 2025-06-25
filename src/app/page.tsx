@@ -10,8 +10,6 @@ import {
   Mail,
   MapPin,
   Phone,
-  Quote,
-  Star,
   Twitter,
 } from "lucide-react"
 import Image from "next/image"
@@ -274,7 +272,7 @@ export default function Component() {
       </section>
 
       {/* Testimonials Section */}
-      <section className="py-20 bg-white">
+      {/* <section className="py-20 bg-white">
         <div className="container mx-auto px-4 lg:px-[5rem]">
           <div className="text-center space-y-4 mb-16">
             <Badge variant="secondary" className="bg-orange-100 text-orange-700">
@@ -333,7 +331,7 @@ export default function Component() {
             ))}
           </div>
         </div>
-      </section>
+      </section> */}
 
       {/* Contact Section */}
       <section id="contact" className="py-6 bg-gradient-to-br from-gray-900 to-gray-800 text-white">
