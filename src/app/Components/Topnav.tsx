@@ -40,9 +40,9 @@ export default function Topnav() {
           name: "Fertilizer Bags",
           href: "/product/fertilizer-bags",
           subItems: [
-            { name: "Printed Fertilizer Bag", href: "/product/fertilizer-bags/printed" },
-            { name: "Plain PP Fertilizer Bag", href: "/product/fertilizer-bags/plain-pp" },
-            { name: "Dap Fertilizer Bag", href: "/product/fertilizer-bags/dap" },
+            { name: "Printed Fertilizer Bag", href: "/product/fertilizer-bags#printed-packaging" },
+            { name: "Plain PP Fertilizer Bag", href: "/product/fertilizer-bags#plain-pp" },
+            { name: "Dap Fertilizer Bag", href: "/product/fertilizer-bags#dapFertilizerBag" },
             { name: "White Fertilizer Packaging Bag", href: "/product/fertilizer-bags/white" },
             { name: "25Kg Fertilizer Bag", href: "/product/fertilizer-bags/25kg" },
           ],

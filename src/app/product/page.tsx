@@ -18,7 +18,7 @@ export default function ProductsPage() {
         // "White Fertilizer Packaging Bag",
         // "25Kg Fertilizer Bag",
       ],
-      link: "/products/fertilizer-bags",
+      link: "/product/fertilizer-bags",
     },
     {
       id: 2,

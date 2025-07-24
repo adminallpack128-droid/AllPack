@@ -1,27 +1,23 @@
+import QuoteButtonWithDialog from "@/app/Components/getQuotePopup";
+import { Badge } from "@/app/Components/Ui/badge";
+import { Button } from "@/app/Components/Ui/button";
+import { Card, CardContent } from "@/app/Components/Ui/card";
+import fertilizerBags from "@/JsonDataFiles/FertilizerBagJSON";
+import {
+  Search,
+  Phone,
+  Mail,
+  Star,
+  CheckCircle,
+  Package,
+  Truck,
+  Shield,
+  Award,
+} from "lucide-react";
+import Link from "next/link";
+import BagImageGallery from "@/app/Components/imageCarousal";
 
-import QuoteButtonWithDialog from "@/app/Components/getQuotePopup"
-import { Badge } from "@/app/Components/Ui/badge"
-import { Button } from "@/app/Components/Ui/button"
-import { Card, CardContent } from "@/app/Components/Ui/card"
-import { Search, Phone, Mail, Star, CheckCircle, Package, Truck, Shield, Award } from "lucide-react"
-import Image from "next/image"
-import Link from "next/link"
-
-export default function PlainPPFertilizerBagPage() {
-  const productImages = ["/HomePage2.jpeg", "/HomePage1.jpeg", "/HomePage3.jpeg", "/HomePage4.jpeg"]
-
-  const productSpecs = [
-    { label: "Minimum Order Quantity", value: "1000 Piece" },
-    { label: "Storage Capacity", value: "25-50 Kg" },
-    { label: "Usage/Application", value: "Fertilizer Packaging" },
-    { label: "Material", value: "PP (Polypropylene)" },
-    { label: "Shape", value: "Rectangular" },
-    { label: "Pattern", value: "Plain" },
-    { label: "Brand", value: "AllPack Pro" },
-    { label: "Color", value: "White/Natural" },
-    { label: "Weave Type", value: "Woven" },
-    { label: "Thickness", value: "70-100 GSM" },
-  ]
+export default function PlainPPFertilizerBagPage() { 
 
   const features = [
     "High-strength woven polypropylene construction",
@@ -32,14 +28,26 @@ export default function PlainPPFertilizerBagPage() {
     "Available in multiple sizes and capacities",
     "Easy to handle and transport",
     "Eco-friendly and recyclable material",
-  ]
+  ];
 
   const benefits = [
-    { icon: Shield, title: "Durability", desc: "Strong construction for heavy-duty use" },
-    { icon: Package, title: "Cost Effective", desc: "Economical solution for bulk packaging" },
-    { icon: Truck, title: "Easy Transport", desc: "Lightweight and stackable design" },
+    {
+      icon: Shield,
+      title: "Durability",
+      desc: "Strong construction for heavy-duty use",
+    },
+    {
+      icon: Package,
+      title: "Cost Effective",
+      desc: "Economical solution for bulk packaging",
+    },
+    {
+      icon: Truck,
+      title: "Easy Transport",
+      desc: "Lightweight and stackable design",
+    },
     { icon: Award, title: "Quality Material", desc: "Premium PP woven fabric" },
-  ]
+  ];
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-orange-50 via-orange-25 to-amber-50">
@@ -53,13 +61,21 @@ export default function PlainPPFertilizerBagPage() {
                 <span className="text-white font-bold text-xl">AP</span>
               </div>
               <div>
-                <h1 className="text-2xl font-bold text-gray-900">AllPack Pro</h1>
+                <h1 className="text-2xl font-bold text-gray-900">
+                  AllPack Pro
+                </h1>
                 <p className="text-gray-600">Pune, Maharashtra</p>
                 <div className="flex items-center space-x-4 mt-1">
-                  <Badge variant="secondary" className="bg-green-100 text-green-700">
+                  <Badge
+                    variant="secondary"
+                    className="bg-green-100 text-green-700"
+                  >
                     ✓ GST Verified
                   </Badge>
-                  <Badge variant="secondary" className="bg-orange-100 text-orange-700">
+                  <Badge
+                    variant="secondary"
+                    className="bg-orange-100 text-orange-700"
+                  >
                     ⭐ TrustSEAL Verified
                   </Badge>
                 </div>
@@ -68,10 +84,15 @@ export default function PlainPPFertilizerBagPage() {
 
             {/* Contact Buttons */}
             <div className="flex flex-col sm:flex-row gap-3">
-              <Button variant="outline" className="border-gray-800 text-gray-800 hover:bg-gray-50">
+              <Button
+                variant="outline"
+                className="border-gray-800 text-gray-800 hover:bg-gray-50"
+              >
                 <Phone className="h-4 w-4 mr-2" />
                 Call +91 89750 40173
-                <span className="text-xs text-gray-500 ml-2">68% Response Rate</span>
+                <span className="text-xs text-gray-500 ml-2">
+                  68% Response Rate
+                </span>
               </Button>
               <QuoteButtonWithDialog className="bg-gradient-to-r from-red-500 to-red-600 hover:from-red-600 hover:to-red-700 text-white">
                 <Mail className="h-4 w-4 mr-2" />
@@ -95,10 +116,12 @@ export default function PlainPPFertilizerBagPage() {
                 Our Products
               </Link>
               <span className="mx-2">»</span>
-              <Link href="/product/fertilizer-bags" className="hover:text-orange-600">
+              <Link
+                href="/product/fertilizer-bags"
+                className="hover:text-orange-600"
+              >
                 Fertilizer Bags
               </Link>
-             
             </nav>
 
             <div className="relative hidden md:flex">
@@ -113,22 +136,8 @@ export default function PlainPPFertilizerBagPage() {
         </div>
       </section>
 
-      {/* Back Button */}
-      {/* <section className="py-6">
-        <div className="container mx-auto px-4 lg:px-[5rem]">
-          <Link <span className="mx-2">»</span>
-              
-            href="/product/fertilizer-bags"
-            className="inline-flex items-center text-orange-600 hover:text-orange-800 font-medium"
-          >
-            <ArrowLeft className="h-4 w-4 mr-2" />
-            Back to Fertilizer Bags
-          </Link>
-        </div>
-      </section> */}
-
-       {/* Category Header Section - This is the blue section you're asking about */}
-       <section className="py-5 bg-gradient-to-br from-amber-50 via-orange-25 to-orange-50">
+      {/* Category Header Section - This is the blue section you're asking about */}
+      <section className="py-5 bg-gradient-to-br from-amber-50 via-orange-25 to-orange-50">
         <div className="container mx-auto px-4 lg:px-[5rem]">
           <div className="text-gray-800">
             {/* Category Title */}
@@ -142,13 +151,34 @@ export default function PlainPPFertilizerBagPage() {
             <div className="bg-white bg-opacity-90 border border-orange-200 rounded-lg p-6 shadow-md">
               <p className="text-lg leading-relaxed text-gray-700">
                 We are a leading Manufacturer of{" "}
-                <span className="font-semibold text-orange-600">printed fertilizer bag</span>,{" "}
-                <span className="font-semibold text-orange-600">plain pp fertilizer bag</span>,{" "}
-                <span className="font-semibold text-orange-600">dap fertilizer bag</span>,{" "}
-                <span className="font-semibold text-orange-600">white fertilizer packaging bag</span>,{" "}
-                <span className="font-semibold text-orange-600">25kg fertilizer bag</span> and{" "}
-                <span className="font-semibold text-orange-600">bopp fertilizer bag</span> from{" "}
-                <span className="font-semibold text-gray-900">Indore, India</span>.
+                <span className="font-semibold text-orange-600">
+                  printed fertilizer bag
+                </span>
+                ,{" "}
+                <span className="font-semibold text-orange-600">
+                  plain pp fertilizer bag
+                </span>
+                ,{" "}
+                <span className="font-semibold text-orange-600">
+                  dap fertilizer bag
+                </span>
+                ,{" "}
+                <span className="font-semibold text-orange-600">
+                  white fertilizer packaging bag
+                </span>
+                ,{" "}
+                <span className="font-semibold text-orange-600">
+                  25kg fertilizer bag
+                </span>{" "}
+                and{" "}
+                <span className="font-semibold text-orange-600">
+                  bopp fertilizer bag
+                </span>{" "}
+                from{" "}
+                <span className="font-semibold text-gray-900">
+                  Indore, India
+                </span>
+                .
               </p>
             </div>
           </div>
@@ -156,198 +186,1508 @@ export default function PlainPPFertilizerBagPage() {
       </section>
 
       {/* Product Details Section */}
-     <section className="pb-16">
+      <section className="pb-16">
         <div className="container mx-auto px-4 lg:px-[5rem]">
-          <div className="bg-white rounded-2xl shadow-xl overflow-hidden">
-            <div className="grid lg:grid-cols-2 gap-0">
-              {/* Left Side - Product Images */}
-              <div className="p-8 space-y-4">
-                <div className="relative aspect-square bg-gray-100 rounded-lg overflow-hidden">
-                  <Image
-                    src={productImages[0] || "/placeholder.svg"}
-                    alt="Plain PP Fertilizer Bag"
-                    fill
-                    className="object-cover hover:scale-105 transition-transform duration-300"
-                  />
+          <div className="bg-gray-100 overflow-hidden">
+            {fertilizerBags.map((bag) => (
+              <div
+                className=" scroll-offset grid lg:grid-cols-2 gap-0 rounded-2xl shadow-xl bg-gray-100 my-4"
+                key={bag.id} 
+                id={bag.id} 
+              >
+                {/* Left Side - Product Images */}
+                <div className="px-6 space-y-4 mt-3" >
+                  <h1 className="text-3xl font-bold text-red-600 mb-2">
+                    {bag.title}
+                  </h1>
+                  {bag.images?.length > 0 && (
+                    <BagImageGallery bag={{ images: bag?.images }} />
+                  )}
                 </div>
-                <div className="grid grid-cols-4 gap-2">
-                  {productImages.map((image, index) => (
-                    <div
-                      key={index}
-                      className="relative aspect-square bg-gray-100 rounded-lg overflow-hidden border-2 border-orange-200 hover:border-orange-500 cursor-pointer"
-                    >
-                      <Image
-                        src={image || "/placeholder.svg"}
-                        alt={`Product view ${index + 1}`}
-                        fill
-                        className="object-cover"
-                      />
-                    </div>
-                  ))}
-                </div>
-              </div>
 
-              {/* Right Side - Product Info with Scrollable Content */}
-              <div className="border-l border-gray-200 flex flex-col h-[800px]">
-                {/* Fixed Header Section */}
-                <div className="p-8 border-b border-gray-200 bg-white">
-                  <div>
-                    <h1 className="text-3xl font-bold text-red-600 mb-2">Plain PP Fertilizer Bag</h1>
-                    <div className="flex items-center space-x-4 mb-4">
-                      <div className="flex items-center">
-                        {[...Array(5)].map((_, i) => (
-                          <Star key={i} className="h-5 w-5 text-yellow-400 fill-current" />
-                        ))}
-                        <span className="ml-2 text-gray-600">(4.7/5 - 89 reviews)</span>
+                {/* Right Side - Product Info with Scrollable Content */}
+                <div className="border-l border-gray-200 flex flex-col h-[800px]">
+                  {/* Fixed Header Section */}
+                  <div className="px-8 pt-4 border-b border-gray-200 bg-white">
+                    <div>
+                      <div className="flex items-center space-x-4 mb-4">
+                        <div className="flex items-center">
+                          {[...Array(5)].map((_, i) => (
+                            <Star
+                              key={i}
+                              className="h-5 w-5 text-yellow-400 fill-current"
+                            />
+                          ))}
+                          <span className="ml-2 text-gray-600">
+                            ({bag.rating}/5 - {bag.reviews} reviews)
+                          </span>
+                        </div>
+                      </div>
+                      <div className="flex items-center space-x-4 mb-6">
+                        <span className="text-2xl font-bold text-gray-900">
+                          {bag.price}
+                        </span>
+                        <span className="text-gray-600">/ Piece</span>
+                        <Button
+                          variant="outline"
+                          size="sm"
+                          className="border-red-500 text-red-600 hover:bg-red-50"
+                        >
+                          Get Latest Price
+                        </Button>
+                        <QuoteButtonWithDialog className="flex-1">
+                          <Button className="w-full bg-gradient-to-r from-orange-500 to-orange-600 hover:from-orange-600 hover:to-orange-700 text-white font-semibold py-3">
+                            Get Best Quote
+                          </Button>
+                        </QuoteButtonWithDialog>
                       </div>
                     </div>
-                    <div className="flex items-center space-x-4 mb-6">
-                      <span className="text-2xl font-bold text-gray-900">₹ 28</span>
-                      <span className="text-gray-600">/ Piece</span>
-                      <Button variant="outline" size="sm" className="border-red-500 text-red-600 hover:bg-red-50">
-                        Get Latest Price
-                      </Button>
-                    </div>
-
-                    {/* Action Buttons */}
-                    <div className="flex flex-col sm:flex-row gap-3">
-                      <QuoteButtonWithDialog className="flex-1">
-                        <Button className="w-full bg-gradient-to-r from-orange-500 to-orange-600 hover:from-orange-600 hover:to-orange-700 text-white font-semibold py-3">
-                          Get Best Quote
-                        </Button>
-                      </QuoteButtonWithDialog>
-                      <Button className="flex-1 bg-red-600 hover:bg-red-700 text-white font-semibold py-3">
-                        Yes! I am Interested
-                      </Button>
-                    </div>
                   </div>
-                </div>
 
-                {/* Scrollable Content Area */}
-                <div className="flex-1 overflow-y-auto p-8 space-y-8">
-                  {/* Product Specifications */}
-                  <Card className="border-gray-200">
-                    <CardContent className="p-6">
-                      <h3 className="text-lg font-semibold text-gray-900 mb-4">Product Details:</h3>
-                      <div className="grid grid-cols-1 gap-3">
-                        {productSpecs.map((spec, index) => (
+                  {/* Scrollable Content Area */}
+                  <div className="flex-1 overflow-y-auto p-8 space-y-8 bg-white">
+                    {/* Product Specifications */}
+                    <Card className="border-gray-200">
+                      <CardContent className="p-6 bg-gray-100">
+                        <h3 className="text-lg font-semibold text-gray-900 mb-4">
+                          Product Details:
+                        </h3>
+                        {/* <div className="grid grid-cols-1 gap-3">
+                        {bag.specs.map((spec, index) => (
                           <div
                             key={index}
-                            className="flex justify-between py-2 border-b border-gray-100 last:border-b-0"
+                            className="flex justify-between py-2 border-b-2 border-gray-500 last:border-b-0"
                           >
-                            <span className="text-gray-600 font-medium">{spec.label}</span>
+                            <span className="text-gray-600 font-medium border-r-2 pr-2">{spec.label}</span>
                             <span className="text-gray-900 font-semibold">{spec.value}</span>
                           </div>
                         ))}
-                      </div>
-                    </CardContent>
-                  </Card>
+                      </div> */}
+                        <table className="w-full border-collapse">
+                          <tbody>
+                            {bag.specs.map((spec, index) => (
+                              <tr
+                                key={index}
+                                className="border-b-2 border-gray-300 last:border-b-0"
+                              >
+                                <td className="text-gray-600 font-medium pr-4 py-2 border-r-2 border-gray-400 w-1/2">
+                                  {spec.label}
+                                </td>
+                                <td className="text-gray-900 font-semibold pl-4 py-2">
+                                  {spec.value}
+                                </td>
+                              </tr>
+                            ))}
+                          </tbody>
+                        </table>
+                      </CardContent>
+                    </Card>
 
-                  {/* About Section */}
-                  <div>
-                    <h2 className="text-2xl font-bold text-gray-900 mb-6">About Plain PP Fertilizer Bags</h2>
-                    <div className="prose max-w-none text-gray-700 leading-relaxed">
-                      <p className="mb-6">
-                        <strong>Plain PP Fertilizer Bags</strong> are cost-effective, durable packaging solutions made
-                        from high-quality woven polypropylene material. These bags are designed for bulk fertilizer
-                        packaging where custom printing is not required, offering an economical choice for large-scale
-                        agricultural operations.
-                      </p>
+                    {bag.id == "plain-pp" ? (
+                      <div >
+                        <section className="max-w-4xl mx-auto px-4 ">
+                          <p className="text-lg mb-6">
+                            PP (Polypropylene) fertilizer bags are widely used
+                            in the agricultural industry for packaging
+                            fertilizers and other related products. Here are
+                            some key aspects of PP fertilizer bags:
+                          </p>
 
-                      <h3 className="text-xl font-semibold text-gray-900 mb-4">
-                        Key Advantages of Plain PP Fertilizer Bags:
-                      </h3>
+                          <div className="mb-6">
+                            <h2 className="text-2xl font-semibold mb-2">
+                              1. Material
+                            </h2>
+                            <ul className="list-disc list-inside space-y-2 text-gray-800">
+                              <li>
+                                Made from woven polypropylene (PP) fabric, which
+                                is durable, lightweight, and resistant to
+                                moisture.
+                              </li>
+                              <li>
+                                Polypropylene is a thermoplastic polymer known
+                                for its high tensile strength and ability to
+                                withstand rough handling.
+                              </li>
+                            </ul>
+                          </div>
 
-                      <div className="space-y-6">
-                        <div>
-                          <h4 className="font-semibold text-gray-900 mb-3">1. Material Excellence:</h4>
-                          <ul className="space-y-2 text-gray-700 ml-4">
-                            <li>
-                              • High-strength <strong>woven polypropylene</strong> construction
-                            </li>
-                            <li>• Superior tear and puncture resistance</li>
-                            <li>• Moisture-resistant properties protect contents</li>
-                          </ul>
-                        </div>
-
-                        <div>
-                          <h4 className="font-semibold text-gray-900 mb-3">2. Cost Efficiency:</h4>
-                          <ul className="space-y-2 text-gray-700 ml-4">
-                            <li>
-                              • <strong>Economical solution</strong> for bulk packaging needs
-                            </li>
-                            <li>• Lower cost compared to printed alternatives</li>
-                            <li>• Ideal for large-volume fertilizer distribution</li>
-                          </ul>
-                        </div>
-
-                        <div>
-                          <h4 className="font-semibold text-gray-900 mb-3">3. Practical Design:</h4>
-                          <ul className="space-y-2 text-gray-700 ml-4">
-                            <li>
-                              • <strong>Lightweight yet durable</strong> construction
-                            </li>
-                            <li>• Easy to handle and transport</li>
-                            <li>• Stackable design for efficient storage</li>
-                          </ul>
-                        </div>
-
-                        <div>
-                          <h4 className="font-semibold text-gray-900 mb-3">4. Environmental Benefits:</h4>
-                          <ul className="space-y-2 text-gray-700 ml-4">
-                            <li>• Made from recyclable polypropylene material</li>
-                            <li>• Eco-friendly packaging solution</li>
-                            <li>• Reusable for various agricultural applications</li>
-                          </ul>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-
-                  {/* Benefits Section */}
-                  <div>
-                    <h2 className="text-xl font-bold text-gray-900 mb-6">Why Choose Our Plain PP Fertilizer Bags?</h2>
-                    <div className="grid grid-cols-2 gap-4">
-                      {benefits.map((benefit, index) => (
-                        <Card key={index} className="border-0 shadow-md hover:shadow-lg transition-shadow duration-300">
-                          <CardContent className="p-4 text-center">
-                            <div className="w-12 h-12 bg-gradient-to-r from-orange-500 to-orange-600 rounded-full flex items-center justify-center mx-auto mb-3">
-                              <benefit.icon className="h-6 w-6 text-white" />
+                          <div>
+                            <h2 className="text-2xl font-semibold mb-2">
+                              2. Features
+                            </h2>
+                            <ul className="list-disc list-inside space-y-2 text-gray-800">
+                              <li>
+                                <strong>Moisture resistance:</strong> Essential
+                                for protecting fertilizers from humidity and
+                                moisture during storage and transport.
+                              </li>
+                              <li>
+                                <strong>UV Protection:</strong> Many PP bags are
+                                treated to protect the contents from sunlight,
+                                especially for outdoor storage.
+                              </li>
+                              <li>
+                                <strong>Customizable:</strong> Available in
+                                various sizes and colors, with options for
+                                printing company logos, branding, product
+                                information, etc.
+                              </li>
+                              <li>
+                                <strong>Laminated or non-laminated:</strong>{" "}
+                                Lamination provides additional protection
+                                against moisture and improves the bag’s
+                                appearance.
+                              </li>
+                            </ul>
+                          </div>
+                        </section>
+                        <h2 className="text-xl font-bold text-gray-900 mb-4 mt-3">
+                          Product Features
+                        </h2>
+                        <div className="space-y-3">
+                          {features.map((feature, index) => (
+                            <div
+                              key={index}
+                              className="flex items-start space-x-3"
+                            >
+                              <CheckCircle className="h-5 w-5 text-green-500 mt-0.5 flex-shrink-0" />
+                              <span className="text-gray-700 text-sm">
+                                {feature}
+                              </span>
                             </div>
-                            <h3 className="text-sm font-semibold text-gray-900 mb-1">{benefit.title}</h3>
-                            <p className="text-gray-600 text-xs">{benefit.desc}</p>
-                          </CardContent>
-                        </Card>
-                      ))}
-                    </div>
-                  </div>
-
-                  {/* Features List */}
-                  <div>
-                    <h2 className="text-xl font-bold text-gray-900 mb-4">Product Features</h2>
-                    <div className="space-y-3">
-                      {features.map((feature, index) => (
-                        <div key={index} className="flex items-start space-x-3">
-                          <CheckCircle className="h-5 w-5 text-green-500 mt-0.5 flex-shrink-0" />
-                          <span className="text-gray-700 text-sm">{feature}</span>
+                          ))}
                         </div>
-                      ))}
-                    </div>
+                      </div>
+                    ) : (
+                      ""
+                    )}
+
+                    {bag.id == "printed-packaging" ? (
+                      <>
+                        <section className="max-w-4xl mx-auto px-4">
+                          <p className="text-lg mb-6 text-gray-700">
+                            Printed Fertilizer Bags are specially designed bags
+                            used for packaging various types of fertilizers.
+                            These bags are made from woven polypropylene (PP)
+                            and are often printed with brand logos, product
+                            information, and other relevant details. Here’s a
+                            detailed overview:
+                          </p>
+
+                          <div className="space-y-6">
+                            {/* Key Features */}
+                            <div>
+                              <h2 className="text-2xl font-semibold mb-2">
+                                Key Features of Printed Fertilizer Bags
+                              </h2>
+
+                              {/* Material */}
+                              <div className="mt-4">
+                                <h3 className="text-xl font-medium mb-1">
+                                  Material
+                                </h3>
+                                <ul className="list-disc list-inside text-gray-800 space-y-1">
+                                  <li>
+                                    Made from woven polypropylene (PP), which is
+                                    known for its strength, durability, and
+                                    resistance to moisture and tearing.
+                                  </li>
+                                  <li>
+                                    Some bags may be laminated with BOPP
+                                    (Biaxially Oriented Polypropylene) for
+                                    additional protection and improved print
+                                    quality.
+                                  </li>
+                                </ul>
+                              </div>
+
+                              {/* Printing Options */}
+                              <div className="mt-4">
+                                <h3 className="text-xl font-medium mb-1">
+                                  Printing Options
+                                </h3>
+                                <ul className="list-disc list-inside text-gray-800 space-y-1">
+                                  <li>
+                                    <strong>Custom Printing:</strong> These bags
+                                    can be printed in various colors and
+                                    designs, allowing for brand logos, product
+                                    descriptions, and instructions to be clearly
+                                    displayed.
+                                  </li>
+                                  <li>
+                                    <strong>
+                                      High-quality printing methods
+                                    </strong>{" "}
+                                    like flexographic printing are commonly used
+                                    for clear and vibrant graphics.
+                                  </li>
+                                </ul>
+                              </div>
+
+                              {/* Durability */}
+                              <div className="mt-4">
+                                <h3 className="text-xl font-medium mb-1">
+                                  Durability
+                                </h3>
+                                <ul className="list-disc list-inside text-gray-800 space-y-1">
+                                  <li>
+                                    <strong>Tear-Resistant:</strong> Designed to
+                                    withstand handling and transport without
+                                    breaking or ripping, essential for heavy
+                                    materials like fertilizers.
+                                  </li>
+                                  <li>
+                                    <strong>Moisture Resistance:</strong> Helps
+                                    to protect the contents from humidity,
+                                    preventing clumping or degradation of the
+                                    fertilizer.
+                                  </li>
+                                </ul>
+                              </div>
+
+                              {/* Size and Capacity */}
+                              <div className="mt-4">
+                                <h3 className="text-xl font-medium mb-1">
+                                  Size and Capacity
+                                </h3>
+                                <ul className="list-disc list-inside text-gray-800 space-y-1">
+                                  <li>
+                                    Available in various sizes, including 5 kg,
+                                    10 kg, 25 kg, and 50 kg, depending on the
+                                    specific needs of the fertilizer type and
+                                    customer preferences.
+                                  </li>
+                                  <li>
+                                    The size can be customized based on the
+                                    manufacturer&apos;s requirements.
+                                  </li>
+                                </ul>
+                              </div>
+                            </div>
+                          </div>
+                        </section>
+                        <div>
+                          <h2 className="text-xl font-bold text-gray-900 mb-6">
+                            Why Choose Our Plain PP Fertilizer Bags?
+                          </h2>
+                          <div className="grid grid-cols-2 gap-4">
+                            {benefits.map((benefit, index) => (
+                              <Card
+                                key={index}
+                                className="border-0 shadow-md hover:shadow-lg transition-shadow duration-300"
+                              >
+                                <CardContent className="p-4 text-center">
+                                  <div className="w-12 h-12 bg-gradient-to-r from-orange-500 to-orange-600 rounded-full flex items-center justify-center mx-auto mb-3">
+                                    <benefit.icon className="h-6 w-6 text-white" />
+                                  </div>
+                                  <h3 className="text-sm font-semibold text-gray-900 mb-1">
+                                    {benefit.title}
+                                  </h3>
+                                  <p className="text-gray-600 text-xs">
+                                    {benefit.desc}
+                                  </p>
+                                </CardContent>
+                              </Card>
+                            ))}
+                          </div>
+                        </div>
+                      </>
+                    ) : (
+                      ""
+                    )}
+
+                    {bag.id == "dapFertilizerBag" ? (
+                      <section className="max-w-4xl mx-auto px-4 py-10">
+                        <p className="text-lg mb-6 text-gray-700">
+                          DAP Fertilizer Bags refer to the packaging used for
+                          Diammonium Phosphate (DAP), a widely used
+                          nitrogen-phosphorus (N-P) fertilizer. DAP is known for
+                          its high nutrient content and is commonly used in
+                          agricultural practices to promote healthy plant
+                          growth. Here’s an overview of DAP fertilizer bags,
+                          including key features, benefits, and common uses:
+                        </p>
+
+                        <div className="space-y-6">
+                          {/* Key Features */}
+                          <div>
+                            <h2 className="text-2xl font-semibold mb-2">
+                              Key Features of DAP Fertilizer Bags
+                            </h2>
+
+                            {/* Material */}
+                            <div className="mt-4">
+                              <h3 className="text-xl font-medium mb-1">
+                                Material
+                              </h3>
+                              <ul className="list-disc list-inside text-gray-800 space-y-1">
+                                <li>
+                                  Typically made from woven polypropylene (PP),
+                                  which provides durability and strength to hold
+                                  the weight of the fertilizer.
+                                </li>
+                                <li>
+                                  May also include lamination (BOPP) for
+                                  moisture resistance and improved print
+                                  quality.
+                                </li>
+                              </ul>
+                            </div>
+
+                            {/* Size and Capacity */}
+                            <div className="mt-4">
+                              <h3 className="text-xl font-medium mb-1">
+                                Size and Capacity
+                              </h3>
+                              <ul className="list-disc list-inside text-gray-800 space-y-1">
+                                <li>
+                                  Commonly available in sizes like 25 kg, 50 kg,
+                                  and sometimes in bulk packaging (e.g., 1000 kg
+                                  bags) for large agricultural operations.
+                                </li>
+                                <li>
+                                  Custom sizes can be produced based on specific
+                                  requirements.
+                                </li>
+                              </ul>
+                            </div>
+
+                            {/* Printing Options */}
+                            <div className="mt-4">
+                              <h3 className="text-xl font-medium mb-1">
+                                Printing Options
+                              </h3>
+                              <ul className="list-disc list-inside text-gray-800 space-y-1">
+                                <li>
+                                  Bags are often printed with product
+                                  information, branding, and usage instructions,
+                                  helping consumers identify the product easily.
+                                </li>
+                                <li>
+                                  High-quality printing methods (e.g.,
+                                  flexographic printing) are used to ensure
+                                  vibrant colors and clear text.
+                                </li>
+                              </ul>
+                            </div>
+
+                            {/* Durability */}
+                            <div className="mt-4">
+                              <h3 className="text-xl font-medium mb-1">
+                                Durability
+                              </h3>
+                              <ul className="list-disc list-inside text-gray-800 space-y-1">
+                                <li>
+                                  <strong>Tear and Puncture Resistance:</strong>{" "}
+                                  Designed to withstand rough handling and
+                                  transport without breaking.
+                                </li>
+                              </ul>
+                            </div>
+                          </div>
+                        </div>
+                      </section>
+                    ) : (
+                      ""
+                    )}
+
+                    {bag.id == "whiteFertilizerBag" ? (
+                      <section className="max-w-4xl mx-auto px-4 ">
+                        <p className="text-lg mb-6 text-gray-700">
+                          White Fertilizer Packaging Bags are commonly used for
+                          the storage and transport of various types of
+                          fertilizers. These bags are typically made from woven
+                          polypropylene (PP) and offer several benefits due to
+                          their material and design. Here’s an overview of their
+                          key features, advantages, and uses:
+                        </p>
+
+                        <div className="space-y-8">
+                          {/* Key Features */}
+                          <div>
+                            <h2 className="text-2xl font-semibold mb-2">
+                              Key Features of White Fertilizer Packaging Bags
+                            </h2>
+
+                            {/* 1. Material */}
+                            <div className="mt-4">
+                              <h3 className="text-xl font-medium mb-1">
+                                1. Material
+                              </h3>
+                              <ol className="list-decimal list-inside text-gray-800 space-y-1">
+                                <li>
+                                  Made from woven polypropylene (PP), known for
+                                  its strength and durability.
+                                </li>
+                                <li>
+                                  Lightweight yet capable of holding heavy loads
+                                  without tearing or breaking.
+                                </li>
+                              </ol>
+                            </div>
+
+                            {/* 2. Color and Design */}
+                            <div className="mt-4">
+                              <h3 className="text-xl font-medium mb-1">
+                                2. Color and Design
+                              </h3>
+                              <ol className="list-decimal list-inside text-gray-800 space-y-1">
+                                <li>
+                                  The white color is often chosen for its
+                                  neutrality and cleanliness, making it suitable
+                                  for a variety of products.
+                                </li>
+                                <li>
+                                  Bags can be plain or printed with branding,
+                                  product information, and usage instructions.
+                                </li>
+                              </ol>
+                            </div>
+
+                            {/* 3. Sizes and Capacity */}
+                            <div className="mt-4">
+                              <h3 className="text-xl font-medium mb-1">
+                                3. Sizes and Capacity
+                              </h3>
+                              <ol className="list-decimal list-inside text-gray-800 space-y-1">
+                                <li>
+                                  Available in various sizes such as 25 kg, 50
+                                  kg, and bulk sizes like 1000 kg.
+                                </li>
+                                <li>
+                                  Custom sizes can be manufactured based on
+                                  specific requirements.
+                                </li>
+                              </ol>
+                            </div>
+
+                            {/* 4. Printing Options */}
+                            <div className="mt-4">
+                              <h3 className="text-xl font-medium mb-1">
+                                4. Printing Options
+                              </h3>
+                              <ol className="list-decimal list-inside text-gray-800 space-y-1">
+                                <li>
+                                  Custom-printed designs can include logos,
+                                  product details, and safety guidelines.
+                                </li>
+                                <li>
+                                  High-quality printing techniques ensure
+                                  clarity and visual appeal.
+                                </li>
+                              </ol>
+                            </div>
+
+                            {/* 5. Durability */}
+                            <div className="mt-4">
+                              <h3 className="text-xl font-medium mb-1">
+                                5. Durability
+                              </h3>
+                              <ol className="list-decimal list-inside text-gray-800 space-y-1">
+                                <li>
+                                  <strong>Tear and Puncture Resistance:</strong>{" "}
+                                  Withstands transport and storage conditions.
+                                </li>
+                                <li>
+                                  <strong>Moisture Resistance:</strong> Protects
+                                  fertilizer from clumping or degrading.
+                                </li>
+                              </ol>
+                            </div>
+
+                            {/* 6. Environmental Considerations */}
+                            <div className="mt-4">
+                              <h3 className="text-xl font-medium mb-1">
+                                6. Environmental Considerations
+                              </h3>
+                              <ol className="list-decimal list-inside text-gray-800 space-y-1">
+                                <li>
+                                  Many white fertilizer bags are recyclable.
+                                </li>
+                                <li>
+                                  Some are made from recycled materials,
+                                  promoting sustainability.
+                                </li>
+                              </ol>
+                            </div>
+                          </div>
+
+                          {/* Advantages */}
+                          <div>
+                            <h2 className="text-2xl font-semibold mb-2">
+                              Advantages of White Fertilizer Packaging Bags
+                            </h2>
+                            <ol className="list-decimal list-inside text-gray-800 space-y-1">
+                              <li>
+                                <strong>Neutral Appearance:</strong> The clean
+                                white look is suitable for retail or commercial
+                                use.
+                              </li>
+                              <li>
+                                <strong>Branding Opportunities:</strong> Allows
+                                custom printing for marketing and product
+                                identification.
+                              </li>
+                              <li>
+                                <strong>Durability:</strong> Strong construction
+                                supports heavy fertilizer loads without
+                                breaking.
+                              </li>
+                            </ol>
+                          </div>
+                        </div>
+                      </section>
+                    ) : (
+                      ""
+                    )}
+
+                    {bag.id == "25kgFertilizerBag" ? (
+                      <section className="px-6 bg-gray-50 text-gray-800">
+                        <div className="max-w-6xl mx-auto">
+                          {/* Introduction */}
+                          <p className="text-lg mb-3">
+                            An organic fertilizer bag is designed specifically
+                            for packaging organic fertilizers, which are made
+                            from natural materials such as compost, manure, and
+                            plant residues. These bags are crucial for
+                            maintaining the quality and nutrient content of the
+                            organic fertilizer while ensuring ease of handling
+                            and transportation. Organic fertilizers are often
+                            used in environmentally conscious farming, and the
+                            packaging reflects this by offering eco-friendly and
+                            sustainable options.
+                          </p>
+
+                          {/* Types of Bags */}
+                          <h2 className="text-3xl font-semibold mb-4">
+                            Types of Organic Fertilizer Bags
+                          </h2>
+                          <div className="grid md:grid-cols-2 gap-8">
+                            {/* Woven PP Bags */}
+                            <div className="bg-white p-6 shadow rounded-lg border border-green-100">
+                              <h3 className="text-xl font-bold text-green-600 mb-3">
+                                Woven Polypropylene (PP) Bags
+                              </h3>
+                              <ul className="list-disc pl-5 space-y-2 text-gray-700">
+                                <li>
+                                  <strong>Material:</strong> Made from woven
+                                  polypropylene, offering strength and
+                                  durability.
+                                </li>
+                                <li>
+                                  <strong>Lamination:</strong> Often laminated
+                                  with BOPP (Biaxially Oriented Polypropylene)
+                                  film for moisture protection.
+                                </li>
+                                <li>
+                                  <strong>Capacity:</strong> Common sizes
+                                  include 5 kg, 10 kg, 25 kg, and 50 kg.
+                                </li>
+                                <li>
+                                  <strong>Customization:</strong> These bags can
+                                  be custom printed with branding, instructions,
+                                  and eco-friendly messages.
+                                </li>
+                              </ul>
+                            </div>
+
+                            {/* Kraft Paper Bags */}
+                            <div className="bg-white p-6 shadow rounded-lg border border-green-100">
+                              <h3 className="text-xl font-bold text-green-600 mb-3">
+                                Kraft Paper Bags
+                              </h3>
+                              <ul className="list-disc pl-5 space-y-2 text-gray-700">
+                                <li>
+                                  <strong>Material:</strong> Multi-layered kraft
+                                  paper with an inner PE (polyethylene) lining
+                                  to provide moisture resistance.
+                                </li>
+                                <li>
+                                  <strong>Eco-Friendly:</strong> Biodegradable
+                                  and recyclable, making them ideal for
+                                  environmentally conscious packaging.
+                                </li>
+                                <li>
+                                  <strong>Applications:</strong> Suitable for
+                                  small to medium-sized packaging of organic
+                                  fertilizers like compost, peat, and manure.
+                                </li>
+                              </ul>
+                            </div>
+                          </div>
+                        </div>
+                      </section>
+                    ) : (
+                      ""
+                    )}
+
+                    {bag.id == "BOPPFertilizer" ? (
+                      <section className="px-6 bg-white text-gray-800">
+                        <div className="max-w-6xl mx-auto">
+                          <p className="text-lg mb-3">
+                            BOPP Fertilizer Bags are high-quality packaging
+                            solutions made from Biaxially Oriented Polypropylene
+                            (BOPP) material. These bags are widely used for
+                            packaging fertilizers due to their excellent
+                            strength, durability, and aesthetic appeal. Here’s a
+                            detailed overview of BOPP fertilizer bags, including
+                            their key features, advantages, and common uses:
+                          </p>
+
+                          {/* Key Features */}
+                          <h2 className="text-3xl font-semibold mb-6">
+                            Key Features of BOPP Fertilizer Bags
+                          </h2>
+
+                          <div className="space-y-8">
+                            {/* Material */}
+                            <div className="bg-gray-50 p-6 rounded-lg border border-green-100 shadow-sm">
+                              <h3 className="text-xl font-bold text-green-600 mb-3">
+                                Material
+                              </h3>
+                              <ul className="list-disc pl-5 space-y-2">
+                                <li>
+                                  Made from BOPP film, a type of polypropylene
+                                  that is stretched in two directions
+                                  (biaxially), enhancing strength, clarity, and
+                                  barrier properties.
+                                </li>
+                                <li>
+                                  Often laminated, offering additional moisture
+                                  resistance and making them suitable for
+                                  storing various fertilizers.
+                                </li>
+                              </ul>
+                            </div>
+
+                            {/* Size and Capacity */}
+                            <div className="bg-gray-50 p-6 rounded-lg border border-green-100 shadow-sm">
+                              <h3 className="text-xl font-bold text-green-600 mb-3">
+                                Size and Capacity
+                              </h3>
+                              <ul className="list-disc pl-5 space-y-2">
+                                <li>
+                                  Available in standard sizes such as 25 kg, 50
+                                  kg, and larger bulk sizes like 1000 kg bags.
+                                </li>
+                                <li>
+                                  Custom sizes can be manufactured to meet
+                                  specific customer requirements.
+                                </li>
+                              </ul>
+                            </div>
+
+                            {/* Printing Options */}
+                            <div className="bg-gray-50 p-6 rounded-lg border border-green-100 shadow-sm">
+                              <h3 className="text-xl font-bold text-green-600 mb-3">
+                                Printing Options
+                              </h3>
+                              <ul className="list-disc pl-5 space-y-2">
+                                <li>
+                                  High-quality printing capabilities allow for
+                                  vibrant graphics, branding, and product
+                                  details.
+                                </li>
+                                <li>
+                                  Advanced techniques like flexographic printing
+                                  ensure sharp, colorful, and eye-catching
+                                  designs.
+                                </li>
+                              </ul>
+                            </div>
+
+                            {/* Durability */}
+                            <div className="bg-gray-50 p-6 rounded-lg border border-green-100 shadow-sm">
+                              <h3 className="text-xl font-bold text-green-600 mb-3">
+                                Durability
+                              </h3>
+                              <ul className="list-disc pl-5 space-y-2">
+                                <li>
+                                  <strong>Tear and Puncture Resistance:</strong>{" "}
+                                  Designed to withstand rough handling and
+                                  transport conditions.
+                                </li>
+                                <li>
+                                  <strong>Moisture and UV Resistance:</strong>{" "}
+                                  Offers strong protection against moisture and
+                                  UV rays, maintaining fertilizer quality.
+                                </li>
+                              </ul>
+                            </div>
+                          </div>
+                        </div>
+                      </section>
+                    ) : (
+                      ""
+                    )}
+
+                    {bag.id == "agriFertilizer" ? (
+                      <section className="px-6 bg-gray-50 text-gray-900">
+                        <div className="max-w-6xl mx-auto">
+                          <p className="text-lg mb-2">
+                            Agricultural fertilizer bags are specifically
+                            designed to package and transport a wide variety of
+                            fertilizers used in farming and agriculture. These
+                            bags are engineered to protect fertilizers from
+                            moisture, contamination, and physical damage during
+                            storage and transportation. Fertilizer bags come in
+                            different materials, sizes, and designs based on the
+                            type of fertilizer, storage conditions, and
+                            application.
+                          </p>
+
+                          {/* Types of Bags */}
+                          <h2 className="text-3xl font-semibold mb-4">
+                            Types of Agricultural Fertilizer Bags
+                          </h2>
+
+                          {/* Woven PP Bags */}
+                          <div className="bg-white p-6 rounded-lg shadow border border-green-100">
+                            <h3 className="text-2xl font-bold text-green-600 mb-3">
+                              Woven Polypropylene (PP) Bags
+                            </h3>
+                            <ul className="list-disc list-inside space-y-3 text-gray-800 text-base">
+                              <li>
+                                <strong>Material:</strong> Made from woven
+                                polypropylene fabric, these bags are strong,
+                                durable, and resistant to tearing.
+                              </li>
+                              <li>
+                                <strong>Lamination:</strong> Often laminated
+                                with BOPP (Biaxially Oriented Polypropylene) for
+                                added moisture resistance.
+                              </li>
+                              <li>
+                                <strong>Capacity:</strong> Typically available
+                                in sizes ranging from 25 kg to 50 kg.
+                              </li>
+                              <li>
+                                <strong>Applications:</strong> Suitable for
+                                packing chemical fertilizers such as urea, DAP
+                                (Diammonium Phosphate), and NPK fertilizers.
+                              </li>
+                            </ul>
+                          </div>
+                        </div>
+                      </section>
+                    ) : (
+                      ""
+                    )}
+
+                    {bag.id == "hdpeFertilizer" ? (
+                      <section className="px-6 bg-white text-gray-900">
+                        <div className="max-w-6xl mx-auto">
+                          <p className="text-lg mb-1">
+                            HDPE Fertilizer Bags are durable and lightweight
+                            packaging solutions made from High-Density
+                            Polyethylene (HDPE). These bags are widely used for
+                            storing and transporting various types of
+                            fertilizers due to their strength, moisture
+                            resistance, and cost-effectiveness. Here’s an
+                            overview of HDPE fertilizer bags, including their
+                            key features, advantages, and common uses:
+                          </p>
+
+                          {/* Key Features */}
+                          <h2 className="text-3xl font-semibold mb-4">
+                            Key Features of HDPE Fertilizer Bags
+                          </h2>
+
+                          <div className="space-y-8">
+                            {/* Material */}
+                            <div className="bg-gray-50 p-6 rounded-lg border border-green-100 shadow-sm">
+                              <h3 className="text-xl font-bold text-green-600 mb-3">
+                                Material
+                              </h3>
+                              <ul className="list-disc pl-5 space-y-2">
+                                <li>
+                                  Made from High-Density Polyethylene (HDPE),
+                                  known for its high strength-to-density ratio,
+                                  making it suitable for heavy loads.
+                                </li>
+                                <li>
+                                  HDPE is resistant to chemicals, moisture, and
+                                  UV radiation, providing good protection for
+                                  the contents inside.
+                                </li>
+                              </ul>
+                            </div>
+
+                            {/* Size and Capacity */}
+                            <div className="bg-gray-50 p-6 rounded-lg border border-green-100 shadow-sm">
+                              <h3 className="text-xl font-bold text-green-600 mb-3">
+                                Size and Capacity
+                              </h3>
+                              <ul className="list-disc pl-5 space-y-2">
+                                <li>
+                                  Common sizes: 25 kg, 50 kg, and large bulk
+                                  options like 1000 kg.
+                                </li>
+                                <li>
+                                  Custom sizes available based on customer
+                                  requirements.
+                                </li>
+                              </ul>
+                            </div>
+
+                            {/* Printing Options */}
+                            <div className="bg-gray-50 p-6 rounded-lg border border-green-100 shadow-sm">
+                              <h3 className="text-xl font-bold text-green-600 mb-3">
+                                Printing Options
+                              </h3>
+                              <ul className="list-disc pl-5 space-y-2">
+                                <li>
+                                  Supports branding, product details, and
+                                  instructions using flexographic printing.
+                                </li>
+                                <li>
+                                  Delivers vibrant color and high legibility.
+                                </li>
+                              </ul>
+                            </div>
+
+                            {/* Durability */}
+                            <div className="bg-gray-50 p-6 rounded-lg border border-green-100 shadow-sm">
+                              <h3 className="text-xl font-bold text-green-600 mb-3">
+                                Durability
+                              </h3>
+                              <ul className="list-disc pl-5 space-y-2">
+                                <li>
+                                  <strong>Tear & Puncture Resistance:</strong>{" "}
+                                  Engineered for rough handling and transport
+                                  conditions.
+                                </li>
+                                <li>
+                                  <strong>Moisture Resistance:</strong> Protects
+                                  contents from humidity and prevents clumping
+                                  or spoilage.
+                                </li>
+                              </ul>
+                            </div>
+                          </div>
+                        </div>
+                      </section>
+                    ) : (
+                      ""
+                    )}
+
+                    {bag.id == "5kgFertilizer" ? (
+                      <section className="px-6 bg-gray-50 text-gray-900">
+                        <div className="max-w-6xl mx-auto">
+                          <p className="text-lg mb-2">
+                            5 Kg Fertilizer Bags are commonly used packaging
+                            solutions designed to hold 5 kilograms of various
+                            types of fertilizers. These bags are popular in both
+                            retail and agricultural settings, offering a
+                            convenient size for consumers and farmers alike.
+                            Here’s a detailed overview of 5 Kg fertilizer bags,
+                            including their key features, advantages, and common
+                            uses:
+                          </p>
+
+                          {/* Key Features */}
+                          <h2 className="text-3xl font-semibold mb-4">
+                            Key Features of 5 Kg Fertilizer Bags
+                          </h2>
+
+                          <div className="space-y-8">
+                            {/* Material */}
+                            <div className="bg-white p-6 rounded-lg shadow border border-green-100">
+                              <h3 className="text-xl font-bold text-green-600 mb-3">
+                                Material
+                              </h3>
+                              <ul className="list-disc pl-5 space-y-2">
+                                <li>
+                                  Made from woven polypropylene (PP) or
+                                  High-Density Polyethylene (HDPE) for
+                                  durability and strength.
+                                </li>
+                                <li>
+                                  Optional use of BOPP for improved moisture
+                                  resistance and aesthetic appeal.
+                                </li>
+                              </ul>
+                            </div>
+
+                            {/* Size and Dimensions */}
+                            <div className="bg-white p-6 rounded-lg shadow border border-green-100">
+                              <h3 className="text-xl font-bold text-green-600 mb-3">
+                                Size and Dimensions
+                              </h3>
+                              <ul className="list-disc pl-5 space-y-2">
+                                <li>
+                                  Designed specifically to hold 5 kilograms of
+                                  fertilizer.
+                                </li>
+                                <li>
+                                  Dimensions may vary depending on material type
+                                  and bag style (flat or gusseted).
+                                </li>
+                              </ul>
+                            </div>
+
+                            {/* Printing Options */}
+                            <div className="bg-white p-6 rounded-lg shadow border border-green-100">
+                              <h3 className="text-xl font-bold text-green-600 mb-3">
+                                Printing Options
+                              </h3>
+                              <ul className="list-disc pl-5 space-y-2">
+                                <li>
+                                  Custom-printed with branding, product info,
+                                  and instructions using high-quality methods
+                                  like flexographic printing.
+                                </li>
+                                <li>
+                                  Eye-catching designs boost visibility on
+                                  retail shelves.
+                                </li>
+                              </ul>
+                            </div>
+
+                            {/* Durability */}
+                            <div className="bg-white p-6 rounded-lg shadow border border-green-100">
+                              <h3 className="text-xl font-bold text-green-600 mb-3">
+                                Durability
+                              </h3>
+                              <ul className="list-disc pl-5 space-y-2">
+                                <li>
+                                  <strong>Tear & Puncture Resistance:</strong>{" "}
+                                  Withstands transportation and handling stress.
+                                </li>
+                                <li>
+                                  <strong>Moisture Resistance:</strong> Prevents
+                                  clumping and maintains fertilizer quality.
+                                </li>
+                              </ul>
+                            </div>
+
+                            {/* Environmental Considerations */}
+                            <div className="bg-white p-6 rounded-lg shadow border border-green-100">
+                              <h3 className="text-xl font-bold text-green-600 mb-3">
+                                Environmental Considerations
+                              </h3>
+                              <ul className="list-disc pl-5 space-y-2">
+                                <li>
+                                  Many bags are recyclable and support
+                                  eco-friendly agricultural practices.
+                                </li>
+                                <li>
+                                  Can be manufactured from recycled materials to
+                                  promote sustainability.
+                                </li>
+                              </ul>
+                            </div>
+                          </div>
+                        </div>
+                      </section>
+                    ) : (
+                      ""
+                    )}
+
+                    {bag.id == "25kgFertilizers" ? (
+                      <section className="px-6 bg-white text-gray-900">
+                        <p className="text-lg mb-2">
+                          25 Kg Fertilizer Bags are commonly used packaging
+                          solutions designed for the storage and transport of
+                          various fertilizers. These bags are ideal for
+                          agricultural use, providing an effective way to handle
+                          and apply fertilizers in larger quantities. Here’s a
+                          detailed overview of 25 Kg fertilizer bags, including
+                          their key features, advantages, and common uses:
+                        </p>
+
+                        {/* Key Features */}
+                        <h2 className="text-3xl font-semibold mb-4">
+                          Key Features of 25 Kg Fertilizer Bags
+                        </h2>
+                        <ol className="space-y-6 list-decimal list-inside text-gray-800 text-base pl-4">
+                          {/* 1. Material */}
+                          <li>
+                            <strong>Material:</strong>
+                            <ul className="list-disc pl-6 mt-2 space-y-1">
+                              <li>
+                                Made from woven polypropylene (PP), HDPE, or
+                                BOPP.
+                              </li>
+                              <li>Woven PP bags are strong and durable.</li>
+                              <li>
+                                BOPP bags offer superior moisture resistance and
+                                aesthetics.
+                              </li>
+                            </ul>
+                          </li>
+
+                          {/* 2. Size and Capacity */}
+                          <li>
+                            <strong>Size and Capacity:</strong>
+                            <ul className="list-disc pl-6 mt-2 space-y-1">
+                              <li>
+                                Designed to hold 25 kilograms of fertilizer.
+                              </li>
+                              <li>Suitable for both retail and bulk use.</li>
+                              <li>
+                                Bag dimensions may vary by material and design
+                                (flat/gusseted).
+                              </li>
+                            </ul>
+                          </li>
+
+                          {/* 3. Printing Options */}
+                          <li>
+                            <strong>Printing Options:</strong>
+                            <ul className="list-disc pl-6 mt-2 space-y-1">
+                              <li>
+                                Uses flexographic and other high-quality
+                                printing methods.
+                              </li>
+                              <li>
+                                Enables branding, product info, and visual
+                                appeal.
+                              </li>
+                            </ul>
+                          </li>
+
+                          {/* 4. Durability */}
+                          <li>
+                            <strong>Durability:</strong>
+                            <ul className="list-disc pl-6 mt-2 space-y-1">
+                              <li>
+                                Tear and puncture resistant for reliable storage
+                                and transport.
+                              </li>
+                              <li>
+                                Moisture resistant to prevent clumping and
+                                product degradation.
+                              </li>
+                            </ul>
+                          </li>
+
+                          {/* 5. Environmental Considerations */}
+                          <li>
+                            <strong>Environmental Considerations:</strong>
+                            <ul className="list-disc pl-6 mt-2 space-y-1">
+                              <li>
+                                Recyclable materials support sustainability.
+                              </li>
+                              <li>Some bags made using recycled content.</li>
+                            </ul>
+                          </li>
+                        </ol>
+
+                        {/* Advantages */}
+                        <h2 className="text-3xl font-semibold mt-12 mb-4">
+                          Advantages of 25 Kg Fertilizer Bags
+                        </h2>
+                        <ol className="list-decimal list-inside space-y-4 text-gray-800 pl-4">
+                          <li>
+                            <strong>Convenient Size:</strong> Ideal for farmers
+                            and gardeners seeking a manageable quantity.
+                          </li>
+                          <li>
+                            <strong>Cost-Effective:</strong> Affordable and
+                            widely accessible.
+                          </li>
+                          <li>
+                            <strong>Informational:</strong> Can include key
+                            product info like nutrients, usage, and safety tips.
+                          </li>
+                          <li>
+                            <strong>Brand Visibility:</strong> Custom-printed
+                            surfaces boost marketing impact.
+                          </li>
+                        </ol>
+
+                        {/* Additional Info */}
+                        <h2 className="text-3xl font-semibold mt-12 mb-4">
+                          Additional Information
+                        </h2>
+                        <ul className="list-disc pl-6 text-gray-800 space-y-2">
+                          <li>
+                            <strong>Request:</strong> Callback available on
+                            inquiry.
+                          </li>
+                          <li>
+                            <strong>Delivery Time:</strong> 1–2 Days
+                          </li>
+                        </ul>
+                      </section>
+                    ) : (
+                      ""
+                    )}
+
+                    {bag.id == "printedFertilizers" ? (
+                      <section className="px-6 bg-gray-50 text-gray-900">
+                        <p className="text-lg mb-2">
+                          Printed Fertilizer Bags are specialized packaging
+                          solutions designed for the storage and transport of
+                          various fertilizers, featuring customized printing for
+                          branding, product information, and marketing. These
+                          bags are popular in the agricultural industry for
+                          their ability to effectively communicate essential
+                          details while providing robust protection for the
+                          contents.
+                        </p>
+
+                        {/* Key Features */}
+                        <h2 className="text-3xl font-semibold mb-4">
+                          Key Features of Printed Fertilizer Bags
+                        </h2>
+
+                        <ol className="list-decimal list-inside space-y-6 text-gray-800 text-base pl-4">
+                          {/* 1. Material */}
+                          <li>
+                            <strong>Material:</strong>
+                            <ul className="list-disc pl-6 mt-2 space-y-1">
+                              <li>
+                                Commonly made from woven polypropylene (PP) or
+                                High-Density Polyethylene (HDPE).
+                              </li>
+                              <li>
+                                Offers strong resistance to tearing and
+                                puncturing.
+                              </li>
+                              <li>
+                                Optional BOPP lamination improves moisture
+                                resistance and visual appearance.
+                              </li>
+                            </ul>
+                          </li>
+
+                          {/* 2. Size and Capacity */}
+                          <li>
+                            <strong>Size and Capacity:</strong>
+                            <ul className="list-disc pl-6 mt-2 space-y-1">
+                              <li>
+                                Available in standard sizes like 5 kg, 25 kg, 50
+                                kg, and up to 1000 kg bulk options.
+                              </li>
+                              <li>
+                                Custom sizes can be tailored to client needs.
+                              </li>
+                            </ul>
+                          </li>
+
+                          {/* 3. Printing Options */}
+                          <li>
+                            <strong>Printing Options:</strong>
+                            <ul className="list-disc pl-6 mt-2 space-y-1">
+                              <li>
+                                Uses high-quality flexographic printing for
+                                vibrant, long-lasting graphics and clear text.
+                              </li>
+                              <li>
+                                Customizable for branding, product instructions,
+                                safety warnings, and marketing purposes.
+                              </li>
+                              <li>
+                                Enhances visibility and appeal in retail and
+                                agricultural markets.
+                              </li>
+                            </ul>
+                          </li>
+                        </ol>
+
+                        {/* Additional Info */}
+                        <h2 className="text-3xl font-semibold mt-12 mb-4">
+                          Additional Information
+                        </h2>
+
+                        <ul className="list-disc pl-6 space-y-2 text-gray-800">
+                          <li>
+                            <strong>Request:</strong> Callback available upon
+                            inquiry.
+                          </li>
+                          <li>
+                            <strong>Production Capacity:</strong> 1 (unit
+                            capacity — can be clarified if needed).
+                          </li>
+                          <li>
+                            <strong>Delivery Time:</strong> 1–2 Days.
+                          </li>
+                          <li>
+                            <strong>Packaging Details:</strong> Size: 8X11.
+                          </li>
+                        </ul>
+                      </section>
+                    ) : (
+                      ""
+                    )}
+
+                    {bag.id == "greenFertilizer" ? (
+                      <section className="px-6 bg-white text-gray-900">
+                        <p className="text-lg mb-2">
+                          Green Printed Fertilizer Bags are specially designed
+                          for packaging fertilizers, featuring a green color
+                          scheme. Typically made from woven polypropylene (PP),
+                          these bags are printed with brand logos, product
+                          information, and handling instructions. Below is an
+                          overview of their key features, advantages, and
+                          typical uses.
+                        </p>
+
+                        {/* Key Features */}
+                        <h2 className="text-3xl font-semibold mb-4">
+                          Key Features of Green Printed Fertilizer Bags
+                        </h2>
+
+                        <ol className="list-decimal list-inside text-base text-gray-800 space-y-6 pl-4">
+                          {/* 1. Material */}
+                          <li>
+                            <strong>Material:</strong>
+                            <ul className="list-disc pl-6 mt-2 space-y-1">
+                              <li>
+                                Constructed from woven polypropylene (PP) for
+                                high strength and durability.
+                              </li>
+                              <li>
+                                Optional BOPP lamination for added moisture
+                                resistance and superior print quality.
+                              </li>
+                            </ul>
+                          </li>
+
+                          {/* 2. Color and Design */}
+                          <li>
+                            <strong>Color and Design:</strong>
+                            <ul className="list-disc pl-6 mt-2 space-y-1">
+                              <li>
+                                Green color represents eco-friendliness or
+                                organic agricultural products.
+                              </li>
+                              <li>
+                                Custom-designed with logos, graphics, and
+                                product info to enhance brand recognition and
+                                shelf appeal.
+                              </li>
+                            </ul>
+                          </li>
+
+                          {/* 3. Printing Options */}
+                          <li>
+                            <strong>Printing Options:</strong>
+                            <ul className="list-disc pl-6 mt-2 space-y-1">
+                              <li>
+                                Printed using flexographic or rotogravure
+                                methods for vibrant colors and detailed text.
+                              </li>
+                              <li>
+                                Supports multi-color designs and high-resolution
+                                branding elements.
+                              </li>
+                            </ul>
+                          </li>
+                        </ol>
+                      </section>
+                    ) : (
+                      ""
+                    )}
+
+                    {bag.id == "25kgBopp" ? (
+                      <section className="px-6 bg-white text-gray-900">
+                        <p className="text-lg mb-2">
+                          25 Kg BOPP Fertilizer Bags are specialized packaging
+                          solutions designed for storing and transporting
+                          fertilizers, with a focus on durability, moisture
+                          resistance, and aesthetic appeal. These bags are made
+                          from Biaxially Oriented Polypropylene (BOPP), which
+                          enhances their strength and barrier properties.
+                        </p>
+
+                        {/* Key Features */}
+                        <h2 className="text-3xl font-semibold mb-4">
+                          Key Features of 25 Kg BOPP Fertilizer Bags
+                        </h2>
+
+                        <ol className="list-decimal list-inside space-y-6 text-gray-800 text-base pl-4">
+                          {/* 1. Material */}
+                          <li>
+                            <strong>Material:</strong>
+                            <ul className="list-disc pl-6 mt-2 space-y-1">
+                              <li>
+                                Made from BOPP film, known for high tensile
+                                strength, clarity, and moisture resistance.
+                              </li>
+                              <li>
+                                Often features a glossy finish for enhanced
+                                appearance and printability.
+                              </li>
+                            </ul>
+                          </li>
+
+                          {/* 2. Size and Capacity */}
+                          <li>
+                            <strong>Size and Capacity:</strong>
+                            <ul className="list-disc pl-6 mt-2 space-y-1">
+                              <li>
+                                Engineered to hold 25 kilograms of fertilizer.
+                              </li>
+                              <li>
+                                Can vary in shape and dimension (e.g., gusseted
+                                or flat design).
+                              </li>
+                              <li>
+                                Suitable for both retail display and bulk
+                                storage.
+                              </li>
+                            </ul>
+                          </li>
+
+                          {/* 3. Printing Options */}
+                          <li>
+                            <strong>Printing Options:</strong>
+                            <ul className="list-disc pl-6 mt-2 space-y-1">
+                              <li>
+                                Supports vibrant, high-definition graphics for
+                                product and brand visibility.
+                              </li>
+                              <li>
+                                Printed using flexographic techniques to ensure
+                                sharp, long-lasting results.
+                              </li>
+                            </ul>
+                          </li>
+
+                          {/* 4. Durability */}
+                          <li>
+                            <strong>Durability:</strong>
+                            <ul className="list-disc pl-6 mt-2 space-y-1">
+                              <li>
+                                <strong>Tear and Puncture Resistant:</strong>{" "}
+                                Built to endure rough handling and shipping.
+                              </li>
+                              <li>
+                                <strong>Moisture & UV Resistant:</strong>{" "}
+                                Protects fertilizer from environmental
+                                degradation.
+                              </li>
+                            </ul>
+                          </li>
+
+                          {/* 5. Environmental Considerations */}
+                          <li>
+                            <strong>Environmental Considerations:</strong>
+                            <ul className="list-disc pl-6 mt-2 space-y-1">
+                              <li>
+                                Recyclable materials promote eco-friendly
+                                practices.
+                              </li>
+                              <li>
+                                Some versions made using recycled content,
+                                supporting sustainability goals.
+                              </li>
+                            </ul>
+                          </li>
+                        </ol>
+                      </section>
+                    ) : (
+                      ""
+                    )}
+
+                    {bag.id == "25kgPrinted" ? (
+                      <section className="px-6 bg-white text-gray-900">
+                        <p className="text-lg mb-2">
+                          25 Kg Printed Fertilizer Bags are specially designed
+                          woven polypropylene (PP) bags used for packaging
+                          fertilizers. These bags are durable, lightweight, and
+                          often feature custom printing for branding and product
+                          information. Here’s a detailed overview of these bags:
+                        </p>
+
+                        {/* Key Features */}
+                        <h2 className="text-3xl font-semibold mb-4">
+                          Key Features of 25 Kg Printed Fertilizer Bags
+                        </h2>
+
+                        <ol className="list-decimal list-inside space-y-6 text-gray-800 text-base pl-4">
+                          {/* 1. Material */}
+                          <li>
+                            <strong>Material:</strong>
+                            <ul className="list-disc pl-6 mt-2 space-y-1">
+                              <li>
+                                Made from woven polypropylene (PP), known for
+                                its strength and wear resistance.
+                              </li>
+                              <li>
+                                Woven fabric structure provides excellent
+                                durability for heavy-duty use.
+                              </li>
+                            </ul>
+                          </li>
+
+                          {/* 2. Size and Capacity */}
+                          <li>
+                            <strong>Size and Capacity:</strong>
+                            <ul className="list-disc pl-6 mt-2 space-y-1">
+                              <li>
+                                Standard capacity of 25 kg, ideal for
+                                fertilizers and agricultural products.
+                              </li>
+                              <li>
+                                Typically rectangular in shape for easier
+                                stacking and transport.
+                              </li>
+                              <li>
+                                Dimensions can vary slightly depending on
+                                manufacturer specifications.
+                              </li>
+                            </ul>
+                          </li>
+
+                          {/* 3. Printing Options */}
+                          <li>
+                            <strong>Printing Options:</strong>
+                            <ul className="list-disc pl-6 mt-2 space-y-1">
+                              <li>
+                                Fully customizable printing with brand logos,
+                                color schemes, and usage instructions.
+                              </li>
+                              <li>
+                                Printing techniques include flexographic
+                                printing or BOPP lamination for a high-quality,
+                                glossy finish.
+                              </li>
+                            </ul>
+                          </li>
+
+                          {/* 4. Durability */}
+                          <li>
+                            <strong>Durability:</strong>
+                            <ul className="list-disc pl-6 mt-2 space-y-1">
+                              <li>
+                                <strong>Tear and Puncture Resistance:</strong>{" "}
+                                Engineered to endure tough handling and
+                                logistics.
+                              </li>
+                              <li>
+                                <strong>Moisture Resistance:</strong> Protects
+                                fertilizer contents from humidity and water
+                                exposure.
+                              </li>
+                            </ul>
+                          </li>
+                        </ol>
+                      </section>
+                    ) : (
+                      ""
+                    )}
                   </div>
                 </div>
               </div>
-            </div>
+            ))}
           </div>
         </div>
       </section>
 
-       {/* Why Choose Us Section */}
+      {/* Why Choose Us Section */}
       <section className="py-16 bg-white">
         <div className="container mx-auto px-4 lg:px-[5rem]">
           <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold text-gray-900 mb-4">Why Choose AllPack Pro for Fertilizer Bags?</h2>
+            <h2 className="text-3xl font-bold text-gray-900 mb-4">
+              Why Choose AllPack Pro for Fertilizer Bags?
+            </h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              Leading manufacturer of high-quality fertilizer packaging solutions with years of expertise
+              Leading manufacturer of high-quality fertilizer packaging
+              solutions with years of expertise
             </p>
           </div>
 
@@ -356,32 +1696,48 @@ export default function PlainPPFertilizerBagPage() {
               <div className="w-16 h-16 bg-gradient-to-r from-orange-500 to-orange-600 rounded-full flex items-center justify-center mx-auto mb-4">
                 <span className="text-white font-bold text-2xl">8+</span>
               </div>
-              <h3 className="text-lg font-semibold text-gray-900 mb-2">Years Experience</h3>
-              <p className="text-gray-600 text-sm">Extensive experience in fertilizer packaging industry</p>
+              <h3 className="text-lg font-semibold text-gray-900 mb-2">
+                Years Experience
+              </h3>
+              <p className="text-gray-600 text-sm">
+                Extensive experience in fertilizer packaging industry
+              </p>
             </div>
 
             <div className="text-center">
               <div className="w-16 h-16 bg-gradient-to-r from-orange-500 to-orange-600 rounded-full flex items-center justify-center mx-auto mb-4">
                 <span className="text-white font-bold text-2xl">50+</span>
               </div>
-              <h3 className="text-lg font-semibold text-gray-900 mb-2">Fertilizer Bag Types</h3>
-              <p className="text-gray-600 text-sm">Wide range of fertilizer packaging solutions</p>
+              <h3 className="text-lg font-semibold text-gray-900 mb-2">
+                Fertilizer Bag Types
+              </h3>
+              <p className="text-gray-600 text-sm">
+                Wide range of fertilizer packaging solutions
+              </p>
             </div>
 
             <div className="text-center">
               <div className="w-16 h-16 bg-gradient-to-r from-orange-500 to-orange-600 rounded-full flex items-center justify-center mx-auto mb-4">
                 <span className="text-white font-bold text-2xl">100+</span>
               </div>
-              <h3 className="text-lg font-semibold text-gray-900 mb-2">Happy Clients</h3>
-              <p className="text-gray-600 text-sm">Satisfied customers across India</p>
+              <h3 className="text-lg font-semibold text-gray-900 mb-2">
+                Happy Clients
+              </h3>
+              <p className="text-gray-600 text-sm">
+                Satisfied customers across India
+              </p>
             </div>
 
             <div className="text-center">
               <div className="w-16 h-16 bg-gradient-to-r from-orange-500 to-orange-600 rounded-full flex items-center justify-center mx-auto mb-4">
                 <span className="text-white font-bold text-xl">✓</span>
               </div>
-              <h3 className="text-lg font-semibold text-gray-900 mb-2">Quality Assured</h3>
-              <p className="text-gray-600 text-sm">Premium quality materials and printing</p>
+              <h3 className="text-lg font-semibold text-gray-900 mb-2">
+                Quality Assured
+              </h3>
+              <p className="text-gray-600 text-sm">
+                Premium quality materials and printing
+              </p>
             </div>
           </div>
         </div>
@@ -396,5 +1752,5 @@ export default function PlainPPFertilizerBagPage() {
         </QuoteButtonWithDialog>
       </div>
     </div>
-  )
+  );
 }
