@@ -1,8 +1,7 @@
 import QuoteButtonWithDialog from "@/app/Components/getQuotePopup";
 import { Badge } from "@/app/Components/Ui/badge";
 import { Button } from "@/app/Components/Ui/button";
-import { Card, CardContent } from "@/app/Components/Ui/card";
-import fertilizerBags from "@/JsonDataFiles/FertilizerBagJSON";
+import { Card, CardContent } from "@/app/Components/Ui/card"; 
 import {
   Search,
   Phone,
@@ -16,8 +15,9 @@ import {
 } from "lucide-react";
 import Link from "next/link";
 import BagImageGallery from "@/app/Components/imageCarousal";
+import feedBags from "@/JsonDataFiles/FeedBagJSON";
 
-export default function PlainPPFertilizerBagPage() { 
+export default function FeedBagsPage() { 
 
   const features = [
     "High-strength woven polypropylene construction",
@@ -53,7 +53,7 @@ export default function PlainPPFertilizerBagPage() {
     <div className="min-h-screen bg-gradient-to-br from-orange-50 via-orange-25 to-amber-50">
       {/* Header Section */}
       <section className="bg-white border-b"> 
-        <div className="container mx-auto px-4 lg:px-[5rem] py-8">
+        <div className="container mx-auto px-4 lg:px-[5rem] py-4">
           <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-6">
             {/* Company Info */}
             <div className="flex items-center space-x-4">
@@ -120,7 +120,7 @@ export default function PlainPPFertilizerBagPage() {
                 href="/product/fertilizer-bags"
                 className="hover:text-orange-600"
               >
-                Fertilizer Bags
+                Feed Bags
               </Link>
             </nav>
 
@@ -143,41 +143,27 @@ export default function PlainPPFertilizerBagPage() {
             {/* Category Title */}
             <div className="mb-4">
               <h1 className="text-2xl font-bold text-white bg-gradient-to-r from-orange-500 to-orange-600 inline-block px-6 py-3 rounded-lg shadow-lg">
-                Fertilizer Bags
+                Feed Bags
               </h1>
             </div>
 
             {/* Category Description */}
             <div className="bg-white bg-opacity-90 border border-orange-200 rounded-lg p-6 shadow-md">
               <p className="text-lg leading-relaxed text-gray-700">
-                We are a leading Manufacturer of{" "}
+                Offering you a complete choice of products which include animal
+                {" "}
                 <span className="font-semibold text-orange-600">
-                  printed fertilizer bag
+                  feed packaging bag
                 </span>
                 ,{" "}
                 <span className="font-semibold text-orange-600">
-                  plain pp fertilizer bag
+                 animal feed bag
                 </span>
-                ,{" "}
-                <span className="font-semibold text-orange-600">
-                  dap fertilizer bag
-                </span>
-                ,{" "}
-                <span className="font-semibold text-orange-600">
-                  white fertilizer packaging bag
-                </span>
-                ,{" "}
-                <span className="font-semibold text-orange-600">
-                  25kg fertilizer bag
-                </span>{" "}
+                ,{" "} 
                 and{" "}
                 <span className="font-semibold text-orange-600">
-                  bopp fertilizer bag
-                </span>{" "}
-                from{" "}
-                <span className="font-semibold text-gray-900">
-                  Indore, India
-                </span>
+                   plain animal feed bag
+                </span> 
                 .
               </p>
             </div>
@@ -189,7 +175,7 @@ export default function PlainPPFertilizerBagPage() {
       <section className="pb-16 ">
         <div className="container mx-auto px-4 lg:px-[5rem]">
           <div className="bg-gray-100 overflow-hidden">
-            {fertilizerBags.map((bag) => (
+            {feedBags.map((bag) => (
               <div
                 className="scroll-mt-20 grid lg:grid-cols-2 gap-0 rounded-2xl shadow-xl bg-gray-100 my-4"
                 key={bag.id} 

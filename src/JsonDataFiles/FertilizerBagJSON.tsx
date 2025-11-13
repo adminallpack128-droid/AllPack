@@ -226,28 +226,6 @@ const fertilizerBags = [
       { label: "Brand", value: "All Pack Creation" }, 
     ],
   },
-  {
-    id: "25kgFertilizers",
-    title: "25Kg Fertilizer Bag",
-    price: "₹ 28",
-    unit: "Piece",
-    rating: null,
-    reviews: null,
-     images: [
-      "25kgFertilizers1",
-      "25kgFertilizers2",
-      "25kgFertilizers3",
-    ],
-    specs: [
-      { label: "Minimum Order Quantity", value: "500 Piece" },
-      { label: "Storage Capacity", value: "25 Kg" },
-      { label: "Shape", value: "Rectangular" },
-      { label: "Material", value: "BOPP" },
-      { label: "Usage", value: "Fertilizer Packaging" },
-      { label: "Pattern", value: "Printed" },
-      { label: "Brand", value: "All Pack Creation" }, 
-    ],
-  },
    {
     id: "printedFertilizers",
     title: "Printed Fertilizer Bag",
@@ -332,5 +310,5 @@ const fertilizerBags = [
   },
 
 ];
-
+  
 export default fertilizerBags;

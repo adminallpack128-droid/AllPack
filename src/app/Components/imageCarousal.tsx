@@ -82,7 +82,7 @@ const BagImageGallery = ({ bag }: BagImageGalleryProps) => {
             src={`/${selectedImage}.webp`}
             alt="Selected Bag Image"
             fill
-            className="object-fit  hover:scale-105 transition-transform duration-300"
+            className="object-fit hover:scale-105 transition-transform duration-300"
           />
         )}
       </div> 
@@ -101,7 +101,7 @@ const BagImageGallery = ({ bag }: BagImageGalleryProps) => {
             {img && (
               <Image
                 src={`/${img}.webp`}
-                alt={`Product view ${index + 1}`}
+                alt={`${img}.webp ${index + 1}`}
                 fill
                 className="object-cover"
               />
