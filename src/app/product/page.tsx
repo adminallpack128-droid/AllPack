@@ -80,7 +80,7 @@ export default function ProductsPage() {
     },
   ];
 
- return (
+  return (
     <div className="min-h-screen bg-gray-50">
       {/* Products Section */}
       <section className="py-8">
@@ -89,9 +89,11 @@ export default function ProductsPage() {
             <h2 className="text-3xl font-bold text-gray-900">Products</h2>
 
             <div className="flex lg:flex-row flex-col items-center space-x-4 gap-3">
-               <QuoteButtonWithDialog className="text-lg cursor-pointer rounded-lg bg-gradient-to-r border-1 border-gray-200 hover:bg-gray-50 text-black">
-               📞 Call +91 89750 40173
-                <span className="text-sm text-gray-500 ml-2">68% Response Rate</span>
+              <QuoteButtonWithDialog className="text-lg cursor-pointer rounded-lg bg-gradient-to-r border-1 border-gray-200 hover:bg-gray-50 text-black">
+                📞 Call +91 89750 40173
+                <span className="text-sm text-gray-500 ml-2">
+                  68% Response Rate
+                </span>
               </QuoteButtonWithDialog>
 
               <QuoteButtonWithDialog className="rounded-lg bg-gradient-to-r from-orange-500 to-orange-600 hover:from-orange-600 hover:to-orange-700 text-white">
@@ -106,13 +108,17 @@ export default function ProductsPage() {
                 key={category.id}
                 className="bg-white border-2 border-gray-200 hover:border-orange-300 hover:shadow-lg transition-all duration-300 hover:-translate-y-1 overflow-hidden group cursor-pointer flex flex-col h-full"
               >
-                <div className="relative overflow-hidden border-b-2 border-orange-200">
-                   <Image
+                <div className="relative overflow-hidden border-b-2 border-orange-200 flex justify-center items-center h-72">
+                  {" "}
+                  {/* Fixed height for the image container */}
+                  <Image
                     src={category.image || "/placeholder.svg"}
                     alt={category.title}
-                    width={300}
-                    height={180}
-                    className="w-full h-64 object-cover group-hover:scale-105 transition-transform duration-300"
+                    width={
+                      category.id == 1 ? 140 : category.id == 2 ? 150 : 300
+                    }
+                    height={300}
+                    className="group-hover:scale-105 transition-transform duration-300 object-cover"
                   />
                 </div>
 
@@ -151,9 +157,12 @@ export default function ProductsPage() {
       <section className="py-16 bg-white">
         <div className="container mx-auto px-4 lg:px-[5rem]">
           <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold text-gray-900 mb-4">Why Choose AllPack Pro?</h2>
+            <h2 className="text-3xl font-bold text-gray-900 mb-4">
+              Why Choose AllPack Pro?
+            </h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              Leading manufacturer of high-quality packaging solutions with years of expertise
+              Leading manufacturer of high-quality packaging solutions with
+              years of expertise
             </p>
           </div>
 
@@ -162,32 +171,48 @@ export default function ProductsPage() {
               <div className="w-16 h-16 bg-gradient-to-r from-orange-500 to-orange-600 rounded-full flex items-center justify-center mx-auto mb-4">
                 <span className="text-white font-bold text-2xl">8+</span>
               </div>
-              <h3 className="text-lg font-semibold text-gray-900 mb-2">Years Experience</h3>
-              <p className="text-gray-600 text-sm">Extensive experience in packaging industry</p>
+              <h3 className="text-lg font-semibold text-gray-900 mb-2">
+                Years Experience
+              </h3>
+              <p className="text-gray-600 text-sm">
+                Extensive experience in packaging industry
+              </p>
             </div>
 
             <div className="text-center">
               <div className="w-16 h-16 bg-gradient-to-r from-orange-500 to-orange-600 rounded-full flex items-center justify-center mx-auto mb-4">
                 <span className="text-white font-bold text-2xl">200+</span>
               </div>
-              <h3 className="text-lg font-semibold text-gray-900 mb-2">Products</h3>
-              <p className="text-gray-600 text-sm">Wide range of packaging solutions</p>
+              <h3 className="text-lg font-semibold text-gray-900 mb-2">
+                Products
+              </h3>
+              <p className="text-gray-600 text-sm">
+                Wide range of packaging solutions
+              </p>
             </div>
 
             <div className="text-center">
               <div className="w-16 h-16 bg-gradient-to-r from-orange-500 to-orange-600 rounded-full flex items-center justify-center mx-auto mb-4">
                 <span className="text-white font-bold text-2xl">100+</span>
               </div>
-              <h3 className="text-lg font-semibold text-gray-900 mb-2">Happy Clients</h3>
-              <p className="text-gray-600 text-sm">Satisfied customers across India</p>
+              <h3 className="text-lg font-semibold text-gray-900 mb-2">
+                Happy Clients
+              </h3>
+              <p className="text-gray-600 text-sm">
+                Satisfied customers across India
+              </p>
             </div>
 
             <div className="text-center">
               <div className="w-16 h-16 bg-gradient-to-r from-orange-500 to-orange-600 rounded-full flex items-center justify-center mx-auto mb-4">
                 <span className="text-white font-bold text-xl">✓</span>
               </div>
-              <h3 className="text-lg font-semibold text-gray-900 mb-2">Quality Assured</h3>
-              <p className="text-gray-600 text-sm">Premium quality materials and printing</p>
+              <h3 className="text-lg font-semibold text-gray-900 mb-2">
+                Quality Assured
+              </h3>
+              <p className="text-gray-600 text-sm">
+                Premium quality materials and printing
+              </p>
             </div>
           </div>
         </div>
@@ -197,9 +222,12 @@ export default function ProductsPage() {
       <section className="py-16 bg-gradient-to-br from-gray-900 to-gray-800 text-white">
         <div className="container mx-auto px-4 lg:px-[5rem] text-center">
           <div className="max-w-3xl mx-auto">
-            <h2 className="text-3xl lg:text-4xl font-bold mb-6">Ready to Get Started with Your Packaging Project?</h2>
+            <h2 className="text-3xl lg:text-4xl font-bold mb-6">
+              Ready to Get Started with Your Packaging Project?
+            </h2>
             <p className="text-xl text-gray-300 mb-8">
-              Contact us today for custom packaging solutions tailored to your business needs
+              Contact us today for custom packaging solutions tailored to your
+              business needs
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <QuoteButtonWithDialog
@@ -221,5 +249,5 @@ export default function ProductsPage() {
         </div>
       </section>
     </div>
-  )
+  );
 }
