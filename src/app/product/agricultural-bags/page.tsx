@@ -6,7 +6,7 @@ import {
   Search,
   Phone,
   Mail,
-  Star, 
+  Star,
   Package,
   Truck,
   Shield,
@@ -14,10 +14,9 @@ import {
 } from "lucide-react";
 import Link from "next/link";
 import BagImageGallery from "@/app/Components/imageCarousal";
-import feedBags from "@/JsonDataFiles/FeedBagJSON";
+import agricultureBags from "@/JsonDataFiles/AgricultureJSON";
 
 export default function FeedBagsPage() {
- 
   const benefits = [
     {
       icon: Shield,
@@ -108,7 +107,7 @@ export default function FeedBagsPage() {
                 href="/product/fertilizer-bags"
                 className="hover:text-orange-600"
               >
-                Feed Bags
+                Agricluture Bags
               </Link>
             </nav>
 
@@ -131,24 +130,24 @@ export default function FeedBagsPage() {
             {/* Category Title */}
             <div className="mb-4">
               <h1 className="text-2xl font-bold text-white bg-gradient-to-r from-orange-500 to-orange-600 inline-block px-6 py-3 rounded-lg shadow-lg">
-                Feed Bags
+                Agricultural Bags
               </h1>
             </div>
 
             {/* Category Description */}
             <div className="bg-white bg-opacity-90 border border-orange-200 rounded-lg p-6 shadow-md">
               <p className="text-lg leading-relaxed text-gray-700">
-                Offering you a complete choice of products which include animal{" "}
+                Prominent & Leading Manufacturer from Indore, we offer{" "}
                 <span className="font-semibold text-orange-600">
-                  feed packaging bag
+                  agricultural packaging bag{" "}
                 </span>
                 ,{" "}
                 <span className="font-semibold text-orange-600">
-                  animal feed bag
+                  25 kg agricultural bag{" "}
                 </span>
                 , and{" "}
                 <span className="font-semibold text-orange-600">
-                  plain animal feed bag
+                  1 kg fertilizer packaging pouch
                 </span>
                 .
               </p>
@@ -161,7 +160,7 @@ export default function FeedBagsPage() {
       <section className="pb-16 ">
         <div className="container mx-auto px-4 lg:px-[5rem]">
           <div className="bg-gray-100 overflow-hidden">
-            {feedBags.map((bag) => (
+            {agricultureBags.map((bag) => (
               <div
                 className="scroll-mt-20 grid lg:grid-cols-2 gap-0 rounded-2xl shadow-xl bg-gray-100 my-4"
                 key={bag.id}
@@ -255,30 +254,29 @@ export default function FeedBagsPage() {
                       </CardContent>
                     </Card>
 
-                   
-
-                    {bag.id == "animal-feed-packaging-bag" ? (
+                    {bag.id == "agricultural-packaging-bag" ? (
                       <>
                         <section className="max-w-4xl mx-auto px-4">
                           <p className="text-lg mb-6 text-gray-700">
-                            Animal Feed Packaging Bags are designed to store,
-                            protect, and transport various types of animal feed.
-                            These bags ensure the feed remains fresh and free
-                            from contamination while offering convenience for
-                            both suppliers and end users, including farmers and
-                            pet owners. Animal feed packaging comes in various
-                            materials and sizes depending on the type of feed
-                            and the specific requirements of the product. Below
-                            is a detailed overview of animal feed packaging
-                            bags, including key features, advantages, and common
-                            uses.
+                            <span className="font-semibold">
+                              Agricultural Packaging Bags
+                            </span>{" "}
+                            are essential for storing and transporting various
+                            agricultural products such as seeds, fertilizers,
+                            grains, animal feed, and harvested crops. These bags
+                            are designed to protect the contents from moisture,
+                            pests, and environmental damage while being durable
+                            enough to withstand handling during transport and
+                            storage. Here’s a detailed overview of agricultural
+                            packaging bags, including key features, types,
+                            advantages, and common uses.
                           </p>
 
                           <div className="space-y-6">
                             {/* Key Features */}
                             <div>
                               <h2 className="text-2xl font-semibold mb-2">
-                                Key Features of Animal Feed Packaging Bags:
+                                Key Features of Agricultural Packaging Bags:
                               </h2>
 
                               {/* Material */}
@@ -288,28 +286,30 @@ export default function FeedBagsPage() {
                                 </h3>
                                 <ul className="list-disc list-inside text-gray-800 space-y-1">
                                   <li>
-                                    Typically made from woven{" "}
+                                    Commonly made from{" "}
                                     <span className="font-semibold">
-                                      polypropylene (PP), High-Density
-                                      Polyethylene (HDPE), or BOPP (Biaxially
-                                      Oriented Polypropylene)
+                                      woven polypropylene (PP) or High-Density
+                                      Polyethylene (HDPE),
                                     </span>{" "}
-                                    for premium products.
+                                    which are known for their strength and
+                                    durability.
                                   </li>
                                   <li>
-                                    These materials are durable,
-                                    moisture-resistant, and help to protect the
-                                    feed from environmental factors such as
-                                    sunlight and humidity.
-                                  </li>
-                                  <li>
-                                    {" "}
                                     <span className="font-semibold">
-                                      Paper-based bags{" "}
-                                    </span>
-                                    with inner lining are sometimes used for
-                                    specific types of feed, offering an
-                                    eco-friendly alternative.
+                                      {" "}
+                                      BOPP laminated bags
+                                    </span>{" "}
+                                    (Biaxially Oriented Polypropylene) provide
+                                    added protection against moisture and
+                                    improve the appearance of the packaging.
+                                  </li>
+                                  <li>
+                                    <span className="font-semibold">
+                                      {" "}
+                                      Jute bags or paper bags
+                                    </span>{" "}
+                                    are also used for more eco-friendly,
+                                    biodegradable options.
                                   </li>
                                 </ul>
                               </div>
@@ -321,16 +321,18 @@ export default function FeedBagsPage() {
                                 </h3>
                                 <ul className="list-disc list-inside text-gray-800 space-y-1">
                                   <li>
-                                    Common sizes include{" "}
+                                    Available in various sizes depending on the
+                                    product being packaged, typically ranging
+                                    from{" "}
                                     <span className="font-semibold">
-                                      5 kg, 10 kg, 25 kg, 50 kg,
-                                    </span>{" "}
-                                    and larger bulk packaging for industrial
-                                    use.
+                                      {" "}
+                                      5 kg, 10 kg, 25 kg, to 50 kg{" "}
+                                    </span>
+                                    and beyond for bulk products.
                                   </li>
                                   <li>
-                                    Custom sizes can be created based on the
-                                    specific needs of the product.
+                                    Custom sizes are available based on specific
+                                    requirements.
                                   </li>
                                 </ul>
                               </div>
@@ -338,19 +340,23 @@ export default function FeedBagsPage() {
                               {/* Printing Options */}
                               <div className="mt-4">
                                 <h3 className="text-xl font-medium mb-1">
-                                  Printing Options:
+                                  Printing and Branding:
                                 </h3>
                                 <ul className="list-disc list-inside text-gray-800 space-y-1">
                                   <li>
-                                    Most animal feed packaging bags are printed
-                                    with vibrant graphics, branding, and product
-                                    details using techniques like flexographic
-                                    or rotogravure printing.
-                                  </li>
-                                  <li>
-                                    Printing includes nutritional information,
-                                    product use guidelines, and branding to make
-                                    the product stand out on store shelves.
+                                    High-quality printing techniques such as
+                                    <span className="font-semibold">
+                                      {" "}
+                                      flexographic
+                                    </span>{" "}
+                                    or{" "}
+                                    <span className="font-semibold">
+                                      {" "}
+                                      rotogravure
+                                    </span>{" "}
+                                    printing allow for vibrant and durable
+                                    designs, including logos, branding, product
+                                    information, and usage instructions.
                                   </li>
                                 </ul>
                               </div>
@@ -387,58 +393,45 @@ export default function FeedBagsPage() {
                       ""
                     )}
 
-                    {bag.id == "animal-feed-packaging-bag-two" ? (
-                      <section className="max-w-4xl mx-auto px-4 py-10">
+                    {bag.id == "25-kg-agricultural-bag" ? (
+                      <section className="max-w-4xl mx-auto px-4">
                         <p className="text-lg mb-6 text-gray-700">
                           <span className="font-semibold">
-                            Animal Feed Bags
+                            Non-Woven Agricultural Bags
                           </span>{" "}
-                          are essential packaging solutions used to store,
-                          transport, and protect various types of feed for
-                          animals. They are designed to keep the feed fresh,
-                          free from contamination, and easily accessible to
-                          farmers, livestock owners, and pet owners. These bags
-                          come in various materials, sizes, and designs based on
-                          the type of feed and its intended use. Below is an
-                          overview of animal feed bags, including key features,
-                          benefits, and common uses. Key Features of Animal Feed
-                          Bags:
+                          are versatile and eco-friendly packaging solutions
+                          designed for various agricultural applications, such
+                          as the storage and transport of seeds, fertilizers,
+                          and other agricultural products. Made from non-woven
+                          fabrics, these bags offer several advantages over
+                          traditional packaging options. Below is an overview of
+                          non-woven agricultural bags, including their key
+                          features, advantages, and common uses.
                         </p>
 
                         <div className="space-y-6">
                           {/* Key Features */}
                           <div>
+                            <h2 className="text-2xl font-semibold mb-2">
+                              Key Features of Non-Woven Agricultural Bags:
+                            </h2>
+
                             {/* Material */}
                             <div className="mt-4">
                               <h3 className="text-xl font-medium mb-1">
                                 Material
                               </h3>
-                              <ul className="list-disc list-inside text-gray-800 space-y-1">
-                                <li>
-                                  Typically made from woven
-                                  <span className="font-semibold">
-                                    {" "}
-                                    polypropylene (PP), High-Density
-                                    Polyethylene (HDPE),
-                                  </span>{" "}
-                                  or{" "}
-                                  <span className="font-semibold">
-                                    paper with an inner lining.
-                                  </span>
-                                </li>
-                                <li>
-                                  <span className="font-semibold">
-                                    BOPP (Biaxially Oriented Polypropylene)
-                                    laminated bags
-                                  </span>{" "}
-                                  are often used for premium feed, offering
-                                  moisture resistance and enhanced durability.
-                                </li>
-                                <li>
-                                  Eco-friendly options are also available, such
-                                  as biodegradable or recyclable bags.
-                                </li>
-                              </ul>
+                              <p className="text-gray-800">
+                                Non-woven agricultural bags are made from{" "}
+                                <span className="font-semibold">
+                                  polypropylene (PP)
+                                </span>{" "}
+                                or other synthetic fibers, which are bonded
+                                together through a process that doesn't involve
+                                weaving. This process creates a lightweight yet
+                                strong fabric, available in various thicknesses
+                                and textures.
+                              </p>
                             </div>
 
                             {/* Size and Capacity */}
@@ -448,18 +441,109 @@ export default function FeedBagsPage() {
                               </h3>
                               <ul className="list-disc list-inside text-gray-800 space-y-1">
                                 <li>
-                                  Common sizes include
+                                  Available in various sizes, including{" "}
                                   <span className="font-semibold">
-                                    {" "}
-                                    5 kg, 10 kg, 25 kg, 50 kg,
+                                    5 kg, 10 kg, 25 kg, and larger
                                   </span>{" "}
-                                  and larger bulk bags for industrial use.
+                                  bulk sizes.
                                 </li>
                                 <li>
-                                  The size is chosen based on the type of feed
-                                  and the quantity required.
+                                  Custom sizes can be manufactured based on
+                                  specific customer requirements.
                                 </li>
                               </ul>
+                            </div>
+
+                            {/* Breathability */}
+                            <div className="mt-4">
+                              <h3 className="text-xl font-medium mb-1">
+                                Breathability
+                              </h3>
+                              <p className="text-gray-800">
+                                Non-woven fabrics are breathable, allowing air
+                                circulation to prevent moisture buildup and
+                                reduce the risk of spoilage.
+                              </p>
+                            </div>
+
+                            {/* Printing Options */}
+                            <div className="mt-4">
+                              <h3 className="text-xl font-medium mb-1">
+                                Printing Options
+                              </h3>
+                              <p className="text-gray-800">
+                                Non-woven bags can be printed with branding,
+                                product information, and usage instructions
+                                using high-quality printing techniques. Custom
+                                designs enhance product visibility, especially
+                                in retail settings.
+                              </p>
+                            </div>
+
+                            {/* Durability */}
+                            <div className="mt-4">
+                              <h3 className="text-xl font-medium mb-1">
+                                Durability
+                              </h3>
+                              <p className="text-gray-800">
+                                These bags are resistant to tearing and
+                                puncturing, making them durable for handling and
+                                transport. Despite being lightweight, they are
+                                strong enough to hold significant weight.
+                              </p>
+                            </div>
+                          </div>
+
+                          {/* Advantages */}
+                          <div>
+                            <h2 className="text-2xl font-semibold mb-2">
+                              Advantages of Non-Woven Agricultural Bags:
+                            </h2>
+
+                            <div className="mt-4">
+                              <h3 className="text-xl font-medium mb-1">
+                                Eco-Friendly
+                              </h3>
+                              <p className="text-gray-800">
+                                Made from recyclable materials and often
+                                reusable, non-woven bags provide a more
+                                sustainable alternative compared to plastic
+                                bags.
+                              </p>
+                            </div>
+
+                            <div className="mt-4">
+                              <h3 className="text-xl font-medium mb-1">
+                                Cost-Effective
+                              </h3>
+                              <p className="text-gray-800">
+                                Non-woven bags are generally more affordable
+                                than other packaging materials, making them an
+                                economical choice for a variety of agricultural
+                                applications.
+                              </p>
+                            </div>
+
+                            <div className="mt-4">
+                              <h3 className="text-xl font-medium mb-1">
+                                Water-Resistant
+                              </h3>
+                              <p className="text-gray-800">
+                                While not completely waterproof, non-woven
+                                fabrics provide some resistance to moisture,
+                                helping to protect the contents inside.
+                              </p>
+                            </div>
+
+                            <div className="mt-4">
+                              <h3 className="text-xl font-medium mb-1">
+                                Customizable
+                              </h3>
+                              <p className="text-gray-800">
+                                These bags are easily customizable in terms of
+                                size, color, and printing, allowing for
+                                effective branding and marketing.
+                              </p>
                             </div>
                           </div>
                         </div>
@@ -468,7 +552,7 @@ export default function FeedBagsPage() {
                       ""
                     )}
 
-                    {bag.id == "animal-feed-bag" ? (
+                    {bag.id == "1-kg-fertilizer-packaging-pouch" ? (
                       <section className="max-w-4xl mx-auto px-4 py-10">
                         <p className="text-lg mb-6 text-gray-700">
                           <span className="font-semibold">
@@ -554,14 +638,17 @@ export default function FeedBagsPage() {
                         <div className="max-w-6xl mx-auto">
                           {/* Introduction */}
                           <p className="text-lg mb-3">
-                             <span className="font-semibold">Plain Animal Feed Bags</span> are simple, durable packaging
-                            solutions designed to store and transport animal
-                            feed. These bags are typically made from materials
-                            that ensure the feed remains fresh and protected
-                            from environmental factors like moisture and pests.
-                            Here’s an overview of plain animal feed bags,
-                            including their key features, advantages, and common
-                            uses: Key Features of Plain Animal Feed Bags:
+                            <span className="font-semibold">
+                              Plain Animal Feed Bags
+                            </span>{" "}
+                            are simple, durable packaging solutions designed to
+                            store and transport animal feed. These bags are
+                            typically made from materials that ensure the feed
+                            remains fresh and protected from environmental
+                            factors like moisture and pests. Here’s an overview
+                            of plain animal feed bags, including their key
+                            features, advantages, and common uses: Key Features
+                            of Plain Animal Feed Bags:
                           </p>
                         </div>
                         <div className="space-y-6">
@@ -571,14 +658,21 @@ export default function FeedBagsPage() {
                             {/* Material */}
                             <div className="mt-4">
                               <h3 className="text-xl font-medium mb-1">
-                               <span className="font-semibold"> Material:</span>
+                                <span className="font-semibold">
+                                  {" "}
+                                  Material:
+                                </span>
                               </h3>
                               <ul className="list-disc list-inside text-gray-800 space-y-1">
                                 <li>
-                                  Commonly made from <span className="font-semibold"> woven polypropylene (PP) or
-                                  High-Density Polyethylene (HDPE),</span> which
-                                  provide durability, moisture resistance, and
-                                  protection against tearing.
+                                  Commonly made from{" "}
+                                  <span className="font-semibold">
+                                    {" "}
+                                    woven polypropylene (PP) or High-Density
+                                    Polyethylene (HDPE),
+                                  </span>{" "}
+                                  which provide durability, moisture resistance,
+                                  and protection against tearing.
                                 </li>
                                 <li>
                                   Some may have a laminated layer for additional
@@ -595,8 +689,12 @@ export default function FeedBagsPage() {
                               <ul className="list-disc list-inside text-gray-800 space-y-1">
                                 <li>
                                   Available in various sizes, with common
-                                  capacities including <span className="font-semibold"> 10 kg, 25 kg, 50 kg,</span> and
-                                  larger bulk sizes.
+                                  capacities including{" "}
+                                  <span className="font-semibold">
+                                    {" "}
+                                    10 kg, 25 kg, 50 kg,
+                                  </span>{" "}
+                                  and larger bulk sizes.
                                 </li>
                                 <li>
                                   Custom sizes can also be produced based on

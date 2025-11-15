@@ -51,9 +51,9 @@ export default function Topnav() {
           name: "Feed Bags",
           href: "/product/feed-bags",
           subItems: [
-            { name: "Animal Feed Packaging Bag", href: "/product/feed-bags/animal-feed-packaging" },
-            { name: "Animal Feed Bag", href: "/product/feed-bags/animal-feed" },
-            { name: "Plain Animal Feed Bag", href: "/product/feed-bags/plain-animal-feed" },
+            { name: "Animal Feed Packaging Bag", href: "/product/feed-bags#animal-feed-packaging-bag" },
+            { name: "Animal Feed Bag", href: "/product/feed-bags#animal-feed-packaging-bag-two" },
+            { name: "Plain Animal Feed Bag", href: "/product/feed-bags#animal-feed-bag" },
           ],
         },
         {
