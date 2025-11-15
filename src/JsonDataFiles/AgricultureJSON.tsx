@@ -8,7 +8,7 @@ const agricultureBags = [
     rating: 4.7,
     reviews: 89,
      images: [
-      "agri1",
+      "10kg-loop-handle-bag1",
       "25kgFertilizers3",
       "agricultural-packaging-bag2", 
       "agricultural-packaging-bag3"

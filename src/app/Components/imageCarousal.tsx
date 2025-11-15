@@ -76,16 +76,19 @@ const BagImageGallery = ({ bag }: BagImageGalleryProps) => {
   return (
     <div>
       {/* Main Image Display */}
-      <div className="relative aspect-square bg-gray-100 rounded-lg overflow-hidden">
-        {selectedImage && (
-          <Image
-            src={`/${selectedImage}.webp`}
-            alt="Selected Bag Image"
-            fill
-            className="object-fit hover:scale-105 transition-transform duration-300"
-          />
-        )}
-      </div> 
+   <div className="relative aspect-[4/3] sm:aspect-square bg-gray-100 rounded-lg overflow-hidden flex justify-center items-center">
+  {selectedImage && (
+    <Image
+      src={`/${selectedImage}.webp`}
+      alt="Selected Bag Image"
+      width={500}
+      height={300}
+      quality={90}
+      className="object-cover hover:scale-105 transition-transform duration-300"
+    />
+  )}
+</div>
+
       {/* Thumbnails */}
       <div className="grid grid-cols-4 gap-2 mt-4">
         {bag.images?.map((img, index) => (
