@@ -184,7 +184,7 @@ export default function Component() {
       </section> */}
 
       {/* Portfolio Carousel Section */}
-      <section id="portfolio" className="py-8 bg-white">
+      <section id="portfolio" className=" bg-white">
         <div className="container mx-auto px-4 bg-gradient-to-r">
           {/* <div className="text-center space-y-4 mb-3">
              <Badge variant="secondary" className="bg-orange-100 text-orange-700">
