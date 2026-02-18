@@ -12,6 +12,7 @@ const carouselItems = [
     id: 1,
     title: "Common Fertilizer Bag",
     subtitle: "40/50kg Bag",
+    price: "Rs 32 / pieces",
     image: "/CarousalSlider1.jpg",
     description: "Professional fertilizer packaging with front and back design showcase",
     colors: ["#4CAF50", "#FF9800", "#E91E63"],
@@ -22,6 +23,7 @@ const carouselItems = [
     id: 2,
     title: "NPK Readymade Fertilizer Bag",
     subtitle: "25/30kg Bag",
+    price: "Rs 28 / pieces",
     image: "/CarousalSlider2.jpg",
     description: "Modern geometric design with blue and yellow color schemes",
     colors: ["#2196F3", "#FFEB3B", "#4CAF50", "#FF9800", "#E91E63"],
@@ -32,9 +34,10 @@ const carouselItems = [
     id: 3,
     title: "5Kg Fertilizer Bags",
     subtitle: "5kg Handle Bag",
+    price: "Rs 15 / pieces",
     image: "/CarousalSlider3.jpg",
     description: "Compact bags with convenient handles for easy carrying",
-    colors: ["#FF9800", "#4CAF50", "#2196F3"],
+    colors: ["#FF9800", "#394139", "#2196F3"],
     availableColors: 3,
     category: "Small Bags",
   },
@@ -42,6 +45,7 @@ const carouselItems = [
     id: 4,
     title: "1Kg Plastic Pouch",
     subtitle: "1kg Pouch",
+    price: "Rs 8 / pieces",
     image: "/CarousalSlider4.jpg",
     description: "Versatile small pouches available in multiple vibrant colors",
     colors: ["#E91E63", "#FF9800", "#4CAF50", "#3F51B5", "#00BCD4", "#FFC107", "#424242", "#9C27B0"],
@@ -52,6 +56,7 @@ const carouselItems = [
     id: 5,
     title: "10Kg Fertilizer Bags",
     subtitle: "10kg Handle Bag",
+    price: "Rs 20 / pieces",
     image: "/CarousalSlider5.jpg",
     description: "Medium-sized bags with sturdy handles and clear branding",
     colors: ["#FF9800", "#4CAF50"],
@@ -62,6 +67,7 @@ const carouselItems = [
     id: 6,
     title: "50Kg Fertilizer Bag",
     subtitle: "50kg Bag",
+    price: "Rs 40 / pieces",
     image: "/CarousalSlider6.jpg",
     description: "Heavy-duty large bags for bulk fertilizer packaging",
     colors: ["#FFEB3B", "#FF9800", "#4CAF50"],
@@ -105,7 +111,7 @@ export default function PortfolioCarousel() {
   return (
     <div className="relative w-full">
       {/* Main Carousel */}
-      <Card className="overflow-hidden border-0 shadow-2xl bg-gradient-to-br from-white to-gray-50">
+      <Card className="overflow-hidden border-1 border-transparent shadow-2xl bg-gradient-to-br from-white to-gray-50 backdrop-blur-md">
         <CardContent className="p-0">
           <div className="grid lg:grid-cols-2 ">
             {/* Image Section */}
@@ -141,7 +147,7 @@ export default function PortfolioCarousel() {
             </div>
 
             {/* Content Section */}
-            <div className="p-6 lg:p-12 flex flex-col justify-center space-y-6">
+            <div className="p-6 lg:pt-10 flex flex-col space-y-6">
               <div className="space-y-4">
                 <div className="flex items-center justify-between">
                   <Badge variant="secondary" className="bg-orange-100 text-orange-700 text-lg">
@@ -158,8 +164,9 @@ export default function PortfolioCarousel() {
                 </div>
 
                 <div>
-                  <h3 className="text-3xl lg:text-4xl font-bold text-gray-900 mb-2">{currentItem.title}</h3>
+                  <h3 className="text-3xl lg:text-4xl font-bold text-gray-900 mb-5">{currentItem.title}</h3>
                   <p className="text-xl text-orange-600 font-semibold">{currentItem.subtitle}</p>
+                  <p className="text-lg text-gray-700 font-medium mt-5">Price: {currentItem.price}</p>
                 </div>
 
                 <p className="text-lg text-gray-600 leading-relaxed">{currentItem.description}</p>
