@@ -1,7 +1,8 @@
 import { Button } from "../Components/Ui/button"
 import { Badge } from "../Components/Ui/badge"
 import { Card, CardContent } from "../Components/Ui/card"
-import { ArrowRight, Package, Palette, Shield, Truck, Users, Award, CheckCircle, Eye } from "lucide-react"
+import { FaArrowRight, FaBox, FaPalette, FaShieldAlt, FaTruck, FaUsers, FaAward, FaCheckCircle, FaEye } from 'react-icons/fa';
+
 import Image from "next/image"
 
 export default function Service() {
@@ -103,25 +104,25 @@ export default function Service() {
 
   const services = [
     {
-      icon: Palette,
+      icon: FaPalette,
       title: "Custom Design Services",
       description: "Professional packaging design tailored to your brand identity and product requirements.",
       features: ["Brand Strategy", "Color Psychology", "Typography Selection", "Visual Hierarchy"],
     },
     {
-      icon: Package,
+      icon: FaBox,
       title: "Product Development",
       description: "Complete product development from concept to final packaging solution.",
       features: ["Concept Development", "Prototyping", "Material Selection", "Testing & Validation"],
     },
     {
-      icon: Shield,
+      icon: FaShieldAlt,
       title: "Regulatory Compliance",
       description: "Ensuring all packaging meets industry standards and regulatory requirements.",
       features: ["Safety Standards", "Labeling Requirements", "Environmental Compliance", "Quality Assurance"],
     },
     {
-      icon: Truck,
+      icon: FaTruck,
       title: "Production & Delivery",
       description: "End-to-end production management with timely delivery solutions.",
       features: ["Quality Control", "Bulk Production", "Logistics Management", "On-time Delivery"],
@@ -326,7 +327,7 @@ export default function Service() {
                   <ul className="space-y-2">
                     {service.features.map((feature, idx) => (
                       <li key={idx} className="flex items-center text-sm text-gray-600">
-                        <CheckCircle className="h-4 w-4 text-orange-500 mr-2" />
+                        <FaCheckCircle className="h-4 w-4 text-orange-500 mr-2" />
                         {feature}
                       </li>
                     ))}
@@ -350,7 +351,7 @@ export default function Service() {
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             <div className="text-center">
               <div className="w-16 h-16 bg-gradient-to-r from-orange-500 to-orange-600 rounded-full flex items-center justify-center mx-auto mb-4">
-                <Award className="h-8 w-8 text-white" />
+                <FaAward className="h-8 w-8 text-white" />
               </div>
               <h3 className="text-xl font-semibold text-gray-900 mb-3">8+ Years Experience</h3>
               <p className="text-gray-600">Extensive experience in packaging design and manufacturing</p>
@@ -358,7 +359,7 @@ export default function Service() {
 
             <div className="text-center">
               <div className="w-16 h-16 bg-gradient-to-r from-orange-500 to-orange-600 rounded-full flex items-center justify-center mx-auto mb-4">
-                <Users className="h-8 w-8 text-white" />
+                <FaUsers className="h-8 w-8 text-white" />
               </div>
               <h3 className="text-xl font-semibold text-gray-900 mb-3">100+ Happy Clients</h3>
               <p className="text-gray-600">Trusted by businesses across various industries</p>
@@ -366,7 +367,7 @@ export default function Service() {
 
             <div className="text-center">
               <div className="w-16 h-16 bg-gradient-to-r from-orange-500 to-orange-600 rounded-full flex items-center justify-center mx-auto mb-4">
-                <Package className="h-8 w-8 text-white" />
+                <FaBox className="h-8 w-8 text-white" />
               </div>
               <h3 className="text-xl font-semibold text-gray-900 mb-3">200+ Designs Created</h3>
               <p className="text-gray-600">Diverse portfolio of successful packaging solutions</p>
@@ -389,14 +390,14 @@ export default function Service() {
                 className="bg-gradient-to-r from-orange-500 to-orange-600 hover:from-orange-600 hover:to-orange-700 text-white"
               >
                 Get Quote
-                <ArrowRight className="ml-2 h-5 w-5" />
+                <FaArrowRight className="ml-2 h-5 w-5" />
               </Button>
               <Button
                 size="lg"
                 variant="outline"
                 className="border-2 border-white text-black hover:bg-white hover:text-gray-900"
               >
-                <Eye className="mr-2 h-5 w-5" />
+                <FaEye className="mr-2 h-5 w-5" />
                 View Portfolio
               </Button>
             </div>

@@ -4,8 +4,9 @@ import { Card, CardContent, CardHeader, CardTitle } from "./Ui/card";
 import { Input } from "./Ui/input";
 import { Label } from "@radix-ui/react-label";
 import { Textarea } from "./Ui/textarea";
-import { Button } from "./Ui/button";
-import { Mail } from "lucide-react";
+import { Button } from "./Ui/button"; 
+import { FaEnvelope } from 'react-icons/fa';
+
 interface FormData {
   firstName: string;
   lastName: string;
@@ -174,7 +175,7 @@ export default function ContactForm() {
           disabled={!isFormValid || isSubmitting}
           className="w-full bg-orange-600 hover:bg-orange-700"
         >
-          <Mail className="w-4 h-4 mr-2" />
+          <FaEnvelope className="w-4 h-4 mr-2" />
           {isSubmitting ? "Sending..." : "Send via Email"}
         </Button>
       </div>

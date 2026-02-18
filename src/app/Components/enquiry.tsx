@@ -6,7 +6,8 @@ import { useState } from "react"
 import { Button } from "./Ui/button"
 import { Textarea } from "./Ui/textarea"
 import { Input } from "./Ui/input"
-import { Send, Package, Phone, Mail } from "lucide-react"
+import { FaEnvelope, FaPaperPlane, FaPhone, FaBox } from 'react-icons/fa';
+
 
 export default function InquirySection() {
   const [formData, setFormData] = useState({
@@ -97,7 +98,7 @@ export default function InquirySection() {
           <div className="text-center mb-6">
             <div className="flex items-center justify-center mb-6">
               <div className="w-16 h-16 bg-gradient-to-r from-orange-500 to-orange-600 rounded-full flex items-center justify-center mr-4">
-                <Package className="h-8 w-8 text-white" />
+                <FaBox className="h-8 w-8 text-white" />
               </div>
               <div className="text-left">
                 <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 mb-2">Tell Us What Are You Looking For?</h2>
@@ -208,7 +209,7 @@ export default function InquirySection() {
                     </div>
                   ) : (
                     <div className="flex items-center space-x-2">
-                      <Send className="h-5 w-5" />
+                      <FaPaperPlane className="h-5 w-5" />
                       <span>Send Enquiry</span>
                     </div>
                   )}
@@ -222,7 +223,7 @@ export default function InquirySection() {
             <div className="bg-white rounded-xl p-6 border border-gray-200 shadow-lg">
               <div className="flex items-center space-x-4">
                 <div className="w-12 h-12 bg-gradient-to-r from-orange-500 to-orange-600 rounded-full flex items-center justify-center">
-                  <Phone className="h-6 w-6 text-white" />
+                  <FaPhone className="h-6 w-6 text-white" />
                 </div>
                 <div>
                   <h3 className="text-gray-900 font-semibold text-lg">Call Us Directly</h3>
@@ -235,7 +236,7 @@ export default function InquirySection() {
             <div className="bg-white rounded-xl p-6 border border-gray-200 shadow-lg">
               <div className="flex items-center space-x-4">
                 <div className="w-12 h-12 bg-gradient-to-r from-orange-500 to-orange-600 rounded-full flex items-center justify-center">
-                  <Mail className="h-6 w-6 text-white" />
+                  <FaEnvelope className="h-6 w-6 text-white" />
                 </div>
                 <div>
                   <h3 className="text-gray-900 font-semibold text-lg">Email Us</h3>

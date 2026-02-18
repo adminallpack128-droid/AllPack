@@ -1,5 +1,5 @@
 "use client";
-import { Menu, X, ChevronDown, ChevronRight } from "lucide-react"
+import { FaBars, FaTimes, FaChevronDown, FaChevronRight } from 'react-icons/fa';
 import Image from "next/image"
 import Link from "next/link"
 import { useState, useRef, useEffect } from "react"
@@ -196,7 +196,7 @@ export default function Topnav() {
                   className="flex items-center text-lg font-medium text-gray-300 hover:text-orange-500 transition-colors"
                 >
                   {item.name}
-                  {item.subItems && <ChevronDown className="ml-1 h-4 w-4" />}
+                  {item.subItems && <FaChevronDown className="ml-1 h-4 w-4" />}
                 </Link>
 
                 {/* Dropdown Menu */}
@@ -213,7 +213,7 @@ export default function Topnav() {
                           className="flex items-center justify-between px-4 py-2 text-gray-700 hover:bg-orange-50 hover:text-orange-600 transition-colors"
                         >
                           <span>{subItem.name}</span>
-                          {subItem.subItems && <ChevronRight className="h-4 w-4" />}
+                          {subItem.subItems && <FaChevronRight className="h-4 w-4" />}
                         </Link>
 
                         {/* Sub-dropdown Menu */}
@@ -260,7 +260,7 @@ export default function Topnav() {
               className="md:hidden text-white hover:text-orange-500"
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
             >
-              {isMobileMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
+              {isMobileMenuOpen ? <FaTimes className="h-6 w-6" /> : <FaBars className="h-6 w-6" />}
             </Button>
           </div>
         </div>
@@ -286,7 +286,7 @@ export default function Topnav() {
                         className="text-gray-300 hover:text-orange-500 p-1"
                         onClick={() => toggleMobileMenu(item.name)}
                       >
-                        <ChevronDown
+                        <FaChevronDown
                           className={`h-4 w-4 transition-transform ${
                             mobileActiveMenu === item.name ? "rotate-180" : ""
                           }`}
@@ -315,7 +315,7 @@ export default function Topnav() {
                                 className="text-gray-400 hover:text-orange-500 p-1"
                                 onClick={() => toggleMobileSubMenu(subItem.name)}
                               >
-                                <ChevronDown
+                                <FaChevronDown
                                   className={`h-3 w-3 transition-transform ${
                                     mobileActiveSubMenu === subItem.name ? "rotate-180" : ""
                                   }`}

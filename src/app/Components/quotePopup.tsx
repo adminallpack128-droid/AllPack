@@ -4,7 +4,7 @@ import type React from "react"
 import { useState } from "react"
 import { Button } from "./Ui/button"
 import { Input } from "./Ui/input"
-import { Package } from "lucide-react"
+import { FaBox } from 'react-icons/fa';
 import { Dialog, DialogContent, DialogTrigger } from "./Ui/dialog"
 
 interface SimpleQuoteDialogProps {
@@ -84,7 +84,7 @@ Customer requested a quote and provided their mobile number for quick contact.`,
           {/* Left Side - Logo */}
           <div className="w-32 bg-gradient-to-br from-orange-500 to-orange-600 flex flex-col items-center justify-center p-6">
             <div className="w-16 h-16 bg-white rounded-lg flex items-center justify-center mb-3">
-              <Package className="h-8 w-8 text-orange-600" />
+              <FaBox className="h-8 w-8 text-orange-600" />
             </div>
             <div className="text-center">
               <h3 className="text-white font-bold text-sm">AllPack Pro</h3>

@@ -1,10 +1,5 @@
 import { Button } from "./Components/Ui/button"
-import {
-  ArrowRight,
-  CheckCircle,
-  Eye,
-  Phone,
-} from "lucide-react"
+import { FaArrowLeft  } from 'react-icons/fa';
 import Image from "next/image"
 import { Card, CardContent } from "./Components/Ui/card"
 import { Badge } from "./Components/Ui/badge"
@@ -62,15 +57,15 @@ export default function Component() {
     
 
       {/* Hero Section */}
-      <section id="home" className="relative py-5 overflow-hidden">
+      {/* <section id="home" className="relative py-5 overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-r from-orange-500/10 to-gray-900/10" />
         <div className="container mx-auto px-4 lg:px-[5rem] relative">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
-            <div className="space-y-8">
+            <div className="space-y-8"> */}
               {/* <Badge variant="secondary" className="text-lg bg-orange-100 text-orange-700 hover:bg-orange-200">
                 🎨 Professional Packaging Designer
               </Badge> */}
-              <h1 className="text-4xl lg:text-6xl font-bold leading-tight text-gray-900">
+              {/* <h1 className="text-4xl lg:text-6xl font-bold leading-tight text-gray-900">
                 Creative
                 <span className="bg-gradient-to-r from-orange-500 to-orange-600 bg-clip-text text-transparent">
                   {" "}
@@ -186,21 +181,21 @@ export default function Component() {
             </div>
           </div>
         </div>
-      </section>
+      </section> */}
 
       {/* Portfolio Carousel Section */}
       <section id="portfolio" className="py-8 bg-white">
-        <div className="container mx-auto px-4 lg:px-[5rem]">
-          <div className="text-center space-y-4 mb-3">
-            {/* <Badge variant="secondary" className="bg-orange-100 text-orange-700">
+        <div className="container mx-auto px-4 bg-gradient-to-r">
+          {/* <div className="text-center space-y-4 mb-3">
+             <Badge variant="secondary" className="bg-orange-100 text-orange-700">
               Portfolio Showcase
-            </Badge> */}
-            <h2 className="text-2xl lg:text-4xl font-bold text-gray-900">Our Packaging Solutions</h2>
+            </Badge> 
+             <h2 className="text-2xl lg:text-4xl font-bold text-gray-900">Our Packaging Solutions</h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
               Explore our comprehensive range of packaging designs from small pouches to large industrial bags, each
               crafted with precision and attention to detail.
-            </p>
-          </div>
+            </p> 
+          </div> */}
 
           <PortfolioCarousel />
         </div>
@@ -264,7 +259,7 @@ export default function Component() {
               className="border-2 border-orange-500 text-orange-600 hover:bg-orange-50 text-lg cursor-pointer"
             >
               View All Products
-              <ArrowRight className="ml-2 h-5 w-5" />
+              <FaArrowLeft className="ml-2 h-5 w-5" />
             </Button>
             </Link>
           </div>

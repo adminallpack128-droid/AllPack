@@ -1,7 +1,7 @@
 "use client"
 
 import { useState, useEffect } from "react"
-import { ChevronLeft, ChevronRight, Play, Pause } from "lucide-react"
+import { FaChevronLeft, FaChevronRight, FaPlay, FaPause } from 'react-icons/fa';
 import Image from "next/image"
 import { Card, CardContent } from "./Ui/card"
 import { Button } from "./Ui/button"
@@ -128,7 +128,7 @@ export default function PortfolioCarousel() {
                 className="absolute left-4 top-1/2 transform -translate-y-1/2 bg-white/80 hover:bg-white shadow-lg"
                 onClick={goToPrevious}
               >
-                <ChevronLeft className="h-5 w-5" />
+                <FaChevronLeft className="h-5 w-5" />
               </Button>
               <Button
                 variant="secondary"
@@ -136,7 +136,7 @@ export default function PortfolioCarousel() {
                 className="absolute right-4 top-1/2 transform -translate-y-1/2 bg-white/80 hover:bg-white shadow-lg"
                 onClick={goToNext}
               >
-                <ChevronRight className="h-5 w-5" />
+                <FaChevronRight className="h-5 w-5" />
               </Button>
             </div>
 
@@ -153,7 +153,7 @@ export default function PortfolioCarousel() {
                     onClick={toggleAutoPlay}
                     className="text-gray-500 hover:text-orange-600"
                   >
-                    {isAutoPlaying ? <Pause className="h-4 w-4" /> : <Play className="h-4 w-4" />}
+                    {isAutoPlaying ? <FaPause className="h-4 w-4" /> : <FaPlay className="h-4 w-4" />}
                   </Button>
                 </div>
 
@@ -210,7 +210,7 @@ export default function PortfolioCarousel() {
 
       {/* Thumbnail Navigation */}
       <div className="mt-6 flex justify-center">
-        <div className="flex space-x-3 overflow-x-auto pb-2">
+        <div className="flex space-x-3 overflow-x-auto p-4">
           {carouselItems.map((item, index) => (
             <button
               key={item.id}

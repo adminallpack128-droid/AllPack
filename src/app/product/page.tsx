@@ -1,4 +1,4 @@
-import { ArrowRight } from "lucide-react";
+import { FaArrowLeft  } from 'react-icons/fa';
 import Image from "next/image";
 import Link from "next/link";
 import { Button } from "../Components/Ui/button";
@@ -35,7 +35,7 @@ export default function ProductsPage() {
     {
       id: 3,
       title: "Agricultural Bags",
-      image: "/product3.webp",
+      image: "/10kg-loop-handle-bag1.webp",
       products: [
         "Agricultural Packaging Bag",
         "25 Kg Agricultural Bag",
@@ -242,7 +242,7 @@ export default function ProductsPage() {
                 className="border-2 border-white text-black hover:bg-orange hover:text-gray-900"
               >
                 View All Products
-                <ArrowRight className="ml-2 h-5 w-5" />
+                <FaArrowLeft className="ml-2 h-5 w-5" />
               </Button>
             </div>
           </div>

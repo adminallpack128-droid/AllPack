@@ -1,4 +1,4 @@
-import { Facebook, Instagram, Linkedin, Mail, MapPin, Phone, Twitter } from "lucide-react";
+import { FaPhone, FaEnvelope, FaMapPin, FaInstagram, FaFacebook, FaTwitter, FaLinkedin } from 'react-icons/fa';
 import { Badge } from "../Components/Ui/badge";
 import { Button } from "../Components/Ui/button";
 import ContactForm from "../Components/contact";
@@ -23,31 +23,31 @@ export default function ContactPage() {
 
               <div className="space-y-4">
                 <div className="flex items-center space-x-3">
-                  <Mail className="h-5 w-5 text-orange-400" />
+                  <FaEnvelope className="h-5 w-5 text-orange-400" />
                   <span>illusiondesign128@gmail.com</span>
                 </div>
                 <div className="flex items-center space-x-3">
-                  <Phone className="h-5 w-5 text-orange-400" />
+                  <FaPhone className="h-5 w-5 text-orange-400" />
                   <span>+91 89750 40173</span>
                 </div>
                 <div className="flex items-center space-x-3">
-                  <MapPin className="h-5 w-5 text-orange-400" />
+                  <FaMapPin className="h-5 w-5 text-orange-400" />
                   <span>Katrj Pune, India</span>
                 </div>
               </div>
 
               <div className="flex space-x-4">
                 <Button variant="secondary" size="icon" className="bg-white/10 hover:bg-white/20 text-white">
-                  <Instagram className="h-5 w-5" />
+                  <FaInstagram className="h-5 w-5" />
                 </Button>
                 <Button variant="secondary" size="icon" className="bg-white/10 hover:bg-white/20 text-white">
-                  <Facebook className="h-5 w-5" />
+                  <FaFacebook className="h-5 w-5" />
                 </Button>
                 <Button variant="secondary" size="icon" className="bg-white/10 hover:bg-white/20 text-white">
-                  <Twitter className="h-5 w-5" />
+                  <FaTwitter className="h-5 w-5" />
                 </Button>
                 <Button variant="secondary" size="icon" className="bg-white/10 hover:bg-white/20 text-white">
-                  <Linkedin className="h-5 w-5" />
+                  <FaLinkedin className="h-5 w-5" />
                 </Button>
               </div>
             </div>

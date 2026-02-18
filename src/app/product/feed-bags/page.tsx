@@ -2,16 +2,7 @@ import QuoteButtonWithDialog from "@/app/Components/getQuotePopup";
 import { Badge } from "@/app/Components/Ui/badge";
 import { Button } from "@/app/Components/Ui/button";
 import { Card, CardContent } from "@/app/Components/Ui/card";
-import {
-  Search,
-  Phone,
-  Mail,
-  Star, 
-  Package,
-  Truck,
-  Shield,
-  Award,
-} from "lucide-react";
+import { FaSearch, FaPhone, FaEnvelope, FaStar, FaBox, FaTruck, FaShieldAlt, FaAward } from 'react-icons/fa';
 import Link from "next/link";
 import BagImageGallery from "@/app/Components/imageCarousal";
 import feedBags from "@/JsonDataFiles/FeedBagJSON";
@@ -20,21 +11,21 @@ export default function FeedBagsPage() {
  
   const benefits = [
     {
-      icon: Shield,
+      icon: FaShieldAlt,
       title: "Durability",
       desc: "Strong construction for heavy-duty use",
     },
     {
-      icon: Package,
+      icon: FaBox,
       title: "Cost Effective",
       desc: "Economical solution for bulk packaging",
     },
     {
-      icon: Truck,
+      icon: FaTruck,
       title: "Easy Transport",
       desc: "Lightweight and stackable design",
     },
-    { icon: Award, title: "Quality Material", desc: "Premium PP woven fabric" },
+    { icon: FaAward, title: "Quality Material", desc: "Premium PP woven fabric" },
   ];
 
   return (
@@ -76,14 +67,14 @@ export default function FeedBagsPage() {
                 variant="outline"
                 className="border-gray-800 text-gray-800 hover:bg-gray-50"
               >
-                <Phone className="h-4 w-4 mr-2" />
+                <FaPhone className="h-4 w-4 mr-2" />
                 Call +91 89750 40173
                 <span className="text-xs text-gray-500 ml-2">
                   68% Response Rate
                 </span>
               </Button>
               <QuoteButtonWithDialog className="bg-gradient-to-r from-red-500 to-red-600 hover:from-red-600 hover:to-red-700 text-white">
-                <Mail className="h-4 w-4 mr-2" />
+                <FaEnvelope className="h-4 w-4 mr-2" />
                 SEND EMAIL
               </QuoteButtonWithDialog>
             </div>
@@ -113,7 +104,7 @@ export default function FeedBagsPage() {
             </nav>
 
             <div className="relative hidden md:flex">
-              <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 h-4 w-4" />
+              <FaSearch className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 h-4 w-4" />
               <input
                 type="text"
                 placeholder="Search Products/Services"
@@ -185,7 +176,7 @@ export default function FeedBagsPage() {
                       <div className="flex items-center space-x-4 mb-4">
                         <div className="flex items-center">
                           {[...Array(5)].map((_, i) => (
-                            <Star
+                            <FaStar
                               key={i}
                               className="h-5 w-5 text-yellow-400 fill-current"
                             />

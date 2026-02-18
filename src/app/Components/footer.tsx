@@ -1,4 +1,5 @@
-import { Facebook, Instagram, Linkedin, Package, Twitter } from "lucide-react";
+import { FaBox, FaFacebook, FaInstagram, FaLinkedin, FaTwitter } from 'react-icons/fa';
+
 import Link from "next/link"
 import { Button } from "./Ui/button";
 
@@ -10,7 +11,7 @@ export default function Footer(){
             <div className="space-y-4">
               <div className="flex items-center space-x-2">
                 <div className="h-8 w-8 rounded-lg bg-gradient-to-r from-orange-500 to-orange-600 flex items-center justify-center">
-                  <Package className="h-5 w-5 text-white" />
+                  <FaBox className="h-5 w-5 text-white" />
                 </div>
                 <span className="text-xl font-bold">
                   All<span className="text-orange-500">Pack</span> Pro
@@ -77,16 +78,16 @@ export default function Footer(){
               <h3 className="text-lg font-semibold">Connect</h3>
               <div className="flex space-x-4">
                 <Button variant="ghost" size="icon" className="text-gray-400 hover:text-orange-500">
-                  <Instagram className="h-5 w-5" />
+                  <FaInstagram className="h-5 w-5" />
                 </Button>
                 <Button variant="ghost" size="icon" className="text-gray-400 hover:text-orange-500">
-                  <Facebook className="h-5 w-5" />
+                  <FaFacebook className="h-5 w-5" />
                 </Button>
                 <Button variant="ghost" size="icon" className="text-gray-400 hover:text-orange-500">
-                  <Twitter className="h-5 w-5" />
+                  <FaTwitter className="h-5 w-5" />
                 </Button>
                 <Button variant="ghost" size="icon" className="text-gray-400 hover:text-orange-500">
-                  <Linkedin className="h-5 w-5" />
+                  <FaLinkedin className="h-5 w-5" />
                 </Button>
               </div>
             </div>
