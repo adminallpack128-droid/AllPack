@@ -3,7 +3,7 @@
 import type React from "react"
 
 import { Button } from "./Ui/button"
-import { FaArrowLeft  } from 'react-icons/fa';
+import { FaArrowRight  } from 'react-icons/fa';
 import QuoteDialog from "./quotePopup"
 
 interface QuoteButtonProps {
@@ -23,7 +23,7 @@ export default function QuoteButtonWithDialog({
     <QuoteDialog className={className}>
       <Button className={className} size={size} variant={variant}>
         {children}
-        <FaArrowLeft className="ml-2 h-4 w-4" />
+        <FaArrowRight className="ml-2 h-4 w-4" />
       </Button>
     </QuoteDialog>
   )

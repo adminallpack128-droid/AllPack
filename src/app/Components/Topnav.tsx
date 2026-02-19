@@ -4,8 +4,7 @@ import Image from "next/image"
 import Link from "next/link"
 import { useState, useRef, useEffect } from "react"
 import { Button } from "./Ui/button"
-import QuoteButtonWithPopup from "./getQuotePopup"
-import QuoteButtonWithDialog from "./getQuotePopup"
+import QuoteButtonWithPopup from "./getQuotePopup" 
 
 interface SubMenuItem {
   name: string
@@ -169,6 +168,15 @@ export default function Topnav() {
     <header className="sticky top-0 z-50 w-full border-b bg-gray-900/95 backdrop-blur-md">
       <div className="container mx-auto px-4 lg:px-6">
         <div className="flex h-16 items-center justify-between">
+           {/* Mobile Menu Button */}
+          <Button
+            variant="ghost"
+            size="icon"
+            className="md:hidden text-white hover:text-orange-500"
+            onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+          >
+            {isMobileMenuOpen ? <FaTimes className="h-6 w-6" /> : <FaBars className="h-6 w-6" />}
+          </Button>
           <div className="flex items-center space-x-2">
             <Link href="/">
               <Image
@@ -249,121 +257,108 @@ export default function Topnav() {
           <div className="flex items-center space-x-4">
             {/* Desktop Get Quote Button */}
             <QuoteButtonWithPopup
-              className="hidden md:flex text-lg bg-gradient-to-r from-orange-500 to-orange-600 hover:from-orange-600 hover:to-orange-700 text-white"
+              className="flex text-lg bg-gradient-to-r from-orange-500 to-orange-600 hover:from-orange-600 hover:to-orange-700 text-white"
               size="lg"
-            />
-
-            {/* Mobile Menu Button */}
-            <Button
-              variant="ghost"
-              size="icon"
-              className="md:hidden text-white hover:text-orange-500"
-              onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-            >
-              {isMobileMenuOpen ? <FaTimes className="h-6 w-6" /> : <FaBars className="h-6 w-6" />}
-            </Button>
+            /> 
           </div>
         </div>
 
         {/* Mobile Navigation Menu */}
-        {isMobileMenuOpen && (
-          <div className="md:hidden border-t border-gray-800">
-            <nav className="flex flex-col px-4 py-6 bg-gray-900 max-h-96 overflow-y-auto">
-              {menuItems.map((item) => (
-                <div key={item.name} className="space-y-2">
-                  <div className="flex items-center justify-between">
-                    <Link
-                      href={item.href}
-                      className="text-lg font-medium text-gray-300 hover:text-orange-500 transition-colors"
-                      onClick={() => !item.subItems && setIsMobileMenuOpen(false)}
-                    >
-                      {item.name}
-                    </Link>
-                    {item.subItems && (
-                      <Button
-                        variant="ghost"
-                        size="sm"
-                        className="text-gray-300 hover:text-orange-500 p-1"
-                        onClick={() => toggleMobileMenu(item.name)}
-                      >
-                        <FaChevronDown
-                          className={`h-4 w-4 transition-transform ${
-                            mobileActiveMenu === item.name ? "rotate-180" : ""
-                          }`}
-                        />
-                      </Button>
-                    )}
-                  </div>
-
-                  {/* Mobile Submenu */}
-                  {item.subItems && mobileActiveMenu === item.name && (
-                    <div className="ml-4 space-y-2 border-l-2 border-orange-500 pl-4">
-                      {item.subItems.map((subItem) => (
-                        <div key={subItem.name} className="space-y-1">
-                          <div className="flex items-center justify-between">
-                            <Link
-                              href={subItem.href}
-                              className="text-gray-400 hover:text-orange-500 transition-colors"
-                              onClick={() => !subItem.subItems && setIsMobileMenuOpen(false)}
-                            >
-                              {subItem.name}
-                            </Link>
-                            {subItem.subItems && (
-                              <Button
-                                variant="ghost"
-                                size="sm"
-                                className="text-gray-400 hover:text-orange-500 p-1"
-                                onClick={() => toggleMobileSubMenu(subItem.name)}
-                              >
-                                <FaChevronDown
-                                  className={`h-3 w-3 transition-transform ${
-                                    mobileActiveSubMenu === subItem.name ? "rotate-180" : ""
-                                  }`}
-                                />
-                              </Button>
-                            )}
-                          </div>
-
-                          {/* Mobile Sub-submenu */}
-                          {subItem.subItems && mobileActiveSubMenu === subItem.name && (
-                            <div className="ml-4 space-y-1 border-l border-gray-600 pl-3">
-                              {subItem.subItems.map((subSubItem) => (
-                                <Link
-                                  key={subSubItem.name}
-                                  href={subSubItem.href}
-                                  className="block text-sm text-gray-500 hover:text-orange-500 transition-colors py-1"
-                                  onClick={() => setIsMobileMenuOpen(false)}
-                                >
-                                  {subSubItem.name}
-                                </Link>
-                              ))}
-                              <Link
-                                href={subItem.href}
-                                className="block text-sm text-orange-500 font-medium hover:text-orange-400 transition-colors py-1"
-                                onClick={() => setIsMobileMenuOpen(false)}
-                              >
-                                VIEW ALL →
-                              </Link>
-                            </div>
-                          )}
-                        </div>
-                      ))}
-                    </div>
-                  )}
-                </div>
-              ))}
-
-              <div className="mt-6 pt-4 border-t border-gray-700">
-                <QuoteButtonWithDialog
-                  size="lg"
-                  className="w-full bg-gradient-to-r from-orange-500 to-orange-600 hover:from-orange-600 hover:to-orange-700 text-white"
-                >
-                  Get Quote Now
-                </QuoteButtonWithDialog>
-              </div>
-            </nav>
-          </div>
-        )}
+      {/* Mobile Navigation Menu */}
+             {isMobileMenuOpen && (
+               <div className="md:hidden fixed top-0 left-0 z-50 w-4/5 h-full bg-white text-black shadow-lg">
+                 <div className="flex items-center justify-between p-2">
+                   <Image src="/AllPackLogo.jpg" alt="logo" height={40} width={120} />
+                   <Button
+                     variant="ghost"
+                     size="icon"
+                     className="text-black"
+                     onClick={() => setIsMobileMenuOpen(false)}
+                   >
+                     <FaTimes className="h-6 w-6" />
+                   </Button>
+                 </div>
+     
+                 <nav className="flex flex-col p-4 space-y-4 bg-white">
+                   {menuItems.map((item) => (
+                     <div key={item.name} className="space-y-2">
+                       <div className="flex items-center justify-between">
+                         <Link
+                           href={item.href}
+                           className="text-lg font-medium text-gray-800 hover:text-orange-500 transition-colors"
+                           onClick={() => !item.subItems && setIsMobileMenuOpen(false)}
+                         >
+                           {item.name}
+                         </Link>
+                         {item.subItems && (
+                           <Button
+                             variant="ghost"
+                             size="sm"
+                             className="text-gray-800 hover:text-orange-500 p-1"
+                             onClick={() => toggleMobileMenu(item.name)}
+                           >
+                             <FaChevronDown
+                               className={`h-4 w-4 transition-transform ${
+                                 mobileActiveMenu === item.name ? "rotate-180" : ""
+                               }`}
+                             />
+                           </Button>
+                         )}
+                       </div>
+     
+                       {/* Mobile Submenu */}
+                       {item.subItems && mobileActiveMenu === item.name && (
+                         <div className="ml-4 space-y-2 border-l-2 border-orange-500 pl-4">
+                           {item.subItems.map((subItem) => (
+                             <div key={subItem.name} className="space-y-1">
+                               <div className="flex items-center justify-between">
+                                 <Link
+                                   href={subItem.href}
+                                   className="text-gray-600 hover:text-orange-500 transition-colors"
+                                   onClick={() => !subItem.subItems && setIsMobileMenuOpen(false)}
+                                 >
+                                   {subItem.name}
+                                 </Link>
+                                 {subItem.subItems && (
+                                   <Button
+                                     variant="ghost"
+                                     size="sm"
+                                     className="text-gray-600 hover:text-orange-500 p-1"
+                                     onClick={() => toggleMobileSubMenu(subItem.name)}
+                                   >
+                                     <FaChevronDown
+                                       className={`h-3 w-3 transition-transform ${
+                                         mobileActiveSubMenu === subItem.name ? "rotate-180" : ""
+                                       }`}
+                                     />
+                                   </Button>
+                                 )}
+                               </div>
+     
+                               {/* Mobile Sub-submenu */}
+                               {subItem.subItems && mobileActiveSubMenu === subItem.name && (
+                                 <div className="ml-4 space-y-1 border-l border-gray-600 pl-3">
+                                   {subItem.subItems.map((subSubItem) => (
+                                     <Link
+                                       key={subSubItem.name}
+                                       href={subSubItem.href}
+                                       className="block text-sm text-gray-500 hover:text-orange-500 transition-colors py-1"
+                                       onClick={() => setIsMobileMenuOpen(false)}
+                                     >
+                                       {subSubItem.name}
+                                     </Link>
+                                   ))}
+                                 </div>
+                               )}
+                             </div>
+                           ))}
+                         </div>
+                       )}
+                     </div>
+                   ))}
+                 </nav>
+               </div>
+             )}
       </div>
     </header>
   )
