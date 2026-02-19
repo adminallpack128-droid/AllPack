@@ -1,11 +1,12 @@
-import QuoteButtonWithDialog from "@/app/Components/getQuotePopup";
-import { Badge } from "@/app/Components/Ui/badge";
-import { Button } from "@/app/Components/Ui/button";
-import { Card, CardContent } from "@/app/Components/Ui/card";
+
+import { Button } from '../../Components/Ui/button';
+import { Badge } from '../../Components/Ui/badge';
 import fertilizerBags from "@/JsonDataFiles/FertilizerBagJSON";
+import { Card, CardContent } from "../../Components/Ui/card";
 import { FaSearch, FaPhone, FaEnvelope, FaStar, FaBox, FaTruck, FaShieldAlt, FaAward, FaCheckCircle } from 'react-icons/fa';
 import Link from "next/link";
-import BagImageGallery from "@/app/Components/imageCarousal";
+import QuoteButtonWithDialog from "../../Components/getQuotePopup";
+import BagImageGallery from "../../Components/imageCarousal";
 
 export default function PlainPPFertilizerBagPage() { 
 
