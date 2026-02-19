@@ -1,11 +1,12 @@
-import QuoteButtonWithDialog from "@/app/Components/getQuotePopup";
-import { Badge } from "@/app/Components/Ui/badge";
-import { Button } from "@/app/Components/Ui/button";
-import { Card, CardContent } from "@/app/Components/Ui/card";
+
 import { FaSearch, FaPhone, FaEnvelope, FaStar, FaBox, FaTruck, FaShieldAlt, FaAward } from 'react-icons/fa';
 import Link from "next/link";
-import BagImageGallery from "@/app/Components/imageCarousal";
 import agricultureBags from "@/JsonDataFiles/AgricultureJSON";
+import { Badge } from '../../Components/Ui/badge';
+import { Button } from '../../Components/Ui/button';
+import QuoteButtonWithDialog from '../../Components/getQuotePopup';
+import BagImageGallery from '../../Components/imageCarousal';
+import { Card, CardContent } from '../../Components/Ui/card';
 
 export default function FeedBagsPage() {
   const benefits = [
