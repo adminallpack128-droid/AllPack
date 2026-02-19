@@ -76,7 +76,7 @@ const products = [
 
 export default function ProductCarousel() {
   const [currentIndex, setCurrentIndex] = useState(0);
-  const [hoveredProduct, setHoveredProduct] = useState<number | null>(null);
+  const [, setHoveredProduct] = useState<number | null>(null);
 
   const next = () => {
     setCurrentIndex((prev) => (prev + 1) % products.length);
