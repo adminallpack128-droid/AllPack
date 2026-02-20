@@ -1,11 +1,5 @@
 import { Button } from "./Components/Ui/button";
-import { Card } from "./Components/Ui/card";
-// import { FaArrowLeft } from "react-icons/fa";
-// import Image from "next/image";
-// import { Card, CardContent } from "./Components/Ui/card";
-// import { Badge } from "./Components/Ui/badge";
-// // import PortfolioCarousel from "./Components/portfolio-carousel";
-// import Link from "next/link";
+import { Card } from "./Components/Ui/card"; 
 import { FaMedal, FaBolt, FaLeaf, FaTag } from "react-icons/fa";
 import InquirySection from "./Components/enquiry";
 import ProductCarousel from "./Components/portfolio-carousel";
