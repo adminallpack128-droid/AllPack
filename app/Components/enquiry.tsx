@@ -28,8 +28,7 @@ export default function InquirySection() {
       const apiData = {
         firstName: formData.name.split(" ")[0] || formData.name,
         lastName: formData.name.split(" ").slice(1).join(" ") || "",
-        email: formData.email,
-        company: "", // Not collected in this form
+        email: formData.email, 
         projectDetails: `Phone: ${formData.phone}\n\nRequirement Details:\n${formData.requirement}`,
         submittedAt: new Date().toISOString(),
       }
