@@ -251,16 +251,16 @@ export default function Component() {
       {/* Portfolio Carousel Section */}
       <section id="portfolio" className=" bg-white">
         <div className="container mx-auto px-4 bg-gradient-to-b from-orange-100/90 to-orange-200/10">
-          <div className="py-3 px-4 md:px-8 ">
+          <div className="lg:py-3 py-1 px-4 ">
             <div className="max-w-6xl mx-auto">
-              <div className="text-center space-y-2">
-                <h1 className="text-2xl font-bold text-foreground">
+              <div className="text-center lg:space-y-2">
+                <h1 className="text-2xl font-bold text-black">
                   High-Quality Printed Packaging Solutions
                 </h1>
-                <p className="text-xl text-muted-foreground">
+                <p className="hidden lg:flex text-xl text-black justify-center text-center ">
                   Premium Printed Bags, Available Instantly.
                 </p>
-                <div className="flex flex-col sm:flex-row gap-3 justify-center">
+                <div className="hidden lg:flex lg:flex-row gap-3 justify-center">
                   <Button
                     type="submit"
                     className="bg-gradient-to-r from-orange-500 to-orange-600 hover:from-orange-400 text-white py-4 px-5 rounded-lg text-md shadow-lg hover:shadow-xl transition-all duration-300"
@@ -283,12 +283,12 @@ export default function Component() {
           </div>
         </div>
       </section>
-      <section className="py-4 px-4 md:px-8 bg-gray-100">
+      <section className="lg:py-4 py-2 px-4 md:px-8 bg-gray-100">
         <div className="max-w-7xl mx-auto">
           <ProductCarousel />
         </div>
       </section>
-      <section className="py-6 px-4 md:px-8 bg-[#F5F3ED]">
+      <section className="lg:py-6 py-4 px-4 md:px-8 bg-[#F5F3ED]">
         <div className="max-w-6xl mx-auto">
           {/* Hero Content */}
           <div className="text-center space-y-4 mb-10">
@@ -443,7 +443,7 @@ export default function Component() {
           </div>
 
           {/* Features Grid */}
-          <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
+          <div className="grid grid-cols-2 md:grid-cols-4 lg:gap-8 gap-3">
             {[
               {
                 icon: FaMedal,
@@ -471,7 +471,7 @@ export default function Component() {
               return (
                 <div
                   key={idx}
-                  className="bg-white rounded-2xl border border-gray-200 p-10 text-center
+                  className="bg-white rounded-2xl border border-gray-200 lg:p-10 p-6 text-center
                        hover:border-orange-400/60 hover:shadow-lg
                        transition-all duration-300"
                 >
@@ -518,16 +518,16 @@ export default function Component() {
         {/* Table Head */}
         <thead>
           <tr className="border-b-2 border-black">
-            <th className="px-6 py-4 text-left font-semibold text-black">
+            <th className="lg:px-6 px-2 lg:py-4 py-2 text-left font-semibold text-black">
               Product
             </th>
-            <th className="px-6 py-4 text-center font-semibold text-black">
+            <th className="lg:px-6 px-2 lg:py-4 py-2 text-center font-semibold text-black">
               Price
             </th>
-            <th className="px-6 py-4 text-center font-semibold text-black">
+            <th className="lg:px-6 px-2 lg:py-4 py-2 text-center font-semibold text-black">
               Bulk Order
             </th>
-            <th className="px-6 py-4 text-center font-semibold text-black">
+            <th className="lg:px-6 px-2 lg:py-4 py-2 text-center font-semibold text-black">
               Action
             </th>
           </tr>
@@ -546,22 +546,22 @@ export default function Component() {
               className="border-b border-gray-200 hover:bg-orange-100 transition"
             >
               {/* Product */}
-              <td className="px-6 py-5 font-medium text-black">
+              <td className="lg:px-6 px-2 lg:py-4 py-2 font-medium text-black">
                 {row.product}
               </td>
 
               {/* Price */}
-              <td className="px-6 py-5 text-center text-green-700 font-bold text-lg">
+              <td className="lg:px-6 px-2 lg:py-4 py-2 text-center text-green-700 font-bold text-lg">
                 {row.price}
               </td>
 
               {/* Bulk */}
-              <td className="px-6 py-5 text-center text-gray-600">
+              <td className="lg:px-6 px-2 lg:py-4 py-2 text-center text-gray-600">
                 {row.bulk}
               </td>
 
               {/* Button */}
-              <td className="px-6 py-5 text-center">
+              <td className="lg:px-6 px-2 lg:py-4 py-2 text-center">
                 <button className="bg-gradient-to-r from-orange-500 to-orange-600 hover:from-orange-400 text-white px-5 py-2 rounded-lg font-medium transition">
                   Quote
                 </button>

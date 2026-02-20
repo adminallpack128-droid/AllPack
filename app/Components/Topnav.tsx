@@ -4,7 +4,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { useState, useRef, useEffect } from "react";
 import { Button } from "./Ui/button";
-// import QuoteButtonWithPopup from "./getQuotePopup";
+import QuoteButtonWithPopup from "./getQuotePopup";
 import { FaWhatsapp } from "react-icons/fa";
 
 interface SubMenuItem {
@@ -353,17 +353,32 @@ export default function Topnav() {
               ))}
             </nav>
 
-            <div className="flex items-center space-x-4">
-              {/* Desktop Get Quote Button */}
+            <div className="flex items-center gap-2">
               <a
                 href={whatsappUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex items-center gap-2 text-lg bg-green-600 hover:bg-green-700 text-white px-6 py-3 rounded-lg font-semibold transition duration-300 shadow-md"
+                className="flex items-center gap-2
+             bg-[#25D366] hover:bg-[#1ebe5d]
+             text-white
+             px-4
+             py-2
+             text-sm md:text-base
+             font-medium
+             rounded-full
+             shadow-md
+             transition-all duration-300
+             whitespace-nowrap"
               >
-                <FaWhatsapp className="text-2xl" />
-                Chat on WhatsApp
+                <FaWhatsapp className="text-xl md:text-2xl text-white" />
+                <span className="hidden sm:inline">WhatsApp</span>
+                <span className="sm:hidden">Chat</span>
               </a>
+
+              <QuoteButtonWithPopup
+              className="flex rounded-xl text-md bg-gradient-to-r from-orange-500 to-orange-600 hover:from-orange-600 hover:to-orange-700 text-white"
+              size="sm"
+            />
             </div>
           </div>
         </div>

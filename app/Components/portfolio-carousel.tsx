@@ -109,7 +109,7 @@ export default function ProductCarousel() {
               {/* Product Image */}
               <div className={`h-56 ${product.image} rounded-t-2xl`}>
                 <div className="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-colors duration-300" />
-                <button className="absolute top-3 right-3 p-2 rounded-full bg-background/80 hover:bg-background text-foreground opacity-0 group-hover:opacity-100 transition-opacity">
+                <button className="absolute top-3 right-3 p-2 rounded-full bg-background/80 hover:bg-background text-black opacity-0 group-hover:opacity-100 transition-opacity">
                   <FaHeart className="w-5 h-5" />
                 </button>
               </div>
@@ -121,7 +121,7 @@ export default function ProductCarousel() {
                     <h3 className="text-lg font-semibold text-gray-900">
                       {product.name}
                     </h3>
-                    <p className="text-xs text-muted-foreground">
+                    <p className="text-xs text-black">
                       {product.size}
                     </p>
                   </div>
@@ -131,7 +131,7 @@ export default function ProductCarousel() {
                 </div>
 
                 {/* Description */}
-                <p className="text-sm text-muted-foreground mb-4 line-clamp-2">
+                <p className="text-sm text-black mb-4 line-clamp-2">
                   {product.description}
                 </p>
 
@@ -157,7 +157,7 @@ export default function ProductCarousel() {
 
                 {/* Available Colors */}
                 <div className="mb-4">
-                  <p className="text-xs font-semibold text-foreground mb-2">
+                  <p className="text-xs font-semibold text-black mb-2">
                     Available Colors:
                   </p>
                   <div className="flex gap-2 flex-wrap">
