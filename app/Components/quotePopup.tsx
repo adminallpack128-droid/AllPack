@@ -1,34 +1,45 @@
-"use client"
+"use client";
 
-import type React from "react"
-import { useState } from "react"
-import { Button } from "./Ui/button"
-import { Input } from "./Ui/input"
-import { FaBox } from 'react-icons/fa';
-import { Dialog, DialogContent, DialogTrigger } from "./Ui/dialog"
+import type React from "react";
+import { useState } from "react";
+import { Button } from "./Ui/button";
+import { Input } from "./Ui/input";
+import { FaBox } from "react-icons/fa";
+import { Dialog, DialogContent, DialogTrigger } from "./Ui/dialog";
+// import { Resend } from "resend"
 
 interface SimpleQuoteDialogProps {
-  children: React.ReactNode
-  className?: string
+  children: React.ReactNode;
+  className?: string;
 }
 
-export default function QuoteDialog({ children, className }: SimpleQuoteDialogProps) {
-  const [mobileNumber, setMobileNumber] = useState("")
-  const [isSubmitting, setIsSubmitting] = useState(false)
-  const [open, setOpen] = useState(false)
-  const [submitStatus, setSubmitStatus] = useState<"idle" | "success" | "error">("idle")
+export default function QuoteDialog({
+  children,
+  className,
+}: SimpleQuoteDialogProps) {
+  const [mobileNumber, setMobileNumber] = useState("");
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [open, setOpen] = useState(false);
+  const [submitStatus, setSubmitStatus] = useState<
+    "idle" | "success" | "error"
+  >("idle");
 
   const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault()
-    setIsSubmitting(true)
-    setSubmitStatus("idle")
-
+    e.preventDefault();
+    setIsSubmitting(true);
+    setSubmitStatus("idle");
+    // const resend = new Resend(process.env.EMAIL_PASS);
+    console.log(
+      "Resend API Key Exists:",
+      !!process.env.EMAIL_PASS,
+      process.env.EMAIL_USER,
+    );
     try {
       // Transform data for API
       const apiData = {
         firstName: "Quote Request",
         lastName: "",
-        email: "quote-request@allpack.com", // Placeholder email
+        // email: "quote-request@allpack.com", // Placeholder email
         company: "",
         projectDetails: `Quote Request via Mobile:
 Phone Number: +91 ${mobileNumber}
@@ -37,9 +48,9 @@ Submitted: ${new Date().toLocaleString()}
 
 Customer requested a quote and provided their mobile number for quick contact.`,
         submittedAt: new Date().toISOString(),
-      }
+      };
 
-      console.log("API data being sent:", apiData)
+      console.log("API data being sent:", apiData);
 
       const response = await fetch("/api/contact", {
         method: "POST",
@@ -47,32 +58,32 @@ Customer requested a quote and provided their mobile number for quick contact.`,
           "Content-Type": "application/json",
         },
         body: JSON.stringify(apiData),
-      })
+      });
 
-      console.log("Response status:", response.status)
-      const result = await response.json()
-      console.log("Response data:", result)
+      console.log("Response status:", response.status);
+      const result = await response.json();
+      console.log("Response data:", result);
 
       if (response.ok && result.success) {
-        setSubmitStatus("success")
-        setMobileNumber("")
+        setSubmitStatus("success");
+        setMobileNumber("");
 
         // Close dialog after 2 seconds
         setTimeout(() => {
-          setOpen(false)
-          setSubmitStatus("idle")
-        }, 2000)
+          setOpen(false);
+          setSubmitStatus("idle");
+        }, 2000);
       } else {
-        console.error("API Error:", result)
-        setSubmitStatus("error")
+        console.error("API Error:", result);
+        setSubmitStatus("error");
       }
     } catch (error) {
-      console.error("Network Error:", error)
-      setSubmitStatus("error")
+      console.error("Network Error:", error);
+      setSubmitStatus("error");
     } finally {
-      setIsSubmitting(false)
+      setIsSubmitting(false);
     }
-  }
+  };
 
   return (
     <Dialog open={open} onOpenChange={setOpen}>
@@ -95,8 +106,10 @@ Customer requested a quote and provided their mobile number for quick contact.`,
           <div className="flex-1 p-6">
             <div className="mb-6">
               <h2 className="text-lg font-semibold text-gray-900 mb-2">
-                Connect with <span className="text-orange-600">&quot;AllPack Pro&quot;</span> receive details on your
-                mobile. We&apos;ll respond to you shortly!
+                Connect with{" "}
+                <span className="text-orange-600">&quot;AllPack Pro&quot;</span>{" "}
+                receive details on your mobile. We&apos;ll respond to you
+                shortly!
               </h2>
             </div>
 
@@ -106,7 +119,8 @@ Customer requested a quote and provided their mobile number for quick contact.`,
                 <div className="flex items-center">
                   <span className="mr-2">✅</span>
                   <div>
-                    <strong>Success!</strong> We&apos;ll contact you shortly on +91 {mobileNumber}
+                    <strong>Success!</strong> We&apos;ll contact you shortly on
+                    +91 {mobileNumber}
                   </div>
                 </div>
               </div>
@@ -118,7 +132,8 @@ Customer requested a quote and provided their mobile number for quick contact.`,
                 <div className="flex items-center">
                   <span className="mr-2">❌</span>
                   <div>
-                    <strong>Error!</strong> Failed to submit request. Please try again.
+                    <strong>Error!</strong> Failed to submit request. Please try
+                    again.
                   </div>
                 </div>
               </div>
@@ -126,7 +141,10 @@ Customer requested a quote and provided their mobile number for quick contact.`,
 
             <form onSubmit={handleSubmit} className="space-y-4">
               <div>
-                <label htmlFor="mobile" className="block text-sm font-medium text-gray-700 mb-2">
+                <label
+                  htmlFor="mobile"
+                  className="block text-sm font-medium text-gray-700 mb-2"
+                >
                   Mobile Number
                 </label>
                 <div className="relative">
@@ -149,12 +167,18 @@ Customer requested a quote and provided their mobile number for quick contact.`,
                     disabled={submitStatus === "success"}
                   />
                 </div>
-                <p className="text-xs text-gray-500 mt-1">We will contact you on this number</p>
+                <p className="text-xs text-gray-500 mt-1">
+                  We will contact you on this number
+                </p>
               </div>
 
               <Button
                 type="submit"
-                disabled={isSubmitting || mobileNumber.length !== 10 || submitStatus === "success"}
+                disabled={
+                  isSubmitting ||
+                  mobileNumber.length !== 10 ||
+                  submitStatus === "success"
+                }
                 className="w-full h-10 bg-gradient-to-r from-teal-500 to-teal-600 hover:from-teal-600 hover:to-teal-700 text-white font-medium rounded-md disabled:opacity-50 disabled:cursor-not-allowed"
               >
                 {isSubmitting ? (
@@ -174,7 +198,8 @@ Customer requested a quote and provided their mobile number for quick contact.`,
             {submitStatus !== "success" && (
               <div className="mt-4 text-center">
                 <p className="text-xs text-gray-500">
-                  By submitting, you agree to receive calls/messages from AllPack Pro
+                  By submitting, you agree to receive calls/messages from
+                  AllPack Pro
                 </p>
               </div>
             )}
@@ -182,5 +207,5 @@ Customer requested a quote and provided their mobile number for quick contact.`,
         </div>
       </DialogContent>
     </Dialog>
-  )
+  );
 }
