@@ -8,13 +8,13 @@ import QuoteDialog from "./quotePopup";
 
 interface QuoteButtonProps {
   className?: string;
-  size?: "default" | "sm" | "lg" | "icon";
+  size?: "default" | "sm" | "lg" | "icon" | "md";
   variant?: "default" | "outline";
   children?: React.ReactNode;
 }
 
 export default function QuoteButtonWithDialog({
-  className = "",
+  className = "px-4 py-2",
   size = "default",
   variant = "default",
   children = "Send Email",

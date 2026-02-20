@@ -376,8 +376,8 @@ export default function Topnav() {
               </a>
 
               <QuoteButtonWithPopup
-              className="flex rounded-xl text-md bg-gradient-to-r from-orange-500 to-orange-600 hover:from-orange-600 hover:to-orange-700 text-white"
-              size="sm"
+              className="flex rounded-full text-md bg-gradient-to-r from-orange-500 to-orange-600 hover:from-orange-600 hover:to-orange-700 text-white"
+              size="md"
             />
             </div>
           </div>
