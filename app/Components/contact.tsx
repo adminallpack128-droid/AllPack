@@ -38,21 +38,23 @@ export default function ContactForm() {
   const sendViaEmail = async () => {
     setIsSubmitting(true);
     try {
-      // This would typically call your email service API
-      const response = await fetch('/api/contact', {
+      const response = await fetch('/api/send-email', {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(formData),
       });
 
-      if (response.ok) {
+      const result = await response.json();
+      
+      if (response.ok && result.success) {
         setSubmitStatus("success");
         resetForm();
       } else {
+        console.error("Email error:", result);
         setSubmitStatus("error");
       }
-    // eslint-disable-next-line @typescript-eslint/no-unused-vars
     } catch (error) {
+      console.error("Error sending email:", error);
       setSubmitStatus("error");
     } finally {
       setIsSubmitting(false);
