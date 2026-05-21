@@ -52,7 +52,7 @@ Customer requested a quote and provided their mobile number for quick contact.`,
 
       console.log("API data being sent:", apiData);
 
-      const response = await fetch("/api/contact", {
+      const response = await fetch("/api/send-email", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
