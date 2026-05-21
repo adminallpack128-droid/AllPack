@@ -11,6 +11,8 @@ export async function POST(req: Request) {
     const gmailPass = process.env.GMAIL_APP_PASSWORD;
     const recipientEmail = process.env.RECIPIENT_EMAIL;
 
+
+
     if (!gmailUser || !gmailPass || !recipientEmail) {
       console.error('Missing email configuration:', {
         hasUser: !!gmailUser,
@@ -27,6 +29,10 @@ export async function POST(req: Request) {
     }
 
     // Create Nodemailer transporter for Gmail
+    console.log('[v0] Creating Gmail transporter...');
+    console.log('[v0] User set:', !!gmailUser);
+    console.log('[v0] Pass length:', gmailPass?.length);
+    
     const transporter = nodemailer.createTransport({
       service: 'gmail',
       auth: {
@@ -75,19 +81,33 @@ export async function POST(req: Request) {
     };
 
     // Send email
-    await transporter.sendMail(mailOptions);
-
-    return NextResponse.json(
-      { 
-        success: true, 
-        message: 'Email sent successfully to your Gmail inbox' 
-      },
-      { status: 200 }
-    );
+    console.log('[v0] Attempting to send email with Nodemailer...');
+    console.log('[v0] From:', gmailUser, 'To:', recipientEmail);
+    
+    try {
+      const result = await transporter.sendMail(mailOptions);
+      console.log('[v0] Email sent successfully:', result);
+      
+      return NextResponse.json(
+        { 
+          success: true, 
+          message: 'Email sent successfully to your Gmail inbox' 
+        },
+        { status: 200 }
+      );
+    } catch (nodemailerError) {
+      console.error('[v0] Nodemailer error:', nodemailerError);
+      throw nodemailerError;
+    }
 
   } catch (error) {
-    console.error('Email sending error:', error);
+    console.error('[v0] API error:', error);
     const errorMessage = error instanceof Error ? error.message : 'Unknown error';
+    console.error('[v0] Error details:', {
+      message: errorMessage,
+      error: JSON.stringify(error, null, 2)
+    });
+    
     return NextResponse.json(
       { 
         success: false, 
