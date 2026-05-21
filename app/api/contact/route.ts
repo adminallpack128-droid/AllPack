@@ -1,7 +1,7 @@
 import { NextResponse } from "next/server";
 import { Resend } from "resend";
 
-const resend = new Resend(process.env.EMAIL_PASS);
+const resend = new Resend(process.env.RESEND_API_KEY);
 
 export async function POST(req: Request) {
   try {
@@ -15,11 +15,29 @@ export async function POST(req: Request) {
       submittedAt,
     } = body;
 
-    console.log("API KEY EXISTS:", !!process.env.EMAIL_PASS,process.env.EMAIL_USER);
-    const sendEmail =  process.env.EMAIL_USER || "";
+    // Validate that we have the required environment variables
+    if (!process.env.RESEND_API_KEY) {
+      console.error("RESEND_API_KEY is not set");
+      return NextResponse.json(
+        { success: false, message: "Email service is not configured" },
+        { status: 500 }
+      );
+    }
+
+    if (!process.env.EMAIL_FROM_ADDRESS) {
+      console.error("EMAIL_FROM_ADDRESS is not set");
+      return NextResponse.json(
+        { success: false, message: "Email sender address is not configured" },
+        { status: 500 }
+      );
+    }
+
+    const recipientEmail = process.env.EMAIL_FROM_ADDRESS;
+    const fromEmail = process.env.EMAIL_FROM_ADDRESS;
+
     const { data, error } = await resend.emails.send({
-      from: "onboarding@resend.dev", // ✅ use this for testing
-      to: sendEmail,    // 👈 put your email here
+      from: fromEmail,
+      to: recipientEmail,
       subject: "New Quote Request - AllPack Pro",
       html: `
         <h2>New Quote Request</h2>
