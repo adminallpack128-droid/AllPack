@@ -30,7 +30,7 @@ export default function Topnav() {
     null,
   );
   const timeoutRef = useRef<NodeJS.Timeout | null>(null);
-  const whatsAppPhoneNumber = "918975040173"; // include country code, no +
+  const whatsAppPhoneNumber = "918805519081"; // include country code, no +
   const whatsAppMessage =
     "Hello, I would like to get a quote for your packaging products.";
 
@@ -269,7 +269,7 @@ export default function Topnav() {
             <div className="flex items-center space-x-2">
               <Link href="/">
                 <Image
-                  src="/AllPackLogo.jpg"
+                  src="/allpacklogo.png"
                   alt="logo"
                   height={100}
                   width={100}

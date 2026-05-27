@@ -24,11 +24,11 @@ export default function ContactPage() {
               <div className="space-y-4">
                 <div className="flex items-center space-x-3">
                   <FaEnvelope className="h-5 w-5 text-orange-400" />
-                  <span>illusiondesign128@gmail.com</span>
+                  <span>allpack956@gmail.com</span>
                 </div>
                 <div className="flex items-center space-x-3">
                   <FaPhone className="h-5 w-5 text-orange-400" />
-                  <span>+91 89750 40173</span>
+                  <span>+91 88055 19081</span>
                 </div>
                 <div className="flex items-center space-x-3">
                   <FaMapPin className="h-5 w-5 text-orange-400" />

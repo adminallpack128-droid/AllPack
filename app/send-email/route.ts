@@ -21,7 +21,7 @@ export async function POST(req: NextRequest) {
 
     const { error } = await resend.emails.send({
       from: 'Contact Form <no-reply@yourdomain.com>',
-      to: ['illusiondesign128@gmail.com'], // Change to your target email
+      to: ['allpack956@gmail.com'], // Change to your target email
       subject: 'New Contact Form Submission',
       text: message,
     });
