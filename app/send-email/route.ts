@@ -27,9 +27,9 @@ export async function POST(req: Request) {
     console.log("[v0] Sending email to:", process.env.ADMIN_EMAIL);
     
     const { data, error } = await resend.emails.send({
-      from: "onboarding@resend.dev", // ✅ Resend verified sender
-      to: process.env.ADMIN_EMAIL || "adminallpack128@gmail.com",
-      subject: "New Quote Request - AllPack Pro",
+      from: 'onboarding@resend.dev', // ✅ Resend verified sender
+      to: 'illusiondesign128@gmail.com', // Resend test mode - must use account owner's email
+      subject: 'New Quote Request - AllPack Pro',
       html: `
         <h2>New Quote Request</h2>
         <p><strong>Name:</strong> ${firstName}</p>
