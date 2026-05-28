@@ -29,11 +29,7 @@ export default function QuoteDialog({
     setIsSubmitting(true);
     setSubmitStatus("idle");
     // const resend = new Resend(process.env.EMAIL_PASS);
-    console.log(
-      "Resend API Key Exists:",
-      !!process.env.EMAIL_PASS,
-      process.env.EMAIL_USER,
-    );
+    
     try {
       // Transform data for API
       const apiData = {
@@ -52,7 +48,7 @@ Customer requested a quote and provided their mobile number for quick contact.`,
 
       console.log("API data being sent:", apiData);
 
-      const response = await fetch("/api/contact", {
+      const response = await fetch("/api/emailcontact", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

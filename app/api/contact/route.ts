@@ -1,50 +1,117 @@
-import { NextRequest, NextResponse } from 'next/server';
-import { Resend } from 'resend';
+import { NextResponse } from "next/server";
+import nodemailer from "nodemailer";
 
-const resend = new Resend(process.env.RESEND_API_KEY);
-
-export async function POST(req: NextRequest) {
+export async function POST(req: Request) {
   try {
-    // Validate API key
-    if (!process.env.RESEND_API_KEY) {
-      console.error('[v0] RESEND_API_KEY is not set');
-      return NextResponse.json(
-        { success: false, message: 'Email service not configured' },
-        { status: 500 }
-      );
-    }
+    // Get frontend data
+    const body = await req.json();
 
-    const data = await req.json();
+    console.log("BODY:", body);
 
-    console.log('[v0] Received contact form submission from:', data.email);
-
-    const message = `
-      New Contact Inquiry:
-
-      Name: ${data.firstName} ${data.lastName}
-      Email: ${data.email}
-      Company: ${data.company}
-
-      Project Details:
-      ${data.projectDetails}
-    `;
-
-    const { error } = await resend.emails.send({
-      from: 'onboarding@resend.dev',
-      to: 'adminallpack128@gmail.com',
-      subject: 'New Contact Form Submission - AllPack',
-      text: message,
+    // SMTP transporter
+    const transporter = nodemailer.createTransport({
+      host: "smtp.gmail.com",
+      port: 465,
+      secure: true,
+      auth: {
+        user: process.env.EMAIL_USER,
+        pass: process.env.EMAIL_PASS,
+      },
     });
 
-    if (error) {
-      console.error('[v0] Email send error:', error);
-      return NextResponse.json({ success: false, message: 'Failed to send email' }, { status: 500 });
-    }
+    // Send email
+   const info = await transporter.sendMail({
+  from: `"AllPack Pro" <${process.env.EMAIL_USER}>`,
+  to: "adminallpack128@gmail.com",
+  subject: "📦 New Customer Requirement",
 
-    console.log('[v0] Contact email sent successfully to:', process.env.ADMIN_EMAIL);
-    return NextResponse.json({ success: true, message: 'Email sent successfully' });
-  } catch (err) {
-    console.error('[v0] Server error:', err);
-    return NextResponse.json({ success: false, message: 'Server error occurred' }, { status: 500 });
+  html: `
+    <div style="font-family: Arial, sans-serif; padding: 20px; color: #333;">
+      
+      <h1 style="color: #ea580c; margin-bottom: 20px;">
+        📦 New Inquiry Received
+      </h1>
+
+      <table 
+        style="
+          width: 100%;
+          border-collapse: collapse;
+          margin-bottom: 20px;
+        "
+      >
+        <tr>
+          <td style="padding: 10px; font-weight: bold; width: 180px;">
+            Customer Name:
+          </td>
+          <td style="padding: 10px;">
+            ${body.firstName} ${body.lastName}
+          </td>
+        </tr>
+
+        <tr>
+          <td style="padding: 10px; font-weight: bold;">
+            Email Address:
+          </td>
+          <td style="padding: 10px;">
+            ${body.email}
+          </td>
+        </tr>
+
+        <tr>
+          <td style="padding: 10px; font-weight: bold;">
+            Phone Number:
+          </td>
+          <td style="padding: 10px;">
+            ${body.projectDetails
+              .match(/Phone:\s(.+)/)?.[1] || "N/A"}
+          </td>
+        </tr>
+
+        <tr>
+          <td style="padding: 10px; font-weight: bold; vertical-align: top;">
+            Requirement:
+          </td>
+
+          <td style="
+            padding: 10px;
+            background: #f9f9f9;
+            border-radius: 8px;
+            line-height: 1.7;
+            white-space: pre-wrap;
+          ">
+            ${
+              body.projectDetails
+                .split("Requirement Details:\n")[1] || "N/A"
+            }
+          </td>
+        </tr>
+      </table>
+
+      <hr style="margin: 25px 0;" />
+
+      <p style="color: #666; font-size: 14px;">
+        Submitted At:
+        ${new Date(body.submittedAt).toLocaleString()}
+      </p>
+
+    </div>
+  `,
+});
+
+    console.log("EMAIL SENT:", info.messageId);
+
+    return NextResponse.json({
+      success: true,
+    });
+  } catch (error) {
+    console.error("EMAIL ERROR:", error);
+
+    return NextResponse.json(
+      {
+        success: false,
+        error: "Failed to send email",
+      },
+      { status: 500 }
+    );
   }
 }
