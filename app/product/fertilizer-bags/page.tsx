@@ -82,7 +82,7 @@ export default function PlainPPFertilizerBagPage() {
                 <FaPhone className="h-4 w-4 mr-2" />
                 Call +91 88055 19081
                 <span className="text-xs text-gray-500 ml-2">
-                  68% Response Rate
+                  75% Response Rate
                 </span>
               </Button>
               <QuoteButtonWithDialog className="bg-gradient-to-r from-red-500 to-red-600 hover:from-red-600 hover:to-red-700 text-white">

@@ -260,7 +260,7 @@ export default function Component() {
                 <p className="hidden lg:flex text-xl text-black justify-center text-center ">
                   Premium Printed Bags, Available Instantly.
                 </p>
-                <div className="hidden lg:flex lg:flex-row gap-3 justify-center">
+                {/* <div className="hidden lg:flex lg:flex-row gap-3 justify-center">
                   <Button
                     type="submit"
                     className="bg-gradient-to-r from-orange-500 to-orange-600 hover:from-orange-400 text-white py-4 px-5 rounded-lg text-md shadow-lg hover:shadow-xl transition-all duration-300"
@@ -277,7 +277,7 @@ export default function Component() {
                       <span>Get Quote</span>
                     </div>
                   </Button>
-                </div>
+                </div> */}
               </div>
             </div>
           </div>

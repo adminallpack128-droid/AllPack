@@ -92,7 +92,7 @@ export default function ProductsPage() {
               <QuoteButtonWithDialog className="text-lg cursor-pointer rounded-lg bg-gradient-to-r border-1 border-gray-200 hover:bg-gray-50 text-black">
                 📞 Call +91 88055 19081
                 <span className="text-sm text-gray-500 ml-2">
-                  68% Response Rate
+                  75% Response Rate
                 </span>
               </QuoteButtonWithDialog>
 

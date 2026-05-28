@@ -24,7 +24,7 @@ export default function ContactPage() {
               <div className="space-y-4">
                 <div className="flex items-center space-x-3">
                   <FaEnvelope className="h-5 w-5 text-orange-400" />
-                  <span>allpack956@gmail.com</span>
+                  <span>adminallpack128@gmail.com</span>
                 </div>
                 <div className="flex items-center space-x-3">
                   <FaPhone className="h-5 w-5 text-orange-400" />
