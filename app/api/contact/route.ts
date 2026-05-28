@@ -1,52 +1,50 @@
-import { NextResponse } from "next/server";
-import { Resend } from "resend";
+import { NextRequest, NextResponse } from 'next/server';
+import { Resend } from 'resend';
 
-const resend = new Resend(process.env.EMAIL_PASS);
+const resend = new Resend(process.env.RESEND_API_KEY);
 
-export async function POST(req: Request) {
+export async function POST(req: NextRequest) {
   try {
-    const body = await req.json();
-
-    const {
-      firstName,
-      email,
-      company,
-      projectDetails,
-      submittedAt,
-    } = body;
-
-    console.log("API KEY EXISTS:", !!process.env.EMAIL_PASS,process.env.EMAIL_USER);
-    const sendEmail =  process.env.EMAIL_USER || "";
-    const { data, error } = await resend.emails.send({
-      from: "onboarding@resend.dev", // ✅ use this for testing
-      to: sendEmail,    // 👈 put your email here
-      subject: "New Quote Request - AllPack Pro",
-      html: `
-        <h2>New Quote Request</h2>
-        <p><strong>Name:</strong> ${firstName}</p>
-        <p><strong>Email:</strong> ${email}</p>
-        <p><strong>Company:</strong> ${company}</p>
-        <p><strong>Details:</strong></p>
-        <pre>${projectDetails}</pre>
-        <p><strong>Submitted At:</strong> ${submittedAt}</p>
-      `,
-    });
-
-    if (error) {
-      console.error("Resend Error:", error);
+    // Validate API key
+    if (!process.env.RESEND_API_KEY) {
+      console.error('[v0] RESEND_API_KEY is not set');
       return NextResponse.json(
-        { success: false, message: "Email sending failed", error },
+        { success: false, message: 'Email service not configured' },
         { status: 500 }
       );
     }
 
-    return NextResponse.json({ success: true, data });
+    const data = await req.json();
 
-  } catch (error) {
-    console.error("Server Error:", error);
-    return NextResponse.json(
-      { success: false, message: "Server error" },
-      { status: 500 }
-    );
+    console.log('[v0] Received contact form submission from:', data.email);
+
+    const message = `
+      New Contact Inquiry:
+
+      Name: ${data.firstName} ${data.lastName}
+      Email: ${data.email}
+      Company: ${data.company}
+
+      Project Details:
+      ${data.projectDetails}
+    `;
+
+    const { error } = await resend.emails.send({
+      from: 'onboarding@resend.dev',
+      to: 'adminallpack128@gmail.com',
+      subject: 'New Contact Form Submission - AllPack',
+      text: message,
+    });
+
+    if (error) {
+      console.error('[v0] Email send error:', error);
+      return NextResponse.json({ success: false, message: 'Failed to send email' }, { status: 500 });
+    }
+
+    console.log('[v0] Contact email sent successfully to:', process.env.ADMIN_EMAIL);
+    return NextResponse.json({ success: true, message: 'Email sent successfully' });
+  } catch (err) {
+    console.error('[v0] Server error:', err);
+    return NextResponse.json({ success: false, message: 'Server error occurred' }, { status: 500 });
   }
 }
