@@ -31,7 +31,7 @@ export async function POST(req: NextRequest) {
 
     const { error } = await resend.emails.send({
       from: 'onboarding@resend.dev',
-      to: 'illusiondesign128@gmail.com', // Resend test mode - must use account owner's email
+      to: 'adminallpack128@gmail.com',
       subject: 'New Contact Form Submission - AllPack',
       text: message,
     });

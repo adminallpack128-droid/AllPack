@@ -28,7 +28,7 @@ export async function POST(req: Request) {
     
     const { data, error } = await resend.emails.send({
       from: 'onboarding@resend.dev', // ✅ Resend verified sender
-      to: 'illusiondesign128@gmail.com', // Resend test mode - must use account owner's email
+      to: 'adminallpack128@gmail.com',
       subject: 'New Quote Request - AllPack Pro',
       html: `
         <h2>New Quote Request</h2>
