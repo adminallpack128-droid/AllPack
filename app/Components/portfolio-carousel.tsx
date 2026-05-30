@@ -185,7 +185,7 @@ export default function ProductSlides() {
                 selectedColors[product.id];
 
               return (
-                <div key={product.id} className="flex-shrink-0 w-full md:w-1/2 lg:w-1/3 lg:max-w-[calc(33.333%-20px)]">
+                <div key={product.id} className="flex-shrink-0 w-full md:w-1/2 lg:flex-[0_0_calc(33.333%-5px)]">
                   <Card className="overflow-hidden rounded-2xl border border-gray-200 shadow-md hover:shadow-xl transition-all duration-300 bg-white h-full">
               {/* Product Image */}
               {/* Product Image */}
