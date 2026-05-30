@@ -75,8 +75,8 @@ const products = [
     colors: [
       {
         name: "green",
-        code: "#22C55E",
-        image: "/images/green5kgcopys.png",
+        code: "#D90445",
+        image: "/images/red25kg.png",
       },
       { 
         name: "orange",
