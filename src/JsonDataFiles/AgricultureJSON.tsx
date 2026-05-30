@@ -42,7 +42,7 @@ const agricultureBags = [
       { label: "Storage Capacity", value: "50 Kg" }, 
       { label: "Material", value: "Polypropylene" },
       { label: "Shape", value: "Rectangular" },
-      { label: "Brand", value: "AllPack Packaging" },
+      { label: "Brand", value: "Allpack Packaging" },
       { label: "Usage/Application", value: "Packaging" },
       { label: "Color", value: "White" },
     ], 

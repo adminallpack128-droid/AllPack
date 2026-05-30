@@ -41,7 +41,7 @@ const feedBags = [
       { label: "Storage Capacity", value: "25 Kg" }, 
       { label: "Material", value: "PP" },
       { label: "Pattern", value: "Printed" },
-      { label: "Brand", value: "AllPack Packaging" },
+      { label: "Brand", value: "Allpack Packaging" },
       { label: "Usage/Application", value: "Packaging" },
       { label: "Width", value: "27 Inch" },
     ], 

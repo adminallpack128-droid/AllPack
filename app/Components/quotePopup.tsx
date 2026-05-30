@@ -4,9 +4,10 @@ import type React from "react";
 import { useState } from "react";
 import { Button } from "./Ui/button";
 import { Input } from "./Ui/input";
-import { FaBox } from "react-icons/fa";
 import { Dialog, DialogContent, DialogTrigger } from "./Ui/dialog";
 // import { Resend } from "resend"
+import Image from "next/image";
+import Link from "next/link";
 
 interface SimpleQuoteDialogProps {
   children: React.ReactNode;
@@ -89,13 +90,21 @@ Customer requested a quote and provided their mobile number for quick contact.`,
       <DialogContent className="sm:max-w-2xl h-[400px] bg-white p-0 gap-0 rounded-lg overflow-hidden">
         <div className="flex">
           {/* Left Side - Logo */}
-          <div className="w-32 bg-gradient-to-br from-orange-500 to-orange-600 flex flex-col items-center justify-center p-6">
-            <div className="w-16 h-16 bg-white rounded-lg flex items-center justify-center mb-3">
+          <div className="w-32 bg-gradient-to-br from-orange-500 to-orange-600 flex flex-col items-center justify-center">
+            {/* <div className="w-16 h-16 bg-white rounded-lg flex items-center justify-center mb-3">
               <FaBox className="h-8 w-8 text-orange-600" />
-            </div>
-            <div className="text-center">
-              <h3 className="text-white font-bold text-sm">AllPack Pro</h3>
-            </div>
+            </div> */}
+            <Link href="/">
+                    <Image
+                      src="/AllPackLogo.jpg"
+                      alt="logo"
+                      height={200}
+                      width={200}
+                      priority
+                      className="h-full w-full object-cover hover:opacity-75 transition-transform duration-500 group-hover:scale-110 cursor-pointer"
+                    />
+                  </Link>
+           
           </div>
 
           {/* Right Side - Form */}
@@ -103,7 +112,7 @@ Customer requested a quote and provided their mobile number for quick contact.`,
             <div className="mb-6">
               <h2 className="text-lg font-semibold text-gray-900 mb-2">
                 Connect with{" "}
-                <span className="text-orange-600">&quot;AllPack&quot;</span>{" "}
+                <span className="text-orange-600">&quot;Allpack&quot;</span>{" "}
                 receive details on your mobile. We&apos;ll respond to you
                 shortly!
               </h2>
@@ -195,7 +204,7 @@ Customer requested a quote and provided their mobile number for quick contact.`,
               <div className="mt-4 text-center">
                 <p className="text-xs text-gray-500">
                   By submitting, you agree to receive calls/messages from
-                  AllPack 
+                  Allpack 
                 </p>
               </div>
             )}

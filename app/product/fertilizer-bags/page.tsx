@@ -1,15 +1,21 @@
-
-import { Button } from '../../Components/Ui/button';
-import { Badge } from '../../Components/Ui/badge';
+import { Button } from "../../Components/Ui/button";
+import { Badge } from "../../Components/Ui/badge";
 import fertilizerBags from "@/JsonDataFiles/FertilizerBagJSON";
 import { Card, CardContent } from "../../Components/Ui/card";
-import { FaSearch, FaPhone, FaEnvelope, FaStar, FaBox, FaTruck, FaShieldAlt, FaAward, FaCheckCircle } from 'react-icons/fa';
+import {
+  FaSearch,
+  FaStar,
+  FaBox,
+  FaTruck,
+  FaShieldAlt,
+  FaAward,
+  FaCheckCircle,
+} from "react-icons/fa";
 import Link from "next/link";
 import QuoteButtonWithDialog from "../../Components/getQuotePopup";
 import BagImageGallery from "../../Components/imageCarousal";
 
-export default function PlainPPFertilizerBagPage() { 
-
+export default function PlainPPFertilizerBagPage() {
   const features = [
     "High-strength woven polypropylene construction",
     "Cost-effective solution for bulk packaging",
@@ -37,66 +43,19 @@ export default function PlainPPFertilizerBagPage() {
       title: "Easy Transport",
       desc: "Lightweight and stackable design",
     },
-    { icon: FaAward, title: "Quality Material", desc: "Premium PP woven fabric" },
+    {
+      icon: FaAward,
+      title: "Quality Material",
+      desc: "Premium PP woven fabric",
+    },
   ];
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-orange-50 via-orange-25 to-amber-50">
-      {/* Header Section */}
-      <section className="bg-white border-b"> 
-        <div className="container mx-auto px-4 lg:px-[5rem] py-8">
-          <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-6">
-            {/* Company Info */}
-            <div className="flex items-center space-x-4">
-              <div className="w-16 h-16 bg-gradient-to-r from-orange-500 to-orange-600 rounded-lg flex items-center justify-center">
-                <span className="text-white font-bold text-xl">AP</span>
-              </div>
-              <div>
-                <h1 className="text-2xl font-bold text-gray-900">
-                  AllPack 
-                </h1>
-                <p className="text-gray-600">Pune, Maharashtra</p>
-                <div className="flex items-center space-x-4 mt-1">
-                  <Badge
-                    variant="secondary"
-                    className="bg-green-100 text-green-700"
-                  >
-                    ✓ GST Verified
-                  </Badge>
-                  <Badge
-                    variant="secondary"
-                    className="bg-orange-100 text-orange-700"
-                  >
-                    ⭐ TrustSEAL Verified
-                  </Badge>
-                </div>
-              </div>
-            </div>
-
-            {/* Contact Buttons */}
-            <div className="flex flex-col sm:flex-row gap-3">
-              <Button
-                variant="outline"
-                className="border-gray-800 text-gray-800 hover:bg-gray-50"
-              >
-                <FaPhone className="h-4 w-4 mr-2" />
-                Call +91 88055 19081
-                <span className="text-xs text-gray-500 ml-2">
-                  75% Response Rate
-                </span>
-              </Button>
-              <QuoteButtonWithDialog className="bg-gradient-to-r from-red-500 to-red-600 hover:from-red-600 hover:to-red-700 text-white">
-                <FaEnvelope className="h-4 w-4 mr-2" />
-                SEND EMAIL
-              </QuoteButtonWithDialog>
-            </div>
-          </div>
-        </div>
-      </section>
-
       {/* Navigation */}
       <section className="bg-white border-b">
         <div className="container mx-auto px-4 lg:px-[5rem] py-4">
+          {/* Top Row */}
           <div className="flex items-center justify-between">
             <nav className="text-sm text-gray-600 flex items-center">
               <Link href="/" className="hover:text-orange-600">
@@ -123,6 +82,20 @@ export default function PlainPPFertilizerBagPage() {
                 className="pl-10 pr-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-500 focus:border-orange-500 w-64"
               />
             </div>
+          </div>
+
+          {/* GST & TrustSEAL Row */}
+          <div className="flex items-center space-x-4 mt-4">
+            <Badge variant="secondary" className="bg-green-100 text-green-700">
+              ✓ GST Verified
+            </Badge>
+
+            <Badge
+              variant="secondary"
+              className="bg-orange-100 text-orange-700"
+            >
+              ⭐ TrustSEAL Verified
+            </Badge>
           </div>
         </div>
       </section>
@@ -167,7 +140,7 @@ export default function PlainPPFertilizerBagPage() {
                 </span>{" "}
                 from{" "}
                 <span className="font-semibold text-gray-900">
-                  Indore, India
+                  Pune, Maharashtra, India
                 </span>
                 .
               </p>
@@ -183,11 +156,11 @@ export default function PlainPPFertilizerBagPage() {
             {fertilizerBags.map((bag) => (
               <div
                 className="scroll-mt-20 grid lg:grid-cols-2 gap-0 rounded-2xl shadow-xl bg-gray-100 my-4"
-                key={bag.id} 
-                id={bag.id} 
+                key={bag.id}
+                id={bag.id}
               >
                 {/* Left Side - Product Images */}
-                <div className="px-6 space-y-4 mt-3" >
+                <div className="px-6 space-y-4 mt-3 py-6">
                   <h1 className="text-3xl font-bold text-red-600 mb-2">
                     {bag.title}
                   </h1>
@@ -197,7 +170,7 @@ export default function PlainPPFertilizerBagPage() {
                 </div>
 
                 {/* Right Side - Product Info with Scrollable Content */}
-                <div className="border-l border-gray-200 flex flex-col h-[800px]">
+                <div className="border-l border-gray-200 flex flex-col h-[600px]">
                   {/* Fixed Header Section */}
                   <div className="px-8 pt-4 border-b border-gray-200 bg-white">
                     <div>
@@ -209,9 +182,9 @@ export default function PlainPPFertilizerBagPage() {
                               className="h-5 w-5 text-yellow-400 fill-current"
                             />
                           ))}
-                          <span className="ml-2 text-gray-600">
+                          {/* <span className="ml-2 text-gray-600">
                             ({bag.rating}/5 - {bag.reviews} reviews)
-                          </span>
+                          </span> */}
                         </div>
                       </div>
                       <div className="flex items-center space-x-4 mb-6">
@@ -219,17 +192,15 @@ export default function PlainPPFertilizerBagPage() {
                           {bag.price}
                         </span>
                         <span className="text-gray-600">/ Piece</span>
-                        <Button
+                        {/* <Button
                           variant="outline"
                           size="sm"
                           className="border-red-500 text-red-600 hover:bg-red-50"
                         >
                           Get Latest Price
-                        </Button>
-                        <QuoteButtonWithDialog className="flex-1">
-                          <Button className="w-full bg-gradient-to-r from-orange-500 to-orange-600 hover:from-orange-600 hover:to-orange-700 text-white font-semibold py-3">
-                            Get Best Quote
-                          </Button>
+                        </Button> */}
+                        <QuoteButtonWithDialog className="rounded-lg bg-gradient-to-r from-orange-500 to-orange-600 text-white">
+                          Get Quote
                         </QuoteButtonWithDialog>
                       </div>
                     </div>
@@ -275,7 +246,7 @@ export default function PlainPPFertilizerBagPage() {
                     </Card>
 
                     {bag.id == "50kgFertilizerBag" ? (
-                      <div >
+                      <div>
                         <section className="max-w-4xl mx-auto px-4 ">
                           <p className="text-lg mb-6">
                             PP (Polypropylene) fertilizer bags are widely used
@@ -1674,7 +1645,7 @@ export default function PlainPPFertilizerBagPage() {
         <div className="container mx-auto px-4 lg:px-[5rem]">
           <div className="text-center mb-12">
             <h2 className="text-3xl font-bold text-gray-900 mb-4">
-              Why Choose AllPack for Fertilizer Bags?
+              Why Choose Allpack for Fertilizer Bags?
             </h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
               Leading manufacturer of high-quality fertilizer packaging

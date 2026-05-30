@@ -59,7 +59,7 @@
 
 'use client';
 
-import { useState } from 'react';
+// import { useState } from 'react';
 import Image from 'next/image';
 
 type BagImageGalleryProps = {
@@ -69,17 +69,17 @@ type BagImageGalleryProps = {
 };
 
 const BagImageGallery = ({ bag }: BagImageGalleryProps) => {
-  const [selectedImage, setSelectedImage] = useState<string>(
-    bag?.images?.[0] || bag?.images?.[1]
-  );
+  // const [selectedImage, setSelectedImage] = useState<string>(
+  //   bag?.images?.[0] || bag?.images?.[1]
+  // );
 
   return (
     <div>
       {/* Main Image Display */}
    <div className="relative aspect-[4/3] sm:aspect-square bg-gray-100 rounded-lg overflow-hidden flex justify-center items-center">
-  {selectedImage && (
+  {bag.images?.[0] && (
     <Image
-      src={`/${selectedImage}.webp`}
+      src={`/${bag.images[0]}`}
       alt="Selected Bag Image"
       width={500}
       height={300}
@@ -90,7 +90,7 @@ const BagImageGallery = ({ bag }: BagImageGalleryProps) => {
 </div>
 
       {/* Thumbnails */}
-      <div className="grid grid-cols-4 gap-2 mt-4">
+      {/* <div className="grid grid-cols-4 gap-2 mt-4">
         {bag.images?.map((img, index) => (
           <div
             key={index}
@@ -103,15 +103,15 @@ const BagImageGallery = ({ bag }: BagImageGalleryProps) => {
           >
             {img && (
               <Image
-                src={`/${img}.webp`}
-                alt={`${img}.webp ${index + 1}`}
+                src={`/${img}`}
+                alt={`${img} ${index + 1}`}
                 fill
                 className="object-cover"
               />
             )}
           </div>
         ))}
-      </div>
+      </div> */}
     </div>
   );
 };
