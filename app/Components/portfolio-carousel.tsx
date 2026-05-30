@@ -179,13 +179,13 @@ export default function ProductSlides() {
     <div className="w-full px-4 md:px-6">
       <div className="relative -mx-4 md:-mx-6">
         <div className="overflow-hidden" ref={emblaRef}>
-          <div className="flex gap-4 md:gap-6 px-4 md:px-6">
+          <div className="flex gap-3 md:gap-4 px-4 md:px-6">
             {products.map((product) => {
               const selectedColorIndex =
                 selectedColors[product.id];
 
               return (
-                <div key={product.id} className="flex-shrink-0 w-full md:w-1/2 lg:w-1/3">
+                <div key={product.id} className="flex-shrink-0 w-full md:w-1/2 lg:w-1/3 lg:max-w-[calc(33.333%-20px)]">
                   <Card className="overflow-hidden rounded-2xl border border-gray-200 shadow-md hover:shadow-xl transition-all duration-300 bg-white h-full">
               {/* Product Image */}
               {/* Product Image */}
