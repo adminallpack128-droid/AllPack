@@ -19,7 +19,7 @@ const feedBags = [
       { label: "Material", value: "LDPE" },
       { label: "Usage/Application", value: "Packaging" },
       { label: "Color", value: "White"}, 
-      { label: "Brand", value: "Allpack Creation" },
+      { label: "Brand", value: "All Pack Creation" },
 
     ], 
   },
@@ -65,7 +65,7 @@ const feedBags = [
       { label: "Color", value: "Yellow" },
       { label: "Material", value: "PP" },
       { label: "Usage/Applications", value: " Packaging" },
-      { label: "Brand", value: "Allpack Creation" }, 
+      { label: "Brand", value: "All Pack Creation" }, 
     ],
   },
   {
@@ -85,7 +85,7 @@ const feedBags = [
       { label: "Material", value: "HDPE" },
       { label: "Usage/Applications", value: " Packaging" },
       { label: "Pattern", value: "Plain" },
-      { label: "Brand", value: "Allpack Creation" }, 
+      { label: "Brand", value: "All Pack Creation" }, 
     ],
   }, 
 ];

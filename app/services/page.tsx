@@ -118,7 +118,7 @@ export default function Service() {
     {
       icon: FaShieldAlt,
       title: "Regulatory Compliance",
-      description: "Ensuring Allpackaging meets industry standards and regulatory requirements.",
+      description: "Ensuring all packaging meets industry standards and regulatory requirements.",
       features: ["Safety Standards", "Labeling Requirements", "Environmental Compliance", "Quality Assurance"],
     },
     {
@@ -170,7 +170,7 @@ export default function Service() {
             <div className="mb-8">
               <h3 className="text-2xl lg:text-3xl font-bold text-blue-600 mb-4">Fertilizer Bags</h3>
               <p className="text-gray-600 mb-2">
-                We are a leading provider of Printed Fertilizer Bag, Plain PP Fertilizer Bag, Dap Fertilizer Bag,
+                We are a leading Manufacturer of Printed Fertilizer Bag, Plain PP Fertilizer Bag, Dap Fertilizer Bag,
                 White Fertilizer Packaging Bag and 25Kg Fertilizer Bag from Indore, India.
               </p>
             </div>
@@ -238,7 +238,7 @@ export default function Service() {
             <div className="mb-8">
               <h3 className="text-2xl lg:text-3xl font-bold text-blue-600 mb-4">Agricultural Bags</h3>
               <p className="text-gray-600 mb-2">
-                Prominent & Leading provider from Indore, we offer Agricultural Packaging Bag, 25 Kg Agricultural
+                Prominent & Leading Manufacturer from Indore, we offer Agricultural Packaging Bag, 25 Kg Agricultural
                 Bag and 1 kg fertilizer Packaging Pouch.
               </p>
             </div>
@@ -272,7 +272,7 @@ export default function Service() {
             <div className="mb-8">
               <h3 className="text-2xl lg:text-3xl font-bold text-blue-600 mb-4">PP Bags</h3>
               <p className="text-gray-600 mb-2">
-                Prominent & Leading provider from Indore, we offer 25kg NPK fertilizer Bag and PP Woven Bag.
+                Prominent & Leading Manufacturer from Indore, we offer 25kg NPK fertilizer Bag and PP Woven Bag.
               </p>
             </div>
 
