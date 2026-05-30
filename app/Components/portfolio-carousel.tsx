@@ -4,13 +4,11 @@ import { useState, useEffect } from "react";
 import Image from "next/image";
 import { Card } from "./Ui/card";
 import useEmblaCarousel from "embla-carousel-react";
-import Link from "next/link";
 
 const products = [
   {
     id: 1,
     name: "5Kg Fertilizer Bags",
-    href: "/product/fertilizer-bags#5kgFertilizerBag", 
     size: "5Kg",
     price: 21,
     originalPrice: 23,
@@ -41,7 +39,6 @@ const products = [
   {
     id: 2,
     name: "10Kg Fertilizer Bags",
-    href: "/product/fertilizer-bags#10kgFertilizerBag",
     size: "10Kg",
     price: 24,
     originalPrice: 26,
@@ -73,7 +70,6 @@ const products = [
     id: 3,
     name: "25Kg Fertilizer Bags",
     size: "25Kg",
-      href: "/product/fertilizer-bags#25kgFertilizerBag",
     price: 34,
     originalPrice: 37,
     description: "Modern fertilizer bag with premium quality printing",
@@ -103,7 +99,6 @@ const products = [
     id: 4,
     name: "50Kg Fertilizer Bags",
     size: "50Kg",
-    href: "/product/fertilizer-bags#50kgFertilizerBag",
     price: 45,
     originalPrice: 50,
     description: "Heavy-duty fertilizer bag for bulk requirements",
@@ -112,17 +107,17 @@ const products = [
       {
         name: "green",
         code: "#22C55E",
-        image: "/images/green50kgcopy.jpeg",
+        image: "/images/green5kgcopys.png",
       },
       {
-        name: "yellow",
-        code: "#FACC15",
-        image: "/images/yellow50kgcopy.jpeg",
+        name: "blue",
+        code: "#3B82F6",
+        image: "/images/blue5kgcopys.png",
       },
       {
         name: "orange",
         code: "#F97316",
-        image: "/images/orange50kgcopy.jpeg",
+        image: "/images/orange5kgcopys.png",
       },
     ],
 
@@ -141,11 +136,16 @@ export default function ProductSlides() {
     4: 0,
   });
 
+  const [windowWidth, setWindowWidth] = useState(1024);
+
+  const isMobile = windowWidth < 768;
+  const isTablet = windowWidth >= 768 && windowWidth < 1024;
+
   const [emblaRef, emblaApi] = useEmblaCarousel({
     align: "start",
     loop: false,
     skipSnaps: false,
-    slidesToScroll: 3,
+    slidesToScroll: isMobile ? 1 : isTablet ? 2 : 3,
   });
 
   const [prevBtnDisabled, setPrevBtnDisabled] = useState(true);
@@ -153,6 +153,16 @@ export default function ProductSlides() {
 
   const scrollPrev = () => emblaApi?.scrollPrev();
   const scrollNext = () => emblaApi?.scrollNext();
+
+  useEffect(() => {
+    function handleResize() {
+      setWindowWidth(window.innerWidth);
+    }
+
+    handleResize(); // Set initial value
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
 
   useEffect(() => {
     if (!emblaApi) return;
@@ -281,11 +291,9 @@ export default function ProductSlides() {
                 </div>
 
                   {/* Button */}
-                  <Link href={product.href} className="w-full">
-                  <button  className="w-full bg-orange-500 hover:bg-orange-600 transition text-white py-3 rounded-lg font-medium">
+                  <button className="w-full bg-orange-500 hover:bg-orange-600 transition text-white py-3 rounded-lg font-medium">
                     View Details
                   </button>
-                  </Link>
                 </div>
               </Card>
                 </div>

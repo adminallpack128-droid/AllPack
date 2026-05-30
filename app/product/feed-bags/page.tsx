@@ -663,7 +663,7 @@ export default function FeedBagsPage() {
               Why Choose Allpack for Fertilizer Bags?
             </h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              Leading provider of high-quality fertilizer packaging
+              Leading manufacturer of high-quality fertilizer packaging
               solutions with years of expertise
             </p>
           </div>

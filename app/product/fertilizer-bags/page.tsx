@@ -1,29 +1,31 @@
-// import { Button } from "../../Components/Ui/button";
+import { Button } from "../../Components/Ui/button";
 import { Badge } from "../../Components/Ui/badge";
 import fertilizerBags from "@/JsonDataFiles/FertilizerBagJSON";
 import { Card, CardContent } from "../../Components/Ui/card";
-import { 
+import {
+  FaSearch,
   FaStar,
   FaBox,
   FaTruck,
   FaShieldAlt,
-  FaAward, 
+  FaAward,
+  FaCheckCircle,
 } from "react-icons/fa";
 import Link from "next/link";
 import QuoteButtonWithDialog from "../../Components/getQuotePopup";
 import BagImageGallery from "../../Components/imageCarousal";
 
 export default function PlainPPFertilizerBagPage() {
-  // const features = [
-  //   "High-strength woven polypropylene construction",
-  //   "Cost-effective solution for bulk packaging",
-  //   "Excellent tear and puncture resistance",
-  //   "Moisture-resistant properties",
-  //   "Lightweight yet durable design",
-  //   "Available in multiple sizes and capacities",
-  //   "Easy to handle and transport",
-  //   "Eco-friendly and recyclable material",
-  // ];
+  const features = [
+    "High-strength woven polypropylene construction",
+    "Cost-effective solution for bulk packaging",
+    "Excellent tear and puncture resistance",
+    "Moisture-resistant properties",
+    "Lightweight yet durable design",
+    "Available in multiple sizes and capacities",
+    "Easy to handle and transport",
+    "Eco-friendly and recyclable material",
+  ];
 
   const benefits = [
     {
@@ -71,7 +73,19 @@ export default function PlainPPFertilizerBagPage() {
                 Fertilizer Bags
               </Link>
             </nav>
-   <div className="flex items-center space-x-4">
+
+            <div className="relative hidden md:flex">
+              <FaSearch className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 h-4 w-4" />
+              <input
+                type="text"
+                placeholder="Search Products/Services"
+                className="pl-10 pr-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-500 focus:border-orange-500 w-64"
+              />
+            </div>
+          </div>
+
+          {/* GST & TrustSEAL Row */}
+          <div className="flex items-center space-x-4 mt-4">
             <Badge variant="secondary" className="bg-green-100 text-green-700">
               ✓ GST Verified
             </Badge>
@@ -82,16 +96,58 @@ export default function PlainPPFertilizerBagPage() {
             >
               ⭐ TrustSEAL Verified
             </Badge>
-          </div> 
-              <h2 className="text-2xl font-bold text-white bg-gradient-to-r from-orange-500 to-orange-600 inline-block px-6 py-2 rounded-lg shadow-lg">
-                Fertilizer Bags
-              </h2> 
           </div>
- 
         </div>
       </section>
 
-       
+      {/* Category Header Section - This is the blue section you're asking about */}
+      <section className="py-5 bg-gradient-to-br from-amber-50 via-orange-25 to-orange-50">
+        <div className="container mx-auto px-4 lg:px-[5rem]">
+          <div className="text-gray-800">
+            {/* Category Title */}
+            <div className="mb-4">
+              <h1 className="text-2xl font-bold text-white bg-gradient-to-r from-orange-500 to-orange-600 inline-block px-6 py-3 rounded-lg shadow-lg">
+                Fertilizer Bags
+              </h1>
+            </div>
+
+            {/* Category Description */}
+            <div className="bg-white bg-opacity-90 border border-orange-200 rounded-lg p-6 shadow-md">
+              <p className="text-lg leading-relaxed text-gray-700">
+                We are a leading Manufacturer of{" "}
+                <span className="font-semibold text-orange-600">
+                  printed fertilizer bag
+                </span>
+                ,{" "}
+                <span className="font-semibold text-orange-600">
+                  plain pp fertilizer bag
+                </span>
+                ,{" "}
+                <span className="font-semibold text-orange-600">
+                  dap fertilizer bag
+                </span>
+                ,{" "}
+                <span className="font-semibold text-orange-600">
+                  white fertilizer packaging bag
+                </span>
+                ,{" "}
+                <span className="font-semibold text-orange-600">
+                  25kg fertilizer bag
+                </span>{" "}
+                and{" "}
+                <span className="font-semibold text-orange-600">
+                  bopp fertilizer bag
+                </span>{" "}
+                from{" "}
+                <span className="font-semibold text-gray-900">
+                  Pune, Maharashtra, India
+                </span>
+                .
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
 
       {/* Product Details Section */}
       <section className="pb-16 ">
@@ -189,7 +245,84 @@ export default function PlainPPFertilizerBagPage() {
                       </CardContent>
                     </Card>
 
-               
+                    {bag.id == "50kgFertilizerBag" ? (
+                      <div>
+                        <section className="max-w-4xl mx-auto px-4 ">
+                          <p className="text-lg mb-6">
+                            PP (Polypropylene) fertilizer bags are widely used
+                            in the agricultural industry for packaging
+                            fertilizers and other related products. Here are
+                            some key aspects of PP fertilizer bags:
+                          </p>
+
+                          <div className="mb-6">
+                            <h2 className="text-2xl font-semibold mb-2">
+                              1. Material
+                            </h2>
+                            <ul className="list-disc list-inside space-y-2 text-gray-800">
+                              <li>
+                                Made from woven polypropylene (PP) fabric, which
+                                is durable, lightweight, and resistant to
+                                moisture.
+                              </li>
+                              <li>
+                                Polypropylene is a thermoplastic polymer known
+                                for its high tensile strength and ability to
+                                withstand rough handling.
+                              </li>
+                            </ul>
+                          </div>
+
+                          <div>
+                            <h2 className="text-2xl font-semibold mb-2">
+                              2. Features
+                            </h2>
+                            <ul className="list-disc list-inside space-y-2 text-gray-800">
+                              <li>
+                                <strong>Moisture resistance:</strong> Essential
+                                for protecting fertilizers from humidity and
+                                moisture during storage and transport.
+                              </li>
+                              <li>
+                                <strong>UV Protection:</strong> Many PP bags are
+                                treated to protect the contents from sunlight,
+                                especially for outdoor storage.
+                              </li>
+                              <li>
+                                <strong>Customizable:</strong> Available in
+                                various sizes and colors, with options for
+                                printing company logos, branding, product
+                                information, etc.
+                              </li>
+                              <li>
+                                <strong>Laminated or non-laminated:</strong>{" "}
+                                Lamination provides additional protection
+                                against moisture and improves the bag’s
+                                appearance.
+                              </li>
+                            </ul>
+                          </div>
+                        </section>
+                        <h2 className="text-xl font-bold text-gray-900 mb-4 mt-3">
+                          Product Features
+                        </h2>
+                        <div className="space-y-3">
+                          {features.map((feature, index) => (
+                            <div
+                              key={index}
+                              className="flex items-start space-x-3"
+                            >
+                              <FaCheckCircle className="h-5 w-5 text-green-500 mt-0.5 flex-shrink-0" />
+                              <span className="text-gray-700 text-sm">
+                                {feature}
+                              </span>
+                            </div>
+                          ))}
+                        </div>
+                      </div>
+                    ) : (
+                      ""
+                    )}
 
                     {bag.id == "printed-packaging" ? (
                       <>
@@ -288,7 +421,7 @@ export default function PlainPPFertilizerBagPage() {
                                   </li>
                                   <li>
                                     The size can be customized based on the
-                                    provider&apos;s requirements.
+                                    manufacturer&apos;s requirements.
                                   </li>
                                 </ul>
                               </div>
@@ -570,7 +703,85 @@ export default function PlainPPFertilizerBagPage() {
                       ""
                     )}
 
-                   
+                    {bag.id == "25kgFertilizerBag" ? (
+                      <section className="px-6 bg-gray-50 text-gray-800">
+                        <div className="max-w-6xl mx-auto">
+                          {/* Introduction */}
+                          <p className="text-lg mb-3">
+                            An organic fertilizer bag is designed specifically
+                            for packaging organic fertilizers, which are made
+                            from natural materials such as compost, manure, and
+                            plant residues. These bags are crucial for
+                            maintaining the quality and nutrient content of the
+                            organic fertilizer while ensuring ease of handling
+                            and transportation. Organic fertilizers are often
+                            used in environmentally conscious farming, and the
+                            packaging reflects this by offering eco-friendly and
+                            sustainable options.
+                          </p>
+
+                          {/* Types of Bags */}
+                          <h2 className="text-3xl font-semibold mb-4">
+                            Types of Organic Fertilizer Bags
+                          </h2>
+                          <div className="grid md:grid-cols-2 gap-8">
+                            {/* Woven PP Bags */}
+                            <div className="bg-white p-6 shadow rounded-lg border border-green-100">
+                              <h3 className="text-xl font-bold text-green-600 mb-3">
+                                Woven Polypropylene (PP) Bags
+                              </h3>
+                              <ul className="list-disc pl-5 space-y-2 text-gray-700">
+                                <li>
+                                  <strong>Material:</strong> Made from woven
+                                  polypropylene, offering strength and
+                                  durability.
+                                </li>
+                                <li>
+                                  <strong>Lamination:</strong> Often laminated
+                                  with BOPP (Biaxially Oriented Polypropylene)
+                                  film for moisture protection.
+                                </li>
+                                <li>
+                                  <strong>Capacity:</strong> Common sizes
+                                  include 5 kg, 10 kg, 25 kg, and 50 kg.
+                                </li>
+                                <li>
+                                  <strong>Customization:</strong> These bags can
+                                  be custom printed with branding, instructions,
+                                  and eco-friendly messages.
+                                </li>
+                              </ul>
+                            </div>
+
+                            {/* Kraft Paper Bags */}
+                            <div className="bg-white p-6 shadow rounded-lg border border-green-100">
+                              <h3 className="text-xl font-bold text-green-600 mb-3">
+                                Kraft Paper Bags
+                              </h3>
+                              <ul className="list-disc pl-5 space-y-2 text-gray-700">
+                                <li>
+                                  <strong>Material:</strong> Multi-layered kraft
+                                  paper with an inner PE (polyethylene) lining
+                                  to provide moisture resistance.
+                                </li>
+                                <li>
+                                  <strong>Eco-Friendly:</strong> Biodegradable
+                                  and recyclable, making them ideal for
+                                  environmentally conscious packaging.
+                                </li>
+                                <li>
+                                  <strong>Applications:</strong> Suitable for
+                                  small to medium-sized packaging of organic
+                                  fertilizers like compost, peat, and manure.
+                                </li>
+                              </ul>
+                            </div>
+                          </div>
+                        </div>
+                      </section>
+                    ) : (
+                      ""
+                    )}
 
                     {bag.id == "BOPPFertilizer" ? (
                       <section className="px-6 bg-white text-gray-800">
@@ -1379,7 +1590,7 @@ export default function PlainPPFertilizerBagPage() {
                               </li>
                               <li>
                                 Dimensions can vary slightly depending on
-                                provider specifications.
+                                manufacturer specifications.
                               </li>
                             </ul>
                           </li>
@@ -1437,13 +1648,13 @@ export default function PlainPPFertilizerBagPage() {
               Why Choose Allpack for Fertilizer Bags?
             </h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              Leading provider of high-quality fertilizer packaging
+              Leading manufacturer of high-quality fertilizer packaging
               solutions with years of expertise
             </p>
           </div>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {/* <div className="text-center">
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+            <div className="text-center">
               <div className="w-16 h-16 bg-gradient-to-r from-orange-500 to-orange-600 rounded-full flex items-center justify-center mx-auto mb-4">
                 <span className="text-white font-bold text-2xl">8+</span>
               </div>
@@ -1453,7 +1664,7 @@ export default function PlainPPFertilizerBagPage() {
               <p className="text-gray-600 text-sm">
                 Extensive experience in fertilizer packaging industry
               </p>
-            </div> */}
+            </div>
 
             <div className="text-center">
               <div className="w-16 h-16 bg-gradient-to-r from-orange-500 to-orange-600 rounded-full flex items-center justify-center mx-auto mb-4">
@@ -1494,14 +1705,14 @@ export default function PlainPPFertilizerBagPage() {
         </div>
       </section>
 
-      {/* Floating Request Callback Button
+      {/* Floating Request Callback Button */}
       <div className="fixed bottom-6 right-6 z-50">
         <QuoteButtonWithDialog>
           <Button className="bg-red-600 hover:bg-red-700 text-white font-bold py-3 px-6 rounded-lg shadow-lg hover:shadow-xl transition-all duration-300">
             Request Callback
           </Button>
         </QuoteButtonWithDialog>
-      </div> */}
+      </div>
     </div>
   );
 }

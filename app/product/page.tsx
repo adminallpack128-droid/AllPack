@@ -161,7 +161,7 @@ export default function ProductsPage() {
               Why Choose Allpack?
             </h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              Leading provider of high-quality packaging solutions with
+              Leading manufacturer of high-quality packaging solutions with
               years of expertise
             </p>
           </div>
