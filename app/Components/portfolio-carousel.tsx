@@ -1,8 +1,9 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Image from "next/image";
-import { Card } from "./Ui/card"; 
+import { Card } from "./Ui/card";
+import useEmblaCarousel from "embla-carousel-react";
 
 const products = [
   {
@@ -75,7 +76,7 @@ const products = [
 
     colors: [
       {
-        name: "green",
+        name: "red",
         code: "#D90445",
         image: "/images/red25kg.png",
       },
@@ -93,6 +94,35 @@ const products = [
 
     available: true,
   },
+
+  {
+    id: 4,
+    name: "50Kg Fertilizer Bags",
+    size: "50Kg",
+    price: 45,
+    originalPrice: 50,
+    description: "Heavy-duty fertilizer bag for bulk requirements",
+
+    colors: [
+      {
+        name: "green",
+        code: "#22C55E",
+        image: "/images/green5kgcopys.png",
+      },
+      {
+        name: "blue",
+        code: "#3B82F6",
+        image: "/images/blue5kgcopys.png",
+      },
+      {
+        name: "orange",
+        code: "#F97316",
+        image: "/images/orange5kgcopys.png",
+      },
+    ],
+
+    available: true,
+  },
 ];
 
 export default function ProductSlides() {
@@ -103,7 +133,36 @@ export default function ProductSlides() {
     1: 0, // default green
     2: 0,
     3: 0,
+    4: 0,
   });
+
+  const [emblaRef, emblaApi] = useEmblaCarousel({
+    align: "start",
+    loop: false,
+    skipSnaps: false,
+  });
+
+  const [prevBtnDisabled, setPrevBtnDisabled] = useState(true);
+  const [nextBtnDisabled, setNextBtnDisabled] = useState(false);
+
+  const scrollPrev = () => emblaApi?.scrollPrev();
+  const scrollNext = () => emblaApi?.scrollNext();
+
+  useEffect(() => {
+    if (!emblaApi) return;
+
+    const onSelect = () => {
+      setPrevBtnDisabled(!emblaApi.canScrollPrev());
+      setNextBtnDisabled(!emblaApi.canScrollNext());
+    };
+
+    emblaApi.on("select", onSelect);
+    onSelect();
+
+    return () => {
+      emblaApi.off("select", onSelect);
+    };
+  }, [emblaApi]);
 
   const handleColorChange = (
     productId: number,
@@ -117,20 +176,16 @@ export default function ProductSlides() {
 
   return (
     <div className="w-full">
-      {/* ONLY 3 STATIC SLIDES */}
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-        {products.map((product) => {
-          const selectedColorIndex =
-            selectedColors[product.id];
+      <div className="relative">
+        <div className="overflow-hidden" ref={emblaRef}>
+          <div className="flex gap-6">
+            {products.map((product) => {
+              const selectedColorIndex =
+                selectedColors[product.id];
 
-          // const selectedColor =
-          //   product.colors[selectedColorIndex];
-
-          return (
-            <Card
-              key={product.id}
-              className="overflow-hidden rounded-2xl border border-gray-200 shadow-md hover:shadow-xl transition-all duration-300 bg-white"
-            >
+              return (
+                <div key={product.id} className="flex-shrink-0 w-full md:w-1/2 lg:w-1/3 min-w-0">
+                  <Card className="overflow-hidden rounded-2xl border border-gray-200 shadow-md hover:shadow-xl transition-all duration-300 bg-white h-full">
               {/* Product Image */}
               {/* Product Image */}
 {/* Product Image */}
@@ -219,14 +274,40 @@ export default function ProductSlides() {
                   </div>
                 </div>
 
-                {/* Button */}
-                <button className="w-full bg-orange-500 hover:bg-orange-600 transition text-white py-3 rounded-lg font-medium">
-                  View Details
-                </button>
-              </div>
-            </Card>
-          );
-        })}
+                  {/* Button */}
+                  <button className="w-full bg-orange-500 hover:bg-orange-600 transition text-white py-3 rounded-lg font-medium">
+                    View Details
+                  </button>
+                </div>
+              </Card>
+                </div>
+              );
+            })}
+          </div>
+        </div>
+
+        {/* Carousel Navigation Buttons */}
+        <button
+          onClick={scrollPrev}
+          disabled={prevBtnDisabled}
+          className="absolute left-0 top-1/3 -translate-y-1/2 -translate-x-4 md:-translate-x-6 z-10 bg-white border border-gray-300 rounded-full p-2 hover:bg-gray-100 disabled:opacity-50 disabled:cursor-not-allowed transition-all"
+          aria-label="Previous slide"
+        >
+          <svg className="w-6 h-6 text-gray-700" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
+          </svg>
+        </button>
+
+        <button
+          onClick={scrollNext}
+          disabled={nextBtnDisabled}
+          className="absolute right-0 top-1/3 -translate-y-1/2 translate-x-4 md:translate-x-6 z-10 bg-white border border-gray-300 rounded-full p-2 hover:bg-gray-100 disabled:opacity-50 disabled:cursor-not-allowed transition-all"
+          aria-label="Next slide"
+        >
+          <svg className="w-6 h-6 text-gray-700" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+          </svg>
+        </button>
       </div>
     </div>
   );
