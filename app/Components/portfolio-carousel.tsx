@@ -4,11 +4,13 @@ import { useState, useEffect } from "react";
 import Image from "next/image";
 import { Card } from "./Ui/card";
 import useEmblaCarousel from "embla-carousel-react";
+import Link from "next/link";
 
 const products = [
   {
     id: 1,
     name: "5Kg Fertilizer Bags",
+    href: "/product/fertilizer-bags#5kgFertilizerBag", 
     size: "5Kg",
     price: 21,
     originalPrice: 23,
@@ -39,6 +41,7 @@ const products = [
   {
     id: 2,
     name: "10Kg Fertilizer Bags",
+    href: "/product/fertilizer-bags#10kgFertilizerBag",
     size: "10Kg",
     price: 24,
     originalPrice: 26,
@@ -70,6 +73,7 @@ const products = [
     id: 3,
     name: "25Kg Fertilizer Bags",
     size: "25Kg",
+      href: "/product/fertilizer-bags#25kgFertilizerBag",
     price: 34,
     originalPrice: 37,
     description: "Modern fertilizer bag with premium quality printing",
@@ -99,6 +103,7 @@ const products = [
     id: 4,
     name: "50Kg Fertilizer Bags",
     size: "50Kg",
+    href: "/product/fertilizer-bags#50kgFertilizerBag",
     price: 45,
     originalPrice: 50,
     description: "Heavy-duty fertilizer bag for bulk requirements",
@@ -107,17 +112,17 @@ const products = [
       {
         name: "green",
         code: "#22C55E",
-        image: "/images/green5kgcopys.png",
+        image: "/images/green50kgcopy.jpeg",
       },
       {
-        name: "blue",
-        code: "#3B82F6",
-        image: "/images/blue5kgcopys.png",
+        name: "yellow",
+        code: "#FACC15",
+        image: "/images/yellow50kgcopy.jpeg",
       },
       {
         name: "orange",
         code: "#F97316",
-        image: "/images/orange5kgcopys.png",
+        image: "/images/orange50kgcopy.jpeg",
       },
     ],
 
@@ -276,9 +281,11 @@ export default function ProductSlides() {
                 </div>
 
                   {/* Button */}
-                  <button className="w-full bg-orange-500 hover:bg-orange-600 transition text-white py-3 rounded-lg font-medium">
+                  <Link href={product.href} className="w-full">
+                  <button  className="w-full bg-orange-500 hover:bg-orange-600 transition text-white py-3 rounded-lg font-medium">
                     View Details
                   </button>
+                  </Link>
                 </div>
               </Card>
                 </div>

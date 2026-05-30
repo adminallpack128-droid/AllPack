@@ -20,7 +20,7 @@ const agricultureBags = [
       { label: "Storage Capacity", value: "20 Kg" }, 
       { label: "Surface Finish", value: "Glossy" },
       { label: "Pattern", value: "Printed"}, 
-      { label: "Brand", value: "All Pack Creation" },
+      { label: "Brand", value: "Allpack Creation" },
 
     ], 
   },
@@ -65,7 +65,7 @@ const agricultureBags = [
       { label: "Pattern", value: "Printed" },
       { label: "Property", value: "Biodegradable" }, 
       { label: "Usage/Applications", value: "Agriculture" },
-      { label: "Brand", value: "All Pack Creation" }, 
+      { label: "Brand", value: "Allpack Creation" }, 
     ],
   },
   
