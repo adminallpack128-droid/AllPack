@@ -9,75 +9,56 @@ export default function ProductsPage() {
   const productCategories = [
     {
       id: 1,
-      title: "Fertilizer Bags",
-      image: "/product1.webp",
-      products: [
-        "Printed Fertilizer Bag",
-        "Plain PP Fertilizer Bag",
-        "Dap Fertilizer Bag",
-        // "White Fertilizer Packaging Bag",
-        // "25Kg Fertilizer Bag",
-      ],
-      link: "/product/fertilizer-bags",
+      title: "5Kg Fertilizer Bags",
+      image: "/5kgfertilizer.png", 
+      link: "/product/fertilizer-bags#5kgFertilizerBag",
     },
     {
       id: 2,
-      title: "Feed Bags",
-      image: "/product2.webp",
-      products: [
-        "Animal Feed Packaging Bag",
-        "Animal Feed Packaging Bag",
-        "Animal Feed Bag",
-        // "Plain Animal Feed Bag",
-      ],
-      link: "/products/feed-bags",
+      title: "10Kg Fertilizer Bags",
+      image: "/10kgfertilizer.png", 
+      link: "/product/fertilizer-bags#10kgFertilizerBag",
     },
     {
       id: 3,
-      title: "Agricultural Bags",
-      image: "/10kg-loop-handle-bag1.webp",
-      products: [
-        "Agricultural Packaging Bag",
-        "25 Kg Agricultural Bag",
-        "1 kg fertilizer Packaging Pouch",
-      ],
-      link: "/products/agricultural-bags",
+      title: "25Kg Fertilizer Bags",
+      image: "/25kgfertilizer.png", 
+      link: "/product/fertilizer-bags#25kgFertilizerBag",
     },
     {
       id: 4,
-      title: "PP Bags",
-      image: "/product4.webp",
-      products: ["25kg NPK fertilizer Bag", "PP Woven Bag"],
-      link: "/products/pp-bags",
+      title: "50Kg Fertilizer Bags",
+      image: "/50kgfertilizer.png", 
+      link: "/product/fertilizer-bags#50kgFertilizerBag",
     },
-    {
-      id: 5,
-      title: "Loop Handle Bags",
-      image: "/product5.webp",
-      products: ["10Kg Loop Handle Bag", "5Kg Loop Handle Non Woven Bag"],
-      link: "/products/loop-handle-bags",
-    },
-    {
-      id: 6,
-      title: "Fertilizer Packaging Bag",
-      image: "/product6.webp",
-      products: ["Fertilizer Standy Pouch"],
-      link: "/products/fertilizer-packaging",
-    },
-    {
-      id: 7,
-      title: "BOPP Laminated Woven Bags",
-      image: "/product7.webp",
-      products: ["Pvc Packaging Pouch"],
-      link: "/products/bopp-laminated",
-    },
-    {
-      id: 8,
-      title: "Organic Fertilizer",
-      image: "/product8.webp",
-      products: ["25kg Water Soluble Fertilizer Bag", "Npk Fertilizer"],
-      link: "/products/organic-fertilizer",
-    },
+    // {
+    //   id: 5,
+    //   title: "Loop Handle Bags",
+    //   image: "/product5.webp",
+    //   products: ["10Kg Loop Handle Bag", "5Kg Loop Handle Non Woven Bag"],
+    //   link: "/products/loop-handle-bags",
+    // },
+    // {
+    //   id: 6,
+    //   title: "Fertilizer Packaging Bag",
+    //   image: "/product6.webp",
+    //   products: ["Fertilizer Standy Pouch"],
+    //   link: "/products/fertilizer-packaging",
+    // },
+    // {
+    //   id: 7,
+    //   title: "BOPP Laminated Woven Bags",
+    //   image: "/product7.webp",
+    //   products: ["Pvc Packaging Pouch"],
+    //   link: "/products/bopp-laminated",
+    // },
+    // {
+    //   id: 8,
+    //   title: "Organic Fertilizer",
+    //   image: "/product8.webp",
+    //   products: ["25kg Water Soluble Fertilizer Bag", "Npk Fertilizer"],
+    //   link: "/products/organic-fertilizer",
+    // },
   ];
 
   return (
@@ -106,7 +87,7 @@ export default function ProductsPage() {
             {productCategories.map((category) => (
               <Card
                 key={category.id}
-                className="bg-white border-2 border-gray-200 hover:border-orange-300 hover:shadow-lg transition-all duration-300 hover:-translate-y-1 overflow-hidden group cursor-pointer flex flex-col h-full"
+                className="bg-white border-2 border-gray-200 hover:border-orange-300 hover:shadow-lg transition-all duration-300 overflow-hidden group cursor-pointer flex flex-col h-full"
               >
                 <div className="relative overflow-hidden border-b-2 border-orange-200 flex justify-center items-center h-72">
                   {" "}
@@ -114,11 +95,9 @@ export default function ProductsPage() {
                   <Image
                     src={category.image || "/placeholder.svg"}
                     alt={category.title}
-                    width={
-                      category.id == 1 ? 140 : category.id == 2 ? 150 : 300
-                    }
+                    width={300}
                     height={300}
-                    className="group-hover:scale-105 transition-transform duration-300 object-cover"
+                    className=" transition-transform duration-300 object-cover"
                   />
                 </div>
 
@@ -127,7 +106,7 @@ export default function ProductsPage() {
                     {category.title}
                   </h3>
 
-                  <ul className="space-y-1 mb-4 flex-1">
+                  {/* <ul className="space-y-1 mb-4 flex-1">
                     {category.products.map((product, index) => (
                       <li
                         key={index}
@@ -136,7 +115,7 @@ export default function ProductsPage() {
                         {product}
                       </li>
                     ))}
-                  </ul>
+                  </ul> */}
                 </CardContent>
 
                 <div className="text-center border-t border-gray-100 p-3 bg-gray-100 mt-auto">
@@ -166,19 +145,8 @@ export default function ProductsPage() {
             </p>
           </div>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-            <div className="text-center">
-              <div className="w-16 h-16 bg-gradient-to-r from-orange-500 to-orange-600 rounded-full flex items-center justify-center mx-auto mb-4">
-                <span className="text-white font-bold text-2xl">8+</span>
-              </div>
-              <h3 className="text-lg font-semibold text-gray-900 mb-2">
-                Years Experience
-              </h3>
-              <p className="text-gray-600 text-sm">
-                Extensive experience in packaging industry
-              </p>
-            </div>
-
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+        
             <div className="text-center">
               <div className="w-16 h-16 bg-gradient-to-r from-orange-500 to-orange-600 rounded-full flex items-center justify-center mx-auto mb-4">
                 <span className="text-white font-bold text-2xl">200+</span>

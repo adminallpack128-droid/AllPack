@@ -19,6 +19,11 @@ const products = [
     // Only 3 colors
     colors: [
       {
+        name: "blue",
+        code: "#3B82F6",
+        image: "/images/blue5kgcopys.png",
+      },
+      {
         name: "green",
         code: "#22C55E",
         image: "/images/green5kgcopys.png",
@@ -28,11 +33,7 @@ const products = [
         code: "#F97316",
         image: "/images/orange5kgcopys.png",
       },
-      {
-        name: "blue",
-        code: "#3B82F6",
-        image: "/images/blue5kgcopys.png",
-      },
+      
     ],
 
     available: true,
@@ -48,21 +49,23 @@ const products = [
     description: "Premium NPK fertilizer packaging",
 
     colors: [
-       {
-        name: "blue",
-        code: "#3B82F6",
-        image: "/images/blue5kgcopys.png",
-      },
+      //  {
+      //   name: "blue",
+      //   code: "#3B82F6",
+      //   image: "/images/blue5kgcopys.png",
+      // },
+      
       {
         name: "green",
         code: "#22C55E",
         image: "/images/green5kgcopys.png",
       },
-      {
+       {
         name: "orange",
         code: "#F97316",
         image: "/images/orange5kgcopys.png",
       },
+     
      
     ],
 
@@ -82,17 +85,17 @@ const products = [
       {
         name: "red",
         code: "#D90445",
-        image: "/images/red25kg.png",
+        image: "/images/red25kgcopy.png",
       },
       {
-        name: "green",
-        code: "#22C55E",
-        image: "/images/green25kg.webp",
+        name: "yellow",
+        code: "#FACC15",
+        image: "/images/yellow25kg.png",
       },
       { 
-        name: "orange",
-        code: "#F97316",
-        image: "/images/all25kg.webp",
+        name: "blue",
+        code: "#3B82F6",
+        image: "/images/blue25kg.png",
       },
     ],
 
@@ -104,7 +107,7 @@ const products = [
     name: "50Kg Fertilizer Bags",
     size: "50Kg",
     href: "/product/fertilizer-bags#50kgFertilizerBag",
-    price: 45,
+    price: 44,
     originalPrice: 50,
     description: "Heavy-duty fertilizer bag for bulk requirements",
 
@@ -240,45 +243,43 @@ export default function ProductSlides() {
                 </p>
 
                 {/* Pricing */}
-                <div className="flex items-center gap-3 mb-5">
-                  <span className="text-3xl font-bold text-green-700">
-                    ₹{product.price}
-                  </span>
+               <div className="flex items-center justify-between mb-5">
+  {/* Price Section */}
+  <div className="flex items-center gap-3">
+    <span className="text-3xl font-bold text-green-700">
+      ₹{product.price}
+    </span>
 
-                  <span className="text-gray-400 line-through">
-                    ₹{product.originalPrice}
-                  </span>
-                </div>
+    <span className="text-gray-400 line-through">
+      ₹{product.originalPrice}
+    </span>
+  </div>
 
-                {/* Available Colors */}
-                <div className="mb-5">
-                  <p className="text-sm font-semibold text-gray-800 mb-3">
-                    Available Colors:
-                  </p>
+  {/* Available Colors */}
+  <div className="flex items-center gap-3">
+    <p className="text-sm font-semibold text-gray-800 whitespace-nowrap">
+      Available Colors:
+    </p>
 
-                  <div className="flex gap-3">
-                    {product.colors.map((color, index) => (
-                      <button
-                        key={index}
-                        onClick={() =>
-                          handleColorChange(
-                            product.id,
-                            index
-                          )
-                        }
-                        className={`w-8 h-8 rounded-full border-4 transition-all duration-200 ${
-                          selectedColorIndex === index
-                            ? "border-black scale-110"
-                            : "border-gray-300"
-                        }`}
-                        style={{
-                          backgroundColor: color.code,
-                        }}
-                        title={color.name}
-                      />
-                    ))}
-                  </div>
-                </div>
+    <div className="flex gap-2">
+      {product.colors.map((color, index) => (
+        <button
+          key={index}
+          onClick={() => handleColorChange(product.id, index)}
+          className={`w-8 h-8 rounded-full border-4 transition-all duration-200 ${
+            selectedColorIndex === index
+              ? "border-black scale-110"
+              : "border-gray-300"
+          }`}
+          style={{
+            backgroundColor: color.code,
+          }}
+          title={color.name}
+        />
+      ))}
+    </div>
+  </div>
+</div>
 
                   {/* Button */}
                   <Link href={product.href} className="w-full">
