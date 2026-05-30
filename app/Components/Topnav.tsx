@@ -185,22 +185,22 @@ export default function Topnav() {
         // },
       ],
     },
-    {
-      name: "Services",
-      href: "/services",
-      subItems: [
-        { name: "Custom Design Services", href: "/services/custom-design" },
-        { name: "Product Development", href: "/services/product-development" },
-        {
-          name: "Regulatory Compliance",
-          href: "/services/regulatory-compliance",
-        },
-        {
-          name: "Production & Delivery",
-          href: "/services/production-delivery",
-        },
-      ],
-    },
+    // {
+    //   name: "Services",
+    //   href: "/services",
+    //   subItems: [
+    //     { name: "Custom Design Services", href: "/services/custom-design" },
+    //     { name: "Product Development", href: "/services/product-development" },
+    //     {
+    //       name: "Regulatory Compliance",
+    //       href: "/services/regulatory-compliance",
+    //     },
+    //     {
+    //       name: "Production & Delivery",
+    //       href: "/services/production-delivery",
+    //     },
+    //   ],
+    // },
     {
       name: "About",
       href: "/about",

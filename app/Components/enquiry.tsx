@@ -96,9 +96,7 @@ export default function InquirySection() {
           {/* Header */}
           <div className="text-center mb-6">
             <div className="flex items-center justify-center mb-6">
-              <div className="w-16 h-16 bg-gradient-to-r from-orange-500 to-orange-600 rounded-full flex items-center justify-center mr-4">
-                <FaBox className="h-8 w-8 text-white" />
-              </div>
+              
               <div className="text-left">
                 <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 mb-2">Tell Us What Are You Looking For?</h2>
                 <p className="text-gray-700 text-lg">Get custom packaging solutions tailored to your business needs</p>

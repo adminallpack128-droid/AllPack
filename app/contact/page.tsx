@@ -1,5 +1,6 @@
-import { FaPhone, FaEnvelope, FaMapPin, FaInstagram, FaFacebook, FaTwitter, FaLinkedin } from 'react-icons/fa';
+import { FaPhone, FaMapPin } from 'react-icons/fa';
 import { Badge } from "../Components/Ui/badge";
+import { FaEnvelope, FaPhoneAlt, FaWhatsapp } from "react-icons/fa";
 import { Button } from "../Components/Ui/button";
 import ContactForm from "../Components/contact";
 
@@ -32,24 +33,48 @@ export default function ContactPage() {
                 </div>
                 <div className="flex items-center space-x-3">
                   <FaMapPin className="h-5 w-5 text-orange-400" />
-                  <span>Katrj Pune, India</span>
+                  <span> Pune, India</span>
                 </div>
               </div>
 
               <div className="flex space-x-4">
-                <Button variant="secondary" size="icon" className="bg-white/10 hover:bg-white/20 text-white">
-                  <FaInstagram className="h-5 w-5" />
-                </Button>
-                <Button variant="secondary" size="icon" className="bg-white/10 hover:bg-white/20 text-white">
-                  <FaFacebook className="h-5 w-5" />
-                </Button>
-                <Button variant="secondary" size="icon" className="bg-white/10 hover:bg-white/20 text-white">
-                  <FaTwitter className="h-5 w-5" />
-                </Button>
-                <Button variant="secondary" size="icon" className="bg-white/10 hover:bg-white/20 text-white">
-                  <FaLinkedin className="h-5 w-5" />
-                </Button>
-              </div>
+  {/* Email */}
+  <a href="mailto:info@allpack.com">
+    <Button
+      variant="secondary"
+      size="icon"
+      className="bg-white/10 hover:bg-white/20 text-white"
+    >
+      <FaEnvelope className="h-5 w-5" />
+    </Button>
+  </a>
+
+  {/* Phone */}
+  <a href="tel:+919876543210">
+    <Button
+      variant="secondary"
+      size="icon"
+      className="bg-white/10 hover:bg-white/20 text-white"
+    >
+      <FaPhoneAlt className="h-5 w-5" />
+    </Button>
+  </a>
+
+  {/* WhatsApp */}
+  <a
+    href="https://wa.me/919876543210"
+    target="_blank"
+    rel="noopener noreferrer"
+  >
+    <Button
+      variant="secondary"
+      size="icon"
+      className="bg-white/10 hover:bg-white/20 text-white"
+    >
+      <FaWhatsapp className="h-5 w-5" />
+    </Button>
+  </a>
+</div>
             </div>
             <ContactForm />
             
