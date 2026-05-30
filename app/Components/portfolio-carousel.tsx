@@ -78,15 +78,15 @@ const products = [
         code: "#D90445",
         image: "/images/red25kg.png",
       },
+      {
+        name: "green",
+        code: "#22C55E",
+        image: "/images/green25kg.webp",
+      },
       { 
         name: "orange",
         code: "#F97316",
-        image: "/images/orange5kgcopys.png",
-      },
-      {
-        name: "blue",
-        code: "#3B82F6",
-        image: "/images/blue5kgcopys.png",
+        image: "/images/all25kg.webp",
       },
     ],
 
