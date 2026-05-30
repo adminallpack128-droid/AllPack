@@ -129,7 +129,7 @@ export default function FeedBagsPage() {
             {/* Category Description */}
             <div className="bg-white bg-opacity-90 border border-orange-200 rounded-lg p-6 shadow-md">
               <p className="text-lg leading-relaxed text-gray-700">
-                Prominent & Leading Manufacturer from Indore, we offer{" "}
+                Prominent & Leading provider from Indore, we offer{" "}
                 <span className="font-semibold text-orange-600">
                   agricultural packaging bag{" "}
                 </span>
@@ -761,7 +761,7 @@ export default function FeedBagsPage() {
               Why Choose Allpack for Fertilizer Bags?
             </h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              Leading manufacturer of high-quality fertilizer packaging
+              Leading provider of high-quality fertilizer packaging
               solutions with years of expertise
             </p>
           </div>
