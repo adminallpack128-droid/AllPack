@@ -9,8 +9,8 @@ const products = [
     id: 1,
     name: "5Kg Fertilizer Bags",
     size: "5Kg",
-    price: 28,
-    originalPrice: 35,
+    price: 21,
+    originalPrice: 23,
     description: "Modern fertilizer bag with premium quality printing",
 
     // Only 3 colors
@@ -39,8 +39,8 @@ const products = [
     id: 2,
     name: "10Kg Fertilizer Bags",
     size: "10Kg",
-    price: 45,
-    originalPrice: 55,
+    price: 24,
+    originalPrice: 26,
     description: "Premium NPK fertilizer packaging",
 
     colors: [
@@ -69,9 +69,9 @@ const products = [
     id: 3,
     name: "25Kg Fertilizer Bags",
     size: "25Kg",
-    price: 48,
-    originalPrice: 10,
-    description: "Eco-friendly seed packet designs",
+    price: 34,
+    originalPrice: 37,
+    description: "Modern fertilizer bag with premium quality printing",
 
     colors: [
       {

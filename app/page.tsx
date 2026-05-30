@@ -258,7 +258,7 @@ export default function Component() {
             <div className="max-w-6xl mx-auto">
               <div className="text-center lg:space-y-2">
                 <h1 className="text-2xl font-bold text-black">
-                  High-Quality Printed Packaging Solutions
+                  High-Quality Printed Packaging
                 </h1>
                 <p className="hidden lg:flex text-xl text-black justify-center text-center ">
                   Premium Printed Bags, Available Instantly.
@@ -326,7 +326,7 @@ export default function Component() {
           </div>
 
           {/* Stats Section */}
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
+          {/* <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
             {[
               { number: "50+", label: "Design Varieties" },
               { number: "5-7 Days", label: "Fast Delivery" },
@@ -343,7 +343,7 @@ export default function Component() {
                 <p className="text-sm text-gray-500">{stat.label}</p>
               </div>
             ))}
-          </div>
+          </div> */}
         </div>
       </section>
       {/* Product Range */}
@@ -424,7 +424,7 @@ export default function Component() {
         </div>
       </section> */}
       {/* Why Choose Us - Features with Icons */}
-      <section className="py-10 px-4 md:px-8 bg-[#F5F3ED]">
+      <section className=" px-4 md:px-8 bg-[#F5F3ED]">
         <div className="max-w-6xl mx-auto">
           {/* Section Header */}
           <div className="text-center mb-6">
@@ -447,7 +447,7 @@ export default function Component() {
               {
                 icon: FaBolt,
                 title: "Fast Delivery",
-                description: "Pan-India shipping in 5-7 days",
+                description: "Pan-India shipping in 10-12 days",
               },
               {
                 icon: FaLeaf,
@@ -516,7 +516,7 @@ export default function Component() {
                     Price
                   </th>
                   <th className="lg:px-6 px-2 lg:py-4 py-2 text-center font-semibold text-black">
-                    Bulk Order
+                    Qty
                   </th>
                   <th className="lg:px-6 px-2 lg:py-4 py-2 text-center font-semibold text-black">
                     Action
@@ -529,23 +529,23 @@ export default function Component() {
                 {[
                   {
                     product: "5Kg Fertilizer Bags",
-                    price: "₹8/piece",
-                    bulk: "5000+ units",
+                    price: "₹21/piece",
+                    bulk: "500 pieces",
                   },
                   {
                     product: "10Kg Fertilizer Bags",
-                    price: "₹28/piece",
-                    bulk: "500+ units",
+                    price: "₹24/piece",
+                    bulk: "500+ pieces",
                   },
                   {
                     product: "25Kg Fertilizer Bags",
-                    price: "₹32/piece",
-                    bulk: "1000+ units",
+                    price: "₹34/piece",
+                    bulk: "500+ pieces",
                   },
                   {
                     product: "50Kg Fertilizer Bags",
-                    price: "₹85/piece",
-                    bulk: "500+ units",
+                    price: "₹44/piece",
+                    bulk: "500+ pieces",
                   },
                 ].map((row, idx) => (
                   <tr
@@ -569,9 +569,9 @@ export default function Component() {
 
                     {/* Button */}
                     <td className="lg:px-6 px-2 lg:py-4 py-2 text-center">
-                      <button className="bg-gradient-to-r from-orange-500 to-orange-600 hover:from-orange-400 text-white px-5 py-2 rounded-lg font-medium transition">
-                        Quote
-                      </button>
+                     <QuoteButtonWithDialog className="rounded-lg bg-gradient-to-r from-orange-500 to-orange-600 text-white">
+                                    Get Quote
+                                   </QuoteButtonWithDialog>
                     </td>
                   </tr>
                 ))}

@@ -1,102 +1,118 @@
-import { FaBox, FaFacebook, FaInstagram, FaLinkedin, FaTwitter } from 'react-icons/fa';
-
-import Link from "next/link"
+// import { FaBox, FaFacebook, FaInstagram, FaLinkedin, FaTwitter } from 'react-icons/fa';
+import Link from "next/link";
 import { Button } from "./Ui/button";
+import { FaEnvelope, FaWhatsapp, FaPhoneAlt } from "react-icons/fa";
+import Image from "next/image";
 
-export default function Footer(){
-    return (
-      <footer className="bg-gray-900 text-white py-12">
-        <div className="container mx-auto px-4 lg:px-[5rem]">
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+export default function Footer() {
+  return (
+    <footer className="bg-gray-900 text-white py-12">
+      <div className="container mx-auto px-4 lg:px-[5rem]">
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="text-center">
             <div className="space-y-4">
-              <div className="flex items-center space-x-2">
-                <div className="h-8 w-8 rounded-lg bg-gradient-to-r from-orange-500 to-orange-600 flex items-center justify-center">
-                  <FaBox className="h-5 w-5 text-white" />
+              <div className="flex items-center justify-center space-x-2">
+                <div className="flex items-center space-x-2">
+                  <Link href="/">
+                    <Image
+                      src="/allpacklogo.png"
+                      alt="logo"
+                      height={100}
+                      width={100}
+                      priority
+                      className="h-full w-full object-cover hover:opacity-75 transition-transform duration-500 group-hover:scale-110 cursor-pointer"
+                    />
+                  </Link>
                 </div>
-                <span className="text-xl font-bold">
-                  All<span className="text-orange-500">Pack</span>
-                </span>
               </div>
               <p className="text-gray-400">
-                Professional packaging design services for agricultural, industrial, and consumer products.
+                Professional packaging design services for agricultural,
+                industrial, and consumer products.
               </p>
             </div>
-
-            <div className="space-y-4">
+          </div>
+          <div className="justify-self-center">
+            <div className="space-y-4 text-center">
               <h3 className="text-lg font-semibold">Services</h3>
               <ul className="space-y-2 text-gray-400">
                 <li>
-                  <Link href="#" className="hover:text-orange-500 transition-colors">
+                  <p className="hover:text-orange-500 transition-colors">
                     Agricultural Packaging
-                  </Link>
+                  </p>
                 </li>
                 <li>
-                  <Link href="#" className="hover:text-orange-500 transition-colors">
+                  <p className="hover:text-orange-500 transition-colors">
                     Industrial Design
-                  </Link>
+                  </p>
                 </li>
                 <li>
-                  <Link href="#" className="hover:text-orange-500 transition-colors">
+                  <p className="hover:text-orange-500 transition-colors">
                     Brand Development
-                  </Link>
+                  </p>
                 </li>
                 <li>
-                  <Link href="#" className="hover:text-orange-500 transition-colors">
+                  <p className="hover:text-orange-500 transition-colors">
                     Label Design
-                  </Link>
+                  </p>
                 </li>
               </ul>
             </div>
+          </div>
 
-            <div className="space-y-4">
-              <h3 className="text-lg font-semibold">Portfolio</h3>
-              <ul className="space-y-2 text-gray-400">
-                <li>
-                  <Link href="#" className="hover:text-orange-500 transition-colors">
-                    Fertilizer Packaging
-                  </Link>
-                </li>
-                <li>
-                  <Link href="#" className="hover:text-orange-500 transition-colors">
-                    Chemical Products
-                  </Link>
-                </li>
-                <li>
-                  <Link href="#" className="hover:text-orange-500 transition-colors">
-                    Agricultural Tools
-                  </Link>
-                </li>
-                <li>
-                  <Link href="#" className="hover:text-orange-500 transition-colors">
-                    Industrial Equipment
-                  </Link>
-                </li>
-              </ul>
-            </div>
-
+          <div className="text-center">
             <div className="space-y-4">
               <h3 className="text-lg font-semibold">Connect</h3>
-              <div className="flex space-x-4">
-                <Button variant="ghost" size="icon" className="text-gray-400 hover:text-orange-500">
-                  <FaInstagram className="h-5 w-5" />
-                </Button>
-                <Button variant="ghost" size="icon" className="text-gray-400 hover:text-orange-500">
-                  <FaFacebook className="h-5 w-5" />
-                </Button>
-                <Button variant="ghost" size="icon" className="text-gray-400 hover:text-orange-500">
-                  <FaTwitter className="h-5 w-5" />
-                </Button>
-                <Button variant="ghost" size="icon" className="text-gray-400 hover:text-orange-500">
-                  <FaLinkedin className="h-5 w-5" />
-                </Button>
+
+              <div className="flex justify-center space-x-4">
+                {/* Email */}
+                <a
+                  href="mailto:info@allpack.com"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <Button
+                    variant="ghost"
+                    size="icon"
+                    className="text-gray-400 hover:text-orange-500"
+                  >
+                    <FaEnvelope className="h-5 w-5" />
+                  </Button>
+                </a>
+
+                {/* WhatsApp */}
+                <a
+                  href="https://wa.me/919876543210"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <Button
+                    variant="ghost"
+                    size="icon"
+                    className="text-gray-400 hover:text-green-500"
+                  >
+                    <FaWhatsapp className="h-5 w-5" />
+                  </Button>
+                </a>
+
+                {/* Call */}
+                <a href="tel:+919876543210">
+                  <Button
+                    variant="ghost"
+                    size="icon"
+                    className="text-gray-400 hover:text-blue-500"
+                  >
+                    <FaPhoneAlt className="h-5 w-5" />
+                  </Button>
+                </a>
               </div>
             </div>
           </div>
-
-          <div className="border-t border-gray-800 mt-12 pt-8 text-center text-gray-400">
-            <p>&copy; {new Date().getFullYear()} All Pack Packaging Solution. All rights reserved.</p>
-          </div>
         </div>
-      </footer>
-    );
+
+        <div className="border-t border-gray-800 mt-12 pt-8 text-center text-gray-400">
+          <p>&copy; {new Date().getFullYear()} Allpack. All rights reserved.</p>
+        </div>
+      </div>
+    </footer>
+  );
 }
