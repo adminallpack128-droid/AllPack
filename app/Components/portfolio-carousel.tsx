@@ -7,8 +7,8 @@ import { Card } from "./Ui/card";
 const products = [
   {
     id: 1,
-    name: "10Kg Fertilizer Bags",
-    size: "10Kg",
+    name: "5Kg Fertilizer Bags",
+    size: "5Kg",
     price: 28,
     originalPrice: 35,
     description: "Modern fertilizer bag with premium quality printing",
@@ -18,17 +18,17 @@ const products = [
       {
         name: "green",
         code: "#22C55E",
-        image: "/images/green5kg.png",
+        image: "/images/green5kgcopys.png",
       },
       {
         name: "orange",
         code: "#F97316",
-        image: "/images/orange5kg.png",
+        image: "/images/orange5kgcopys.png",
       },
       {
         name: "blue",
         code: "#3B82F6",
-        image: "/images/blue5kg.png",
+        image: "/images/blue5kgcopys.png",
       },
     ],
 
@@ -37,8 +37,8 @@ const products = [
 
   {
     id: 2,
-    name: "NPK Readymade Bags",
-    size: "25/30Kg",
+    name: "10Kg Fertilizer Bags",
+    size: "10Kg",
     price: 45,
     originalPrice: 55,
     description: "Premium NPK fertilizer packaging",
@@ -47,17 +47,17 @@ const products = [
       {
         name: "green",
         code: "#22C55E",
-        image: "/images/green5kg.png",
+        image: "/images/green5kgcopys.png",
       },
       {
         name: "orange",
         code: "#F97316",
-        image: "/images/orange5kg.png",
+        image: "/images/orange5kgcopys.png",
       },
       {
         name: "blue",
         code: "#3B82F6",
-        image: "/images/blue5kg.png",
+        image: "/images/blue5kgcopys.png",
       },
     ],
 
@@ -66,9 +66,9 @@ const products = [
 
   {
     id: 3,
-    name: "Seed Packets",
-    size: "Small/Medium",
-    price: 8,
+    name: "25Kg Fertilizer Bags",
+    size: "25Kg",
+    price: 48,
     originalPrice: 10,
     description: "Eco-friendly seed packet designs",
 
@@ -76,17 +76,17 @@ const products = [
       {
         name: "green",
         code: "#22C55E",
-        image: "/images/green5kg.png",
+        image: "/images/green5kgcopys.png",
       },
-      {
+      { 
         name: "orange",
         code: "#F97316",
-        image: "/images/orange5kg.png",
+        image: "/images/orange5kgcopys.png",
       },
       {
         name: "blue",
         code: "#3B82F6",
-        image: "/images/blue5kg.png",
+        image: "/images/blue5kgcopys.png",
       },
     ],
 
