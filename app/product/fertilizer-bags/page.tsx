@@ -274,7 +274,7 @@ export default function PlainPPFertilizerBagPage() {
                       </CardContent>
                     </Card>
 
-                    {bag.id == "plain-pp" ? (
+                    {bag.id == "50kgFertilizerBag" ? (
                       <div >
                         <section className="max-w-4xl mx-auto px-4 ">
                           <p className="text-lg mb-6">

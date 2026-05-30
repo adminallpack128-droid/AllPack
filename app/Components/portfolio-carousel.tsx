@@ -44,6 +44,11 @@ const products = [
     description: "Premium NPK fertilizer packaging",
 
     colors: [
+       {
+        name: "blue",
+        code: "#3B82F6",
+        image: "/images/blue5kgcopys.png",
+      },
       {
         name: "green",
         code: "#22C55E",
@@ -54,11 +59,7 @@ const products = [
         code: "#F97316",
         image: "/images/orange5kgcopys.png",
       },
-      {
-        name: "blue",
-        code: "#3B82F6",
-        image: "/images/blue5kgcopys.png",
-      },
+     
     ],
 
     available: true,

@@ -46,126 +46,143 @@ export default function Topnav() {
       href: "/product",
       subItems: [
         {
-          name: "Fertilizer Bags",
-          href: "/product/fertilizer-bags",
-          subItems: [
-            {
-              name: "Printed Fertilizer Bag",
-              href: "/product/fertilizer-bags#printed-packaging",
-            },
-            {
-              name: "Plain PP Fertilizer Bag",
-              href: "/product/fertilizer-bags#plain-pp",
-            },
-            {
-              name: "Dap Fertilizer Bag",
-              href: "/product/fertilizer-bags#dapFertilizerBag",
-            },
-            {
-              name: "White Fertilizer Packaging Bag",
-              href: "/product/fertilizer-bags#whiteFertilizerBag",
-            },
-            {
-              name: "25Kg Fertilizer Bag",
-              href: "/product/fertilizer-bags#25kgFertilizerBag",
-            },
-          ],
+          name: "5Kg Fertilizer Bags", 
+          href: "/product/fertilizer-bags#5kgFertilizerBag", 
         },
         {
-          name: "Feed Bags",
-          href: "/product/feed-bags",
-          subItems: [
-            {
-              name: "Animal Feed Packaging Bag",
-              href: "/product/feed-bags#animal-feed-packaging-bag",
-            },
-            {
-              name: "Animal Feed Bag",
-              href: "/product/feed-bags#animal-feed-packaging-bag-two",
-            },
-            {
-              name: "Plain Animal Feed Bag",
-              href: "/product/feed-bags#animal-feed-bag",
-            },
-          ],
+          name: "10Kg Fertilizer Bags",
+          href: "/product/fertilizer-bags#10kgFertilizerBag",
         },
         {
-          name: "Agricultural Bags",
-          href: "/product/agricultural-bags",
-          subItems: [
-            {
-              name: "Agricultural Packaging Bag",
-              href: "/product/agricultural-bags/packaging",
-            },
-            {
-              name: "25 Kg Agricultural Bag",
-              href: "/product/agricultural-bags/25kg",
-            },
-            {
-              name: "1 kg fertilizer Packaging Pouch",
-              href: "/product/agricultural-bags/1kg-pouch",
-            },
-          ],
+          name: "25Kg Fertilizer Bags", 
+          href: "/product/fertilizer-bags#25kgFertilizerBag",  
         },
         {
-          name: "PP Bags",
-          href: "/product/pp-bags",
-          subItems: [
-            {
-              name: "25kg NPK fertilizer Bag",
-              href: "/product/pp-bags/25kg-npk",
-            },
-            { name: "PP Woven Bag", href: "/product/pp-bags/woven" },
-          ],
+          name: "50Kg Fertilizer Bags",
+          href: "/product/fertilizer-bags#50kgFertilizerBag", 
         },
-        {
-          name: "Loop Handle Bags",
-          href: "/product/loop-handle-bags",
-          subItems: [
-            {
-              name: "10Kg Loop Handle Bag",
-              href: "/product/loop-handle-bags/10kg",
-            },
-            {
-              name: "5Kg Loop Handle Non Woven Bag",
-              href: "/product/loop-handle-bags/5kg-non-woven",
-            },
-          ],
-        },
-        {
-          name: "Fertilizer Packaging Bag",
-          href: "/products/fertilizer-packaging",
-          subItems: [
-            {
-              name: "Fertilizer Standy Pouch",
-              href: "/products/fertilizer-packaging/standy-pouch",
-            },
-          ],
-        },
-        {
-          name: "BOPP Laminated Woven Bags",
-          href: "/products/bopp-laminated",
-          subItems: [
-            {
-              name: "Pvc Packaging Pouch",
-              href: "/products/bopp-laminated/pvc-pouch",
-            },
-          ],
-        },
-        {
-          name: "Organic Fertilizer",
-          href: "/product/organic-fertilizer",
-          subItems: [
-            {
-              name: "25kg Water Soluble Fertilizer Bag",
-              href: "/products/organic-fertilizer/25kg-water-soluble",
-            },
-            {
-              name: "Npk Fertilizer",
-              href: "/products/organic-fertilizer/npk",
-            },
-          ],
-        },
+
+        // {
+        //   name: "Fertilizer Bags",
+        //   href: "/product/fertilizer-bags",
+        //   subItems: [
+        //     {
+        //       name: "Printed Fertilizer Bag",
+        //       href: "/product/fertilizer-bags#printed-packaging",
+        //     },
+        //     {
+        //       name: "Plain PP Fertilizer Bag",
+        //       href: "/product/fertilizer-bags#plain-pp",
+        //     },
+        //     {
+        //       name: "Dap Fertilizer Bag",
+        //       href: "/product/fertilizer-bags#dapFertilizerBag",
+        //     },
+        //     {
+        //       name: "White Fertilizer Packaging Bag",
+        //       href: "/product/fertilizer-bags#whiteFertilizerBag",
+        //     },
+        //     {
+        //       name: "25Kg Fertilizer Bag",
+        //       href: "/product/fertilizer-bags#25kgFertilizerBag",
+        //     },
+        //   ],
+        // },
+        // {
+        //   name: "Feed Bags",
+        //   href: "/product/feed-bags",
+        //   subItems: [
+        //     {
+        //       name: "Animal Feed Packaging Bag",
+        //       href: "/product/feed-bags#animal-feed-packaging-bag",
+        //     },
+        //     {
+        //       name: "Animal Feed Bag",
+        //       href: "/product/feed-bags#animal-feed-packaging-bag-two",
+        //     },
+        //     {
+        //       name: "Plain Animal Feed Bag",
+        //       href: "/product/feed-bags#animal-feed-bag",
+        //     },
+        //   ],
+        // },
+        // {
+        //   name: "Agricultural Bags",
+        //   href: "/product/agricultural-bags",
+        //   subItems: [
+        //     {
+        //       name: "Agricultural Packaging Bag",
+        //       href: "/product/agricultural-bags/packaging",
+        //     },
+        //     {
+        //       name: "25 Kg Agricultural Bag",
+        //       href: "/product/agricultural-bags/25kg",
+        //     },
+        //     {
+        //       name: "1 kg fertilizer Packaging Pouch",
+        //       href: "/product/agricultural-bags/1kg-pouch",
+        //     },
+        //   ],
+        // },
+        // {
+        //   name: "PP Bags",
+        //   href: "/product/pp-bags",
+        //   subItems: [
+        //     {
+        //       name: "25kg NPK fertilizer Bag",
+        //       href: "/product/pp-bags/25kg-npk",
+        //     },
+        //     { name: "PP Woven Bag", href: "/product/pp-bags/woven" },
+        //   ],
+        // },
+        // {
+        //   name: "Loop Handle Bags",
+        //   href: "/product/loop-handle-bags",
+        //   subItems: [
+        //     {
+        //       name: "10Kg Loop Handle Bag",
+        //       href: "/product/loop-handle-bags/10kg",
+        //     },
+        //     {
+        //       name: "5Kg Loop Handle Non Woven Bag",
+        //       href: "/product/loop-handle-bags/5kg-non-woven",
+        //     },
+        //   ],
+        // },
+        // {
+        //   name: "Fertilizer Packaging Bag",
+        //   href: "/products/fertilizer-packaging",
+        //   subItems: [
+        //     {
+        //       name: "Fertilizer Standy Pouch",
+        //       href: "/products/fertilizer-packaging/standy-pouch",
+        //     },
+        //   ],
+        // },
+        // {
+        //   name: "BOPP Laminated Woven Bags",
+        //   href: "/products/bopp-laminated",
+        //   subItems: [
+        //     {
+        //       name: "Pvc Packaging Pouch",
+        //       href: "/products/bopp-laminated/pvc-pouch",
+        //     },
+        //   ],
+        // },
+        // {
+        //   name: "Organic Fertilizer",
+        //   href: "/product/organic-fertilizer",
+        //   subItems: [
+        //     {
+        //       name: "25kg Water Soluble Fertilizer Bag",
+        //       href: "/products/organic-fertilizer/25kg-water-soluble",
+        //     },
+        //     {
+        //       name: "Npk Fertilizer",
+        //       href: "/products/organic-fertilizer/npk",
+        //     },
+        //   ],
+        // },
       ],
     },
     {

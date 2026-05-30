@@ -1,8 +1,11 @@
 // import { Button } from "./Components/Ui/button";
-// import { Card } from "./Components/Ui/card"; 
+// import { Card } from "./Components/Ui/card";
 import { FaMedal, FaBolt, FaLeaf, FaTag } from "react-icons/fa";
 import InquirySection from "./Components/enquiry";
 import ProductCarousel from "./Components/portfolio-carousel";
+import { Button } from "./Components/Ui/button";
+import Link from "next/link";
+import QuoteButtonWithDialog from "./Components/getQuotePopup";
 
 export default function Component() {
   // const products = [
@@ -260,24 +263,23 @@ export default function Component() {
                 <p className="hidden lg:flex text-xl text-black justify-center text-center ">
                   Premium Printed Bags, Available Instantly.
                 </p>
-                {/* <div className="hidden lg:flex lg:flex-row gap-3 justify-center">
-                  <Button
-                    type="submit"
-                    className="bg-gradient-to-r from-orange-500 to-orange-600 hover:from-orange-400 text-white py-4 px-5 rounded-lg text-md shadow-lg hover:shadow-xl transition-all duration-300"
-                  >
-                    <div className="flex items-center space-x-2">
-                      <span>View All Products</span>
-                    </div>
-                  </Button>
-                  <Button
-                    type="submit"
-                    className="bg-white hover:bg-orange-100 text-orange-500 border border-orange-500 py-4 px-5 rounded-lg text-md shadow-lg hover:shadow-xl transition-all duration-300"
-                  >
-                    <div className="flex items-center space-x-2">
-                      <span>Get Quote</span>
-                    </div>
-                  </Button>
-                </div> */}
+                <div className="hidden lg:flex lg:flex-row gap-3 justify-center">
+                  <Link href="/product">
+                    <Button
+                      type="button"
+                      className="bg-gradient-to-r from-orange-500 to-orange-600 hover:from-orange-400 text-white py-4 px-5 rounded-lg text-md shadow-lg hover:shadow-xl transition-all duration-300"
+                    >
+                      <div className="flex items-center space-x-2 cursor-pointer">
+                        <span>View All Products</span>
+                      </div>
+                    </Button>
+                  </Link>
+                  <QuoteButtonWithDialog  className="bg-white hover:bg-orange-100 text-orange-500 border border-orange-500 rounded-lg text-md shadow-lg hover:shadow-xl transition-all duration-300"
+>
+                                 Get Quote
+                                </QuoteButtonWithDialog>
+                   
+                </div>
               </div>
             </div>
           </div>
@@ -421,7 +423,7 @@ export default function Component() {
           </div>
         </div>
       </section> */}
-      {/* Why Choose Us - Features with Icons */} 
+      {/* Why Choose Us - Features with Icons */}
       <section className="py-10 px-4 md:px-8 bg-[#F5F3ED]">
         <div className="max-w-6xl mx-auto">
           {/* Section Header */}
@@ -488,84 +490,96 @@ export default function Component() {
         </div>
       </section>
 
-
-       {/* Pricing Table - Simple & Clear */}
+      {/* Pricing Table - Simple & Clear */}
       <section className="py-10 px-4 md:px-8 bg-[#f3f3f3]">
-  <div className="max-w-5xl mx-auto">
-    
-    {/* Heading */}
-    <div className="text-center mb-4">
-      <h2 className="text-4xl font-bold text-black mb-4">
-        Quick Pricing Reference
-      </h2>
-      <p className="text-lg text-gray-600">
-        Volume discounts available for bulk orders
-      </p>
-    </div>
+        <div className="max-w-5xl mx-auto">
+          {/* Heading */}
+          <div className="text-center mb-4">
+            <h2 className="text-4xl font-bold text-black mb-4">
+              Quick Pricing Reference
+            </h2>
+            <p className="text-lg text-gray-600">
+              Volume discounts available for bulk orders
+            </p>
+          </div>
 
-    {/* Table */}
-    <div className="overflow-x-auto">
-      <table className="w-full border-collapse">
+          {/* Table */}
+          <div className="overflow-x-auto">
+            <table className="w-full border-collapse">
+              {/* Table Head */}
+              <thead>
+                <tr className="border-b-2 border-black">
+                  <th className="lg:px-6 px-2 lg:py-4 py-2 text-left font-semibold text-black">
+                    Product
+                  </th>
+                  <th className="lg:px-6 px-2 lg:py-4 py-2 text-center font-semibold text-black">
+                    Price
+                  </th>
+                  <th className="lg:px-6 px-2 lg:py-4 py-2 text-center font-semibold text-black">
+                    Bulk Order
+                  </th>
+                  <th className="lg:px-6 px-2 lg:py-4 py-2 text-center font-semibold text-black">
+                    Action
+                  </th>
+                </tr>
+              </thead>
 
-        {/* Table Head */}
-        <thead>
-          <tr className="border-b-2 border-black">
-            <th className="lg:px-6 px-2 lg:py-4 py-2 text-left font-semibold text-black">
-              Product
-            </th>
-            <th className="lg:px-6 px-2 lg:py-4 py-2 text-center font-semibold text-black">
-              Price
-            </th>
-            <th className="lg:px-6 px-2 lg:py-4 py-2 text-center font-semibold text-black">
-              Bulk Order
-            </th>
-            <th className="lg:px-6 px-2 lg:py-4 py-2 text-center font-semibold text-black">
-              Action
-            </th>
-          </tr>
-        </thead>
+              {/* Table Body */}
+              <tbody>
+                {[
+                  {
+                    product: "5Kg Fertilizer Bags",
+                    price: "₹8/piece",
+                    bulk: "5000+ units",
+                  },
+                  {
+                    product: "10Kg Fertilizer Bags",
+                    price: "₹28/piece",
+                    bulk: "500+ units",
+                  },
+                  {
+                    product: "25Kg Fertilizer Bags",
+                    price: "₹32/piece",
+                    bulk: "1000+ units",
+                  },
+                  {
+                    product: "50Kg Fertilizer Bags",
+                    price: "₹85/piece",
+                    bulk: "500+ units",
+                  },
+                ].map((row, idx) => (
+                  <tr
+                    key={idx}
+                    className="border-b border-gray-200 hover:bg-orange-100 transition"
+                  >
+                    {/* Product */}
+                    <td className="lg:px-6 px-2 lg:py-4 py-2 font-medium text-black">
+                      {row.product}
+                    </td>
 
-        {/* Table Body */}
-        <tbody>
-          {[
-            { product: '5Kg Fertilizer Bags', price: '₹8/piece', bulk: '5000+ units' },
-            { product: '10Kg Fertilizer Bags', price: '₹28/piece', bulk: '500+ units' },
-            { product: '25Kg Fertilizer Bags', price: '₹32/piece', bulk: '1000+ units' },
-            { product: '50Kg Fertilizer Bags', price: '₹85/piece', bulk: '500+ units' },
-          ].map((row, idx) => (
-            <tr
-              key={idx}
-              className="border-b border-gray-200 hover:bg-orange-100 transition"
-            >
-              {/* Product */}
-              <td className="lg:px-6 px-2 lg:py-4 py-2 font-medium text-black">
-                {row.product}
-              </td>
+                    {/* Price */}
+                    <td className="lg:px-6 px-2 lg:py-4 py-2 text-center text-green-700 font-bold text-lg">
+                      {row.price}
+                    </td>
 
-              {/* Price */}
-              <td className="lg:px-6 px-2 lg:py-4 py-2 text-center text-green-700 font-bold text-lg">
-                {row.price}
-              </td>
+                    {/* Bulk */}
+                    <td className="lg:px-6 px-2 lg:py-4 py-2 text-center text-gray-600">
+                      {row.bulk}
+                    </td>
 
-              {/* Bulk */}
-              <td className="lg:px-6 px-2 lg:py-4 py-2 text-center text-gray-600">
-                {row.bulk}
-              </td>
-
-              {/* Button */}
-              <td className="lg:px-6 px-2 lg:py-4 py-2 text-center">
-                <button className="bg-gradient-to-r from-orange-500 to-orange-600 hover:from-orange-400 text-white px-5 py-2 rounded-lg font-medium transition">
-                  Quote
-                </button>
-              </td>
-            </tr>
-          ))}
-        </tbody>
-
-      </table>
-    </div>
-  </div>
-</section>
+                    {/* Button */}
+                    <td className="lg:px-6 px-2 lg:py-4 py-2 text-center">
+                      <button className="bg-gradient-to-r from-orange-500 to-orange-600 hover:from-orange-400 text-white px-5 py-2 rounded-lg font-medium transition">
+                        Quote
+                      </button>
+                    </td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </section>
 
       {/* <div className="container mx-auto px-4 lg:px-[5rem]"> 
         <div className="border-t border-gray-500 pt-8 border-dashed">

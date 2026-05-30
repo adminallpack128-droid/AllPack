@@ -1,53 +1,30 @@
 const fertilizerBags = [
-  {
-    id: "printed-packaging",
-    title: "Printed Fertilizer Bag",
-    price: "₹ 32",
-    unit: "Piece",
-    rating: 4.7,
-    reviews: 89,
-     images: [
-      "printedFertilizer1",
-      "printedFertilizer2",
-      "printedFertilizer3", 
-    ],
-    specs: [
-      { label: "Minimum Order Quantity", value: "500 Piece" },
-      { label: "Storage Capacity", value: "50 Kg" },
-      { label: "Usage/Application", value: "Fertilizer Packaging" },
-      { label: "Material", value: "BOPP" },
-      { label: "Shape", value: "Rectangular" },
-      { label: "Pattern", value: "Printed" },
-      { label: "Brand", value: "All Pack Creation" },
+  // {
+  //   id: "printed-packaging",
+  //   title: "Printed Fertilizer Bag",
+  //   price: "₹ 32",
+  //   unit: "Piece",
+  //   rating: 4.7,
+  //   reviews: 89,
+  //    images: [
+  //     "printedFertilizer1",
+  //     "printedFertilizer2",
+  //     "printedFertilizer3", 
+  //   ],
+  //   specs: [
+  //     { label: "Minimum Order Quantity", value: "500 Piece" },
+  //     { label: "Storage Capacity", value: "50 Kg" },
+  //     { label: "Usage/Application", value: "Fertilizer Packaging" },
+  //     { label: "Material", value: "BOPP" },
+  //     { label: "Shape", value: "Rectangular" },
+  //     { label: "Pattern", value: "Printed" },
+  //     { label: "Brand", value: "All Pack Creation" },
 
-    ], 
-  },
-  {
-    id: "plain-pp",
-    title: "Plain PP Fertilizer Bag",
-    price: "₹ 28",
-    unit: "Piece",
-    rating: 4.7,
-    reviews: 89,
-    images: [
-      "ppFertilizer4",
-      "ppFertilizer1",
-      "ppFertilizer2",
-      "ppFertilizer3",
-    ],
-    specs: [
-      { label: "Minimum Order Quantity", value: "100 Piece" },
-      { label: "Storage Capacity", value: "50 Kg" },
-      { label: "Color", value: "White" },
-      { label: "Material", value: "PP" },
-      { label: "Pattern", value: "Plain" },
-      { label: "Brand", value: "AllPack Packaging" },
-      { label: "Usage/Application", value: "Fertilizer Packaging" },
-    ], 
-  }, 
-  {
-    id: "dapFertilizerBag",
-    title: "Dap Fertilizer Bag",
+  //   ], 
+  // },
+   {
+    id: "5kgFertilizerBag",
+    title: "5 Kg Fertilizer Bag",
     price: "₹ 15",
     unit: "Piece",
     rating: null,
@@ -68,6 +45,73 @@ const fertilizerBags = [
       { label: "Brand", value: "All Pack Creation" }, 
     ],
   },
+   {
+    id: "10kgFertilizerBag",
+    title: "10Kg Printed Fertilizer Bag",
+    price: "₹ 7",
+    unit: "Piece",
+    rating: null,
+    reviews: null,
+     images: [
+      "product3", 
+      "printFertilizer3"
+    ],
+    specs: [
+      { label: "Minimum Order Quantity", value: "500 Piece" }, 
+      { label: "Storage Capacity", value: "10 kg" },
+      { label: "Shape", value: "Rectangular" },
+      { label: "Material", value: "LDPE" },
+      { label: "Usage/Application", value: "Fertilizer Packaging" }, 
+      { label: "Brand", value: "All Pack Creation" }, 
+    ],
+  },
+   {
+    id: "25kgFertilizerBag",
+    title: "25Kg Fertilizer Bag",
+    price: "₹ 27",
+    unit: "Piece",
+    rating: null,
+    reviews: null,
+     images: [
+      "25kgFertilizer1",
+      "25kgFertilizer2",
+      "25kgFertilizer3",
+      "25kgFertilizer4",
+    ],
+    specs: [
+      { label: "Minimum Order Quantity", value: "100 Piece" },
+      { label: "Storage Capacity", value: "25 Kg" },
+      { label: "Color", value: "White" },
+      { label: "Material", value: "BOPP" },
+      { label: "Usage/Applications", value: "Packaging" },
+      { label: "Pattern", value: "Plain" },
+      { label: "Brand", value: "All Pack Creation" }, 
+    ],
+  },
+  {
+    id: "50kgFertilizerBag",
+    title: "50 kg Fertilizer Bag",
+    price: "₹ 28",
+    unit: "Piece",
+    rating: 4.7,
+    reviews: 89,
+    images: [
+      "ppFertilizer4",
+      "ppFertilizer1",
+      "ppFertilizer2",
+      "ppFertilizer3",
+    ],
+    specs: [
+      { label: "Minimum Order Quantity", value: "100 Piece" },
+      { label: "Storage Capacity", value: "50 Kg" },
+      { label: "Color", value: "White" },
+      { label: "Material", value: "PP" },
+      { label: "Pattern", value: "Plain" },
+      { label: "Brand", value: "AllPack Packaging" },
+      { label: "Usage/Application", value: "Fertilizer Packaging" },
+    ], 
+  }, 
+ 
   {
     id: "whiteFertilizerBag",
     title: "White Fertilizer Packaging Bag",
@@ -91,29 +135,7 @@ const fertilizerBags = [
       { label: "Brand", value: "All Pack Creation" }, 
     ],
   },
-    {
-    id: "25kgFertilizerBag",
-    title: "25Kg Fertilizer Bag",
-    price: "₹ 27",
-    unit: "Piece",
-    rating: null,
-    reviews: null,
-     images: [
-      "25kgFertilizer1",
-      "25kgFertilizer2",
-      "25kgFertilizer3",
-      "25kgFertilizer4",
-    ],
-    specs: [
-      { label: "Minimum Order Quantity", value: "100 Piece" },
-      { label: "Storage Capacity", value: "25 Kg" },
-      { label: "Color", value: "White" },
-      { label: "Material", value: "BOPP" },
-      { label: "Usage/Applications", value: "Packaging" },
-      { label: "Pattern", value: "Plain" },
-      { label: "Brand", value: "All Pack Creation" }, 
-    ],
-  },
+   
   {
     id: "BOPPFertilizer",
     title: "BOPP Fertilizer Bag",
@@ -288,26 +310,7 @@ const fertilizerBags = [
       { label: "Brand", value: "All Pack Creation" }, 
     ],
   },
-  {
-    id: "25kgPrinted",
-    title: "25Kg Printed Fertilizer Bag",
-    price: "₹ 7",
-    unit: "Piece",
-    rating: null,
-    reviews: null,
-     images: [
-      "product3", 
-      "printFertilizer3"
-    ],
-    specs: [
-      { label: "Minimum Order Quantity", value: "500 Piece" }, 
-      { label: "Storage Capacity", value: "25 kg" },
-      { label: "Shape", value: "Rectangular" },
-      { label: "Material", value: "LDPE" },
-      { label: "Usage/Application", value: "Fertilizer Packaging" }, 
-      { label: "Brand", value: "All Pack Creation" }, 
-    ],
-  },
+ 
 
 ];
   
