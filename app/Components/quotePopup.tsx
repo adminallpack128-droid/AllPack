@@ -103,7 +103,7 @@ Customer requested a quote and provided their mobile number for quick contact.`,
             <div className="mb-6">
               <h2 className="text-lg font-semibold text-gray-900 mb-2">
                 Connect with{" "}
-                <span className="text-orange-600">&quot;AllPack Pro&quot;</span>{" "}
+                <span className="text-orange-600">&quot;AllPack&quot;</span>{" "}
                 receive details on your mobile. We&apos;ll respond to you
                 shortly!
               </h2>
@@ -195,7 +195,7 @@ Customer requested a quote and provided their mobile number for quick contact.`,
               <div className="mt-4 text-center">
                 <p className="text-xs text-gray-500">
                   By submitting, you agree to receive calls/messages from
-                  AllPack Pro
+                  AllPack 
                 </p>
               </div>
             )}

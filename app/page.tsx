@@ -1,76 +1,76 @@
-import { Button } from "./Components/Ui/button";
-import { Card } from "./Components/Ui/card"; 
+// import { Button } from "./Components/Ui/button";
+// import { Card } from "./Components/Ui/card"; 
 import { FaMedal, FaBolt, FaLeaf, FaTag } from "react-icons/fa";
 import InquirySection from "./Components/enquiry";
 import ProductCarousel from "./Components/portfolio-carousel";
 
 export default function Component() {
-  const products = [
-    {
-      id: 1,
-      name: "Printed Fertilizer Bag",
-      price: "₹33",
-      unit: "/piece",
-      colors: "Multi-color",
-      image: "bg-gradient-to-br from-orange-100 to-orange-200",
-    },
-    {
-      id: 2,
-      name: "PP Woven Bag",
-      price: "₹32",
-      unit: "/piece",
-      colors: "Green, Yellow",
-      image: "bg-gradient-to-br from-green-100 to-green-200",
-    },
-    {
-      id: 3,
-      name: "Water Soluble Fertilizers Bag",
-      price: "₹27",
-      unit: "/piece",
-      colors: "Multi-color",
-      image: "bg-gradient-to-br from-blue-100 to-blue-200",
-    },
-    {
-      id: 4,
-      name: "Plain PP Fertilizer Bag",
-      price: "₹32",
-      unit: "/piece",
-      colors: "White, Natural",
-      image: "bg-gradient-to-br from-gray-100 to-gray-200",
-    },
-    {
-      id: 5,
-      name: "25kg NPK Fertilizer Bag",
-      price: "₹27",
-      unit: "/kg",
-      colors: "Blue & Yellow",
-      image: "bg-gradient-to-br from-cyan-100 to-blue-200",
-    },
-    {
-      id: 6,
-      name: "DAP Fertilizer Bag",
-      price: "₹15",
-      unit: "/piece",
-      colors: "Multi-color",
-      image: "bg-gradient-to-br from-red-100 to-red-200",
-    },
-    {
-      id: 7,
-      name: "White Fertilizer Packaging",
-      price: "₹32",
-      unit: "/piece",
-      colors: "White",
-      image: "bg-gradient-to-br from-gray-50 to-gray-100",
-    },
-    {
-      id: 8,
-      name: "25Kg Fertilizer Bag",
-      price: "₹27",
-      unit: "/piece",
-      colors: "Green & White",
-      image: "bg-gradient-to-br from-green-100 to-cyan-100",
-    },
-  ];
+  // const products = [
+  //   {
+  //     id: 1,
+  //     name: "Printed Fertilizer Bag",
+  //     price: "₹33",
+  //     unit: "/piece",
+  //     colors: "Multi-color",
+  //     image: "bg-gradient-to-br from-orange-100 to-orange-200",
+  //   },
+  //   {
+  //     id: 2,
+  //     name: "PP Woven Bag",
+  //     price: "₹32",
+  //     unit: "/piece",
+  //     colors: "Green, Yellow",
+  //     image: "bg-gradient-to-br from-green-100 to-green-200",
+  //   },
+  //   {
+  //     id: 3,
+  //     name: "Water Soluble Fertilizers Bag",
+  //     price: "₹27",
+  //     unit: "/piece",
+  //     colors: "Multi-color",
+  //     image: "bg-gradient-to-br from-blue-100 to-blue-200",
+  //   },
+  //   {
+  //     id: 4,
+  //     name: "Plain PP Fertilizer Bag",
+  //     price: "₹32",
+  //     unit: "/piece",
+  //     colors: "White, Natural",
+  //     image: "bg-gradient-to-br from-gray-100 to-gray-200",
+  //   },
+  //   {
+  //     id: 5,
+  //     name: "25kg NPK Fertilizer Bag",
+  //     price: "₹27",
+  //     unit: "/kg",
+  //     colors: "Blue & Yellow",
+  //     image: "bg-gradient-to-br from-cyan-100 to-blue-200",
+  //   },
+  //   {
+  //     id: 6,
+  //     name: "DAP Fertilizer Bag",
+  //     price: "₹15",
+  //     unit: "/piece",
+  //     colors: "Multi-color",
+  //     image: "bg-gradient-to-br from-red-100 to-red-200",
+  //   },
+  //   {
+  //     id: 7,
+  //     name: "White Fertilizer Packaging",
+  //     price: "₹32",
+  //     unit: "/piece",
+  //     colors: "White",
+  //     image: "bg-gradient-to-br from-gray-50 to-gray-100",
+  //   },
+  //   {
+  //     id: 8,
+  //     name: "25Kg Fertilizer Bag",
+  //     price: "₹27",
+  //     unit: "/piece",
+  //     colors: "Green & White",
+  //     image: "bg-gradient-to-br from-green-100 to-cyan-100",
+  //   },
+  // ];
 
   // const portfolioItems = [
   //   {
@@ -345,10 +345,9 @@ export default function Component() {
         </div>
       </section>
       {/* Product Range */}
-      <section className="py-4 px-4 md:px-8 bg-gray-50">
+      {/* <section className="py-4 px-4 md:px-8 bg-gray-50">
         <div className="max-w-6xl mx-auto">
-          {/* Section Header */}
-          <div className="text-center mb-4">
+           <div className="text-center mb-4">
             <h2 className="text-3xl font-bold text-gray-900 mb-4">
               Complete Product Range
             </h2>
@@ -357,8 +356,7 @@ export default function Component() {
             </p>
           </div>
 
-          {/* Product Grid */}
-          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+           <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
             {products.map((product) => (
               <Card
                 key={product.id}
@@ -375,22 +373,18 @@ export default function Component() {
             group
           "
               >
-                {/* Product Image */}
-                <div
+                 <div
                   className={`${product.image} h-48 md:h-56 flex items-center justify-center relative overflow-hidden`}
                 >
                   <div className="absolute inset-0 bg-gradient-to-t from-black/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                 </div>
 
-                {/* Product Info */}
-                <div className="p-4 md:p-5 flex flex-col h-full">
-                  {/* Title */}
-                  <h3 className="font-semibold text-gray-900 text-sm md:text-base line-clamp-2 mb-3">
+                 <div className="p-4 md:p-5 flex flex-col h-full">
+                   <h3 className="font-semibold text-gray-900 text-sm md:text-base line-clamp-2 mb-3">
                     {product.name}
                   </h3>
 
-                  {/* Price */}
-                  <div className="mb-3">
+                   <div className="mb-3">
                     <div className="text-2xl md:text-3xl font-bold text-green-700">
                       {product.price}
                       <span className="text-xs md:text-sm font-normal text-gray-500 ml-1">
@@ -399,13 +393,11 @@ export default function Component() {
                     </div>
                   </div>
 
-                  {/* Colors */}
-                  <p className="text-xs md:text-sm text-gray-500 mb-4">
+                   <p className="text-xs md:text-sm text-gray-500 mb-4">
                     Colors: {product.colors}
                   </p>
 
-                  {/* Buttons */}
-                  <div className="flex flex-col sm:flex-row gap-3 justify-center">
+                   <div className="flex flex-col sm:flex-row gap-3 justify-center">
                     <Button
                       type="submit"
                       className="bg-gradient-to-r from-orange-500 to-orange-600 hover:from-orange-400 hover:to-orange-500 text-white py-4 px-5 rounded-lg text-md shadow-lg hover:shadow-xl transition-all duration-300"
@@ -428,7 +420,7 @@ export default function Component() {
             ))}
           </div>
         </div>
-      </section>
+      </section> */}
       {/* Why Choose Us - Features with Icons */} 
       <section className="py-10 px-4 md:px-8 bg-[#F5F3ED]">
         <div className="max-w-6xl mx-auto">
@@ -536,10 +528,10 @@ export default function Component() {
         {/* Table Body */}
         <tbody>
           {[
+            { product: '5Kg Fertilizer Bags', price: '₹8/piece', bulk: '5000+ units' },
             { product: '10Kg Fertilizer Bags', price: '₹28/piece', bulk: '500+ units' },
             { product: '25Kg Fertilizer Bags', price: '₹32/piece', bulk: '1000+ units' },
-            { product: 'Seed Packets', price: '₹8/piece', bulk: '5000+ units' },
-            { product: 'Pesticide Containers', price: '₹35/piece', bulk: '500+ units' }
+            { product: '50Kg Fertilizer Bags', price: '₹85/piece', bulk: '500+ units' },
           ].map((row, idx) => (
             <tr
               key={idx}

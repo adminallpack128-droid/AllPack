@@ -21,7 +21,7 @@ export async function POST(req: Request) {
 
     // Send email
    const info = await transporter.sendMail({
-  from: `"AllPack Pro" <${process.env.EMAIL_USER}>`,
+  from: `"AllPack " <${process.env.EMAIL_USER}>`,
   to: "adminallpack128@gmail.com",
   subject: "📦 New Customer Requirement",
 

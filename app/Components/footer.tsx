@@ -14,7 +14,7 @@ export default function Footer(){
                   <FaBox className="h-5 w-5 text-white" />
                 </div>
                 <span className="text-xl font-bold">
-                  All<span className="text-orange-500">Pack</span> Pro
+                  All<span className="text-orange-500">Pack</span>
                 </span>
               </div>
               <p className="text-gray-400">
@@ -94,7 +94,7 @@ export default function Footer(){
           </div>
 
           <div className="border-t border-gray-800 mt-12 pt-8 text-center text-gray-400">
-            <p>&copy; {new Date().getFullYear()} All Pack Packaging Solution Pro. All rights reserved.</p>
+            <p>&copy; {new Date().getFullYear()} All Pack Packaging Solution. All rights reserved.</p>
           </div>
         </div>
       </footer>

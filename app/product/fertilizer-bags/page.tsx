@@ -53,7 +53,7 @@ export default function PlainPPFertilizerBagPage() {
               </div>
               <div>
                 <h1 className="text-2xl font-bold text-gray-900">
-                  AllPack Pro
+                  AllPack 
                 </h1>
                 <p className="text-gray-600">Pune, Maharashtra</p>
                 <div className="flex items-center space-x-4 mt-1">
@@ -1674,7 +1674,7 @@ export default function PlainPPFertilizerBagPage() {
         <div className="container mx-auto px-4 lg:px-[5rem]">
           <div className="text-center mb-12">
             <h2 className="text-3xl font-bold text-gray-900 mb-4">
-              Why Choose AllPack Pro for Fertilizer Bags?
+              Why Choose AllPack for Fertilizer Bags?
             </h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
               Leading manufacturer of high-quality fertilizer packaging

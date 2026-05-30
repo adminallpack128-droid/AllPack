@@ -342,7 +342,7 @@ export default function Service() {
       <section className="py-20 bg-white">
         <div className="container mx-auto px-4 lg:px-[5rem]">
           <div className="text-center space-y-4 mb-16">
-            <h2 className="text-3xl lg:text-4xl font-bold text-gray-900">Why Choose AllPack Pro?</h2>
+            <h2 className="text-3xl lg:text-4xl font-bold text-gray-900">Why Choose AllPack ?</h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
               Industry-leading expertise and commitment to quality
             </p>
