@@ -140,6 +140,7 @@ export default function ProductSlides() {
     align: "start",
     loop: false,
     skipSnaps: false,
+    slidesToScroll: 3,
   });
 
   const [prevBtnDisabled, setPrevBtnDisabled] = useState(true);
@@ -175,16 +176,16 @@ export default function ProductSlides() {
   };
 
   return (
-    <div className="w-full">
-      <div className="relative">
+    <div className="w-full px-4 md:px-6">
+      <div className="relative -mx-4 md:-mx-6">
         <div className="overflow-hidden" ref={emblaRef}>
-          <div className="flex gap-6">
+          <div className="flex gap-4 md:gap-6 px-4 md:px-6">
             {products.map((product) => {
               const selectedColorIndex =
                 selectedColors[product.id];
 
               return (
-                <div key={product.id} className="flex-shrink-0 w-full md:w-1/2 lg:w-1/3 min-w-0">
+                <div key={product.id} className="flex-shrink-0 w-full md:w-1/2 lg:w-1/3">
                   <Card className="overflow-hidden rounded-2xl border border-gray-200 shadow-md hover:shadow-xl transition-all duration-300 bg-white h-full">
               {/* Product Image */}
               {/* Product Image */}
@@ -290,8 +291,9 @@ export default function ProductSlides() {
         <button
           onClick={scrollPrev}
           disabled={prevBtnDisabled}
-          className="absolute left-0 top-1/3 -translate-y-1/2 -translate-x-4 md:-translate-x-6 z-10 bg-white border border-gray-300 rounded-full p-2 hover:bg-gray-100 disabled:opacity-50 disabled:cursor-not-allowed transition-all"
+          className="absolute left-0 top-1/3 -translate-y-1/2 z-10 bg-white border border-gray-300 rounded-full p-2 hover:bg-gray-100 disabled:opacity-50 disabled:cursor-not-allowed transition-all"
           aria-label="Previous slide"
+          style={{ left: '-20px' }}
         >
           <svg className="w-6 h-6 text-gray-700" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
@@ -301,8 +303,9 @@ export default function ProductSlides() {
         <button
           onClick={scrollNext}
           disabled={nextBtnDisabled}
-          className="absolute right-0 top-1/3 -translate-y-1/2 translate-x-4 md:translate-x-6 z-10 bg-white border border-gray-300 rounded-full p-2 hover:bg-gray-100 disabled:opacity-50 disabled:cursor-not-allowed transition-all"
+          className="absolute right-0 top-1/3 -translate-y-1/2 z-10 bg-white border border-gray-300 rounded-full p-2 hover:bg-gray-100 disabled:opacity-50 disabled:cursor-not-allowed transition-all"
           aria-label="Next slide"
+          style={{ right: '-20px' }}
         >
           <svg className="w-6 h-6 text-gray-700" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
