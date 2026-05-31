@@ -413,7 +413,7 @@ export default function Topnav() {
           <div className="absolute top-0 left-0 w-4/5 h-screen bg-white text-black shadow-lg overflow-y-auto">
             <div className="flex items-center justify-between p-2">
               <Image
-                src="/AllPackLogo.jpg"
+                src="/logoallpack.png"
                 alt="logo"
                 height={40}
                 width={120}

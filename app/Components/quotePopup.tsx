@@ -96,7 +96,7 @@ Customer requested a quote and provided their mobile number for quick contact.`,
             </div> */}
             <Link href="/">
                     <Image
-                      src="/AllPackLogo.jpg"
+                      src="/logoallpack.png"
                       alt="logo"
                       height={200}
                       width={200}
