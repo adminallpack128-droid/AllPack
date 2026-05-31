@@ -204,12 +204,12 @@ export default function Topnav() {
     {
       name: "About",
       href: "/about",
-      subItems: [
-        { name: "Our Story", href: "/about/story" },
-        { name: "Our Team", href: "/about/team" },
-        { name: "Certifications", href: "/about/certifications" },
-        { name: "Quality Assurance", href: "/about/quality" },
-      ],
+      // subItems: [
+      //   { name: "Our Story", href: "/about/story" },
+      //   { name: "Our Team", href: "/about/team" },
+      //   { name: "Certifications", href: "/about/certifications" },
+      //   { name: "Quality Assurance", href: "/about/quality" },
+      // ],
     },
     {
       name: "Contact",

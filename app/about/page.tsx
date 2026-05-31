@@ -1,11 +1,8 @@
 "use client";
-
-import { Badge } from "../Components/Ui/badge";
-import { Button } from "../Components/Ui/button";
-import Link from "next/link";
+  
 import { FaAward, FaUsers, FaBullseye, FaLightbulb, FaCheckCircle, FaTrophy } from "react-icons/fa";
-import Image from "next/image";
-import QuoteButtonWithDialog from "../Components/getQuotePopup";
+ 
+// import QuoteButtonWithDialog from "../Components/getQuotePopup";
 
 export default function AboutPage() {
   return (
@@ -14,9 +11,7 @@ export default function AboutPage() {
       <section className="bg-gradient-to-br from-gray-900 via-gray-800 to-black text-white py-12 lg:py-20">
         <div className="container mx-auto px-4 lg:px-8">
           <div className="text-center max-w-4xl mx-auto space-y-6">
-            <Badge className="bg-orange-500/20 text-orange-300 hover:bg-orange-500/30 text-lg justify-center w-fit mx-auto">
-              Our Story
-            </Badge>
+           
             <h1 className="text-4xl lg:text-6xl font-bold leading-tight">
               Transforming Packaging into
               <span className="bg-gradient-to-r from-orange-400 to-orange-600 bg-clip-text text-transparent">
@@ -25,7 +20,7 @@ export default function AboutPage() {
               </span>
             </h1>
             <p className="text-xl text-gray-300 leading-relaxed">
-              Since inception, Allpack Creation has been your trusted partner in creating exceptional packaging solutions that elevate your products and captivate your customers. We combine creative design, quality materials, and industry expertise to deliver packaging that sells.
+              Since inception, Allpack has been your trusted partner in creating exceptional packaging solutions that elevate your products and captivate your customers. We combine creative design, quality materials, and industry expertise to deliver packaging that sells.
             </p>
           </div>
         </div>
@@ -97,7 +92,7 @@ export default function AboutPage() {
         <div className="container mx-auto px-4 lg:px-8">
           <div className="text-center max-w-3xl mx-auto mb-12">
             <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 mb-4">
-              Why Choose Allpack Creation
+              Why Choose Allpack
             </h2>
             <p className="text-lg text-gray-600">
               We&apos;ve built our reputation on reliability, innovation, and customer success
@@ -172,7 +167,7 @@ export default function AboutPage() {
               {
                 year: "2016",
                 title: "The Beginning",
-                description: "Allpack Creation was founded with a simple vision: to provide exceptional packaging design services to agricultural businesses. Started with a small team and big dreams.",
+                description: "Allpack was founded with a simple vision: to provide exceptional packaging design services to agricultural businesses. Started with a small team and big dreams.",
               },
               {
                 year: "2017-2018",
@@ -281,14 +276,14 @@ export default function AboutPage() {
       </section>
 
       {/* CTA Section */}
-      <section className="py-12 lg:py-20 bg-gradient-to-br from-gray-900 to-black text-white">
+      {/* <section className="py-12 lg:py-20 bg-gradient-to-br from-gray-900 to-black text-white">
         <div className="container mx-auto px-4 lg:px-8">
           <div className="text-center max-w-3xl mx-auto space-y-8">
             <h2 className="text-3xl lg:text-5xl font-bold">
               Ready to Create Packaging That Sells?
             </h2>
             <p className="text-xl text-gray-300">
-              Join 200+ happy clients who trust Allpack Creation for their packaging needs. Let&apos;s transform your product packaging into a powerful sales tool.
+              Join 200+ happy clients who trust Allpack for their packaging needs. Let&apos;s transform your product packaging into a powerful sales tool.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center pt-6">
               <Link href="/product">
@@ -302,7 +297,7 @@ export default function AboutPage() {
             </div>
           </div>
         </div>
-      </section>
+      </section> */}
     </main>
   );
 }
