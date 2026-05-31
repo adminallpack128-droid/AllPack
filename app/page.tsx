@@ -274,11 +274,9 @@ export default function Component() {
                       </div>
                     </Button>
                   </Link>
-                  <QuoteButtonWithDialog  className="bg-white hover:bg-orange-100 text-orange-500 border border-orange-500 rounded-lg text-md shadow-lg hover:shadow-xl transition-all duration-300"
->
-                                 Get Quote
-                                </QuoteButtonWithDialog>
-                   
+                  <QuoteButtonWithDialog className="bg-white hover:bg-orange-100 text-orange-500 border border-orange-500 rounded-lg text-md shadow-lg hover:shadow-xl transition-all duration-300">
+                    Get Quote
+                  </QuoteButtonWithDialog>
                 </div>
               </div>
             </div>
@@ -312,16 +310,20 @@ export default function Component() {
             </p>
 
             {/* Buttons */}
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              {/* Primary Button */}
-              <button className="bg-gradient-to-r from-orange-500 to-orange-600 hover:from-orange-400  text-white px-8 py-3 rounded-lg text-base font-medium transition-all duration-300">
-                Explore All Products
-              </button>
-
-              {/* Outline Button */}
-              <button className="border-2 border-orange-500 text-orange-500 hover:bg-orange-100 px-8 py-3 rounded-lg text-base font-medium transition-all duration-300">
+            <div className=" flex flex-row gap-3 justify-center">
+              <Link href="/product">
+                <Button
+                  type="button"
+                  className="bg-gradient-to-r from-orange-500 to-orange-600 hover:from-orange-400 text-white py-5 px-5 rounded-lg text-md shadow-lg hover:shadow-xl transition-all duration-300"
+                >
+                  <div className="flex items-center space-x-2 cursor-pointer">
+                    <span>Explore All Products</span>
+                  </div>
+                </Button>
+              </Link>
+              <QuoteButtonWithDialog className="bg-white hover:bg-orange-100 text-orange-500 border border-orange-500 rounded-lg text-md shadow-lg hover:shadow-xl transition-all duration-300">
                 Request Quote
-              </button>
+              </QuoteButtonWithDialog>
             </div>
           </div>
 
@@ -569,9 +571,9 @@ export default function Component() {
 
                     {/* Button */}
                     <td className="lg:px-6 px-2 lg:py-4 py-2 text-center">
-                     <QuoteButtonWithDialog className="rounded-lg bg-gradient-to-r from-orange-500 to-orange-600 text-white">
-                                    Get Quote
-                                   </QuoteButtonWithDialog>
+                      <QuoteButtonWithDialog className="rounded-lg bg-gradient-to-r from-orange-500 to-orange-600 text-white">
+                        Get Quote
+                      </QuoteButtonWithDialog>
                     </td>
                   </tr>
                 ))}

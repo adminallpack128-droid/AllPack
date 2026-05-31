@@ -76,15 +76,14 @@ const BagImageGallery = ({ bag }: BagImageGalleryProps) => {
   return (
     <div>
       {/* Main Image Display */}
-   <div className="relative aspect-[4/3] sm:aspect-square bg-gray-100 rounded-lg overflow-hidden flex justify-center items-center">
-  {bag.images?.[0] && (
+<div className="relative min-h-[250px] sm:min-h-[350px] bg-gray-100 rounded-lg flex justify-center items-center p-2">  {bag.images?.[0] && (
     <Image
       src={`/${bag.images[0]}`}
       alt="Selected Bag Image"
       width={500}
-      height={300}
+      height={200}
       quality={90}
-      className="object-cover hover:scale-105 transition-transform duration-300"
+  className=" object-contain hover:scale-105 transition-transform duration-300"
     />
   )}
 </div>
