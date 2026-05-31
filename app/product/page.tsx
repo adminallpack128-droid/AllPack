@@ -66,11 +66,11 @@ export default function ProductsPage() {
       {/* Products Section */}
       <section className="py-8">
         <div className="container mx-auto px-4 lg:px-[5rem]">
-          <div className="flex lg:flex-row flex-col gap-3 items-center justify-between mb-8">
-            <h2 className="text-3xl font-bold text-gray-900">Products</h2>
+          <div className="flex flex-row gap-3 items-center justify-between mb-8">
+            <h2 className="lg:text-3xl text-2xl font-bold text-gray-900">Products</h2>
 
-            <div className="flex lg:flex-row flex-col items-center space-x-4 gap-3">
-              <QuoteButtonWithDialog className="text-lg cursor-pointer rounded-lg bg-gradient-to-r border-1 border-gray-200 hover:bg-gray-50 text-black">
+            <div className="flex flex-row items-center space-x-4 gap-3">
+              <QuoteButtonWithDialog className="hidden lg:block text-lg cursor-pointer rounded-lg bg-gradient-to-r border-1 border-gray-200 hover:bg-gray-50 text-black">
                 📞 Call +91 88055 19081
                 <span className="text-sm text-gray-500 ml-2">
                   75% Response Rate

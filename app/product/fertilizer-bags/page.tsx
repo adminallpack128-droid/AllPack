@@ -51,45 +51,31 @@ export default function PlainPPFertilizerBagPage() {
   return (
     <div className="min-h-screen bg-gradient-to-br from-orange-50 via-orange-25 to-amber-50">
       {/* Navigation */}
-      <section className="bg-white border-b">
-        <div className="container mx-auto px-4 lg:px-[5rem] py-4">
-          {/* Top Row */}
-          <div className="flex items-center justify-between">
-            <nav className="text-sm text-gray-600 flex items-center">
-              <Link href="/" className="hover:text-orange-600">
-                Home
-              </Link>
-              <span className="mx-2">»</span>
-              <Link href="/product" className="hover:text-orange-600">
-                Our Products
-              </Link>
-              <span className="mx-2">»</span>
-              <Link
-                href="/product/fertilizer-bags"
-                className="hover:text-orange-600"
-              >
-                Fertilizer Bags
-              </Link>
-            </nav>
-   <div className="flex items-center space-x-4">
-            <Badge variant="secondary" className="bg-green-100 text-green-700">
-              ✓ GST Verified
-            </Badge>
+     <section className="bg-white border-b">
+  <div className="container mx-auto px-4 lg:px-[5rem] py-4">
+    {/* Top Row */}
+    <div className="flex flex-wrap items-center justify-between gap-2">
+      
+      <nav className="text-sm text-gray-600 flex flex-wrap items-center">
+        <Link href="/" className="hover:text-orange-600">Home</Link>
+        <span className="mx-1">»</span>
+        <Link href="/product" className="hover:text-orange-600">Our Products</Link>
+        <span className="mx-1">»</span>
+        <Link href="/product/fertilizer-bags" className="hover:text-orange-600">Fertilizer Bags</Link>
+      </nav>
 
-            <Badge
-              variant="secondary"
-              className="bg-orange-100 text-orange-700"
-            >
-              ⭐ TrustSEAL Verified
-            </Badge>
-          </div> 
-              <h2 className="text-2xl font-bold text-white bg-gradient-to-r from-orange-500 to-orange-600 inline-block px-6 py-2 rounded-lg shadow-lg">
-                Fertilizer Bags
-              </h2> 
-          </div>
- 
-        </div>
-      </section>
+      <div className="flex flex-wrap items-center space-x-2 mt-2 md:mt-0">
+        <Badge variant="secondary" className="bg-green-100 text-green-700">✓ GST Verified</Badge>
+        <Badge variant="secondary" className="bg-orange-100 text-orange-700">⭐ TrustSEAL Verified</Badge>
+      </div> 
+
+      <h2 className="text-2xl md:text-3xl font-bold text-white bg-gradient-to-r from-orange-500 to-orange-600 inline-block px-4 md:px-6 py-2 rounded-lg shadow-lg mt-2 md:mt-0">
+        Fertilizer Bags
+      </h2> 
+
+    </div>
+  </div>
+</section>
 
        
 
