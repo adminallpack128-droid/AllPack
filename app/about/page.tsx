@@ -3,7 +3,7 @@
 import { Badge } from "@/components/ui/badge";
 import { Button } from "../Components/Ui/button";
 import Link from "next/link";
-import { FaAward, FaUsers, FaTarget, FaLightbulb, FaCheckCircle, FaTrophy } from "react-icons/fa";
+import { FaAward, FaUsers, FaBullseye, FaLightbulb, FaCheckCircle, FaTrophy } from "react-icons/fa";
 import Image from "next/image";
 import QuoteButtonWithDialog from "../Components/getQuotePopup";
 
@@ -39,7 +39,7 @@ export default function AboutPage() {
             <div className="space-y-4">
               <div className="flex items-center gap-3">
                 <div className="p-3 bg-orange-100 rounded-lg">
-                  <FaTarget className="w-6 h-6 text-orange-600" />
+                  <FaBullseye className="w-6 h-6 text-orange-600" />
                 </div>
                 <h3 className="text-2xl font-bold text-gray-900">Our Mission</h3>
               </div>
@@ -132,7 +132,7 @@ export default function AboutPage() {
                 description: "Our creative team stays ahead of packaging trends, combining market research, brand strategy, and visual excellence in every design.",
               },
               {
-                icon: FaTarget,
+                icon: FaBullseye,
                 title: "Competitive Pricing",
                 description: "Professional designs and quality materials at prices that work for your business. Volume discounts and flexible payment options available.",
               },
