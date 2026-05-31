@@ -143,12 +143,16 @@ export default function ProductSlides() {
     3: 0,
     4: 0,
   });
+ const [windowWidth, setWindowWidth] = useState(1024);
+
+  const isMobile = windowWidth < 768;
+  const isTablet = windowWidth >= 768 && windowWidth < 1024;
 
   const [emblaRef, emblaApi] = useEmblaCarousel({
     align: "start",
     loop: false,
     skipSnaps: false,
-    slidesToScroll: 3,
+    slidesToScroll: isMobile ? 1 : isTablet ? 2 : 3,
   });
 
   const [prevBtnDisabled, setPrevBtnDisabled] = useState(true);
@@ -156,6 +160,15 @@ export default function ProductSlides() {
 
   const scrollPrev = () => emblaApi?.scrollPrev();
   const scrollNext = () => emblaApi?.scrollNext();
+  useEffect(() => {
+    function handleResize() {
+      setWindowWidth(window.innerWidth);
+    }
+
+    handleResize(); // Set initial value
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
 
   useEffect(() => {
     if (!emblaApi) return;
