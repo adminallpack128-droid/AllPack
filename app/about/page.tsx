@@ -1,6 +1,6 @@
 "use client";
 
-import { Badge } from "@/components/ui/badge";
+import { Badge } from "../Components/Ui/badge";
 import { Button } from "../Components/Ui/button";
 import Link from "next/link";
 import { FaAward, FaUsers, FaBullseye, FaLightbulb, FaCheckCircle, FaTrophy } from "react-icons/fa";
