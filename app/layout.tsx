@@ -1,17 +1,17 @@
 import type { Metadata } from "next";
-import { Inter, Playfair_Display } from "next/font/google";
+import { Poppins, Plus_Jakarta_Sans } from "next/font/google";
 import "./globals.css";
 import Footer from "./Components/footer";
 import Topnav from "./Components/Topnav";
 
-const inter = Inter({
-  variable: "--font-sans",
+const poppins = Poppins({
+  variable: "--font-heading",
   subsets: ["latin"],
-  weight: ["400", "500", "600", "700"],
+  weight: ["400", "500", "600", "700", "800"],
 });
 
-const playfairDisplay = Playfair_Display({
-  variable: "--font-heading",
+const plusJakartaSans = Plus_Jakarta_Sans({
+  variable: "--font-sans",
   subsets: ["latin"],
   weight: ["400", "500", "600", "700"],
 });
@@ -29,7 +29,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${inter.variable} ${playfairDisplay.variable} font-sans antialiased`}
+        className={`${poppins.variable} ${plusJakartaSans.variable} font-sans antialiased`}
       >
       <Topnav />  
        {children}
