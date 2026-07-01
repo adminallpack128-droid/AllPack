@@ -164,7 +164,7 @@ export default function OrderStatusPage() {
                   </li>
                   <li className="flex items-start space-x-3">
                     <span className="text-green-600 font-bold">📞</span>
-                    <span>Contact us at <a href="tel:+91 88055 19081" className="text-green-600 font-semibold hover:underline">+91 8975040173</a></span>
+                    <span>Contact us at <a href="tel:+91 88055 19081" className="text-green-600 font-semibold hover:underline">+91 8805519081</a></span>
                   </li>
                   <li className="flex items-start space-x-3">
                     <span className="text-green-600 font-bold">💬</span>
