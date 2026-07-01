@@ -52,11 +52,11 @@ export default function OrderStatusPage() {
   return (
     <main className="min-h-screen bg-gradient-to-br from-gray-50 via-white to-orange-50">
       {/* Hero Section */}
-      <section className="relative py-12 md:py-20 px-4 overflow-hidden">
+      <section className="relative py-6  px-4 overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-r from-orange-500/5 to-green-500/5" />
         
         <div className="max-w-6xl mx-auto relative">
-          <div className="text-center space-y-6 mb-12">
+          <div className="text-center space-y-6 mb-4">
             {/* Icon */}
             <div className="flex justify-center">
               <div className="p-4 bg-gradient-to-br from-green-500 to-emerald-600 rounded-full shadow-lg">
@@ -65,7 +65,7 @@ export default function OrderStatusPage() {
             </div>
 
             {/* Title */}
-            <h1 className="text-4xl md:text-5xl font-bold text-gray-900 leading-tight">
+            <h1 className="text-4xl font-bold text-gray-900 leading-tight">
               Track Your Order
             </h1>
 
@@ -95,7 +95,7 @@ export default function OrderStatusPage() {
                     <FaSearch className="absolute left-4 top-1/2 transform -translate-y-1/2 text-gray-400 w-5 h-5" />
                   </div>
                   <p className="text-xs text-gray-500 mt-2">
-                    You can find your invoice number in your order confirmation email
+                    You can find your invoice number in your order confirmation invoice
                   </p>
                 </div>
 
@@ -127,7 +127,7 @@ export default function OrderStatusPage() {
 
       {/* Results Section */}
       {searched && invoiceData && (
-        <section className="py-12 md:py-20 px-4">
+        <section className="py-4 px-4">
           <div className="max-w-6xl mx-auto">
             <div className="space-y-8">
               {/* Invoice Info Header */}
@@ -160,11 +160,11 @@ export default function OrderStatusPage() {
                 <ul className="space-y-2 text-gray-700">
                   <li className="flex items-start space-x-3">
                     <span className="text-green-600 font-bold">📧</span>
-                    <span>Check your email for the invoice details in your order confirmation</span>
+                    <span>Check your invoice for the invoice details in your order confirmation</span>
                   </li>
                   <li className="flex items-start space-x-3">
                     <span className="text-green-600 font-bold">📞</span>
-                    <span>Contact us at <a href="tel:+918975040173" className="text-green-600 font-semibold hover:underline">+91 8975040173</a></span>
+                    <span>Contact us at <a href="tel:+91 88055 19081" className="text-green-600 font-semibold hover:underline">+91 8975040173</a></span>
                   </li>
                   <li className="flex items-start space-x-3">
                     <span className="text-green-600 font-bold">💬</span>

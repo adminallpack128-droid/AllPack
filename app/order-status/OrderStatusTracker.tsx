@@ -29,11 +29,11 @@ function formatDate(value?: string | null) {
 
 export default function OrderStatusTracker({ status, updatedAt }: OrderStatusTrackerProps) {
   const currentIndex = STAGES.findIndex((s) => s.key === status?.toLowerCase());
-  const currentStage = currentIndex !== -1 ? STAGES[currentIndex] : null;
+  // const currentStage = currentIndex !== -1 ? STAGES[currentIndex] : null;
   const updatedLabel = formatDate(updatedAt);
 
   return (
-    <div className="rounded-xl border border-gray-100 bg-white p-6 shadow-md md:p-8">
+    <div className="text-lg rounded-xl border border-gray-100 bg-white p-6 shadow-md md:p-8">
       {/* Header */}
       <div className="mb-6 flex items-center gap-2">
         <FaTruck className="h-4 w-4 text-green-600" />
@@ -44,7 +44,7 @@ export default function OrderStatusTracker({ status, updatedAt }: OrderStatusTra
       </div>
 
       {/* Stepper */}
-      <ol className="flex flex-wrap items-start gap-y-6">
+      <ol className="text-lg flex flex-wrap items-start gap-y-6">
         {STAGES.map((stage, index) => {
           const done = index < currentIndex;
           const active = index === currentIndex;
@@ -54,7 +54,7 @@ export default function OrderStatusTracker({ status, updatedAt }: OrderStatusTra
               <div className="flex w-20 flex-col items-center gap-2 text-center sm:w-24">
                 <span
                   className={[
-                    'flex h-9 w-9 items-center justify-center rounded-full text-sm font-semibold transition-colors',
+                    'flex h-9 w-9 items-center justify-center rounded-full text-lg font-semibold transition-colors',
                     done
                       ? 'bg-green-600 text-white'
                       : active
@@ -66,7 +66,7 @@ export default function OrderStatusTracker({ status, updatedAt }: OrderStatusTra
                 </span>
                 <span
                   className={[
-                    'text-xs leading-tight',
+                    'text-sm leading-tight',
                     active ? 'font-semibold text-gray-900' : done ? 'text-gray-700' : 'text-gray-400',
                   ].join(' ')}
                 >
@@ -88,7 +88,7 @@ export default function OrderStatusTracker({ status, updatedAt }: OrderStatusTra
       </ol>
 
       {/* History */}
-      {currentStage && (
+      {/* {currentStage && (
         <div className="mt-6 border-t border-gray-100 pt-4">
           <p className="mb-2 text-sm font-medium text-gray-500">History</p>
           <div className="flex items-center justify-between gap-3 text-sm">
@@ -96,7 +96,7 @@ export default function OrderStatusTracker({ status, updatedAt }: OrderStatusTra
             {updatedLabel && <span className="shrink-0 text-xs text-gray-500">{updatedLabel}</span>}
           </div>
         </div>
-      )}
+      )} */}
     </div>
   );
 }
