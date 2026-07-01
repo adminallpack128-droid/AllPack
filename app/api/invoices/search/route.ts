@@ -1,5 +1,5 @@
-import { sql } from '@vercel/postgres';
 import { NextRequest, NextResponse } from 'next/server';
+import { invoiceDbPool } from '@/lib/invoiceDb';
 
 export const POST = async (request: NextRequest) => {
   try {
@@ -12,22 +12,19 @@ export const POST = async (request: NextRequest) => {
       );
     }
 
-    // Search for order by invoice number and get its latest status
-    const result = await sql`
-      SELECT 
-        o.id,
-        o.invoice_number,
-        os.status_name as tracking_status,
-        os.completed_at as tracking_updated_at,
-        o.customer_name,
-        o.product_name,
-        os.status_order
-      FROM orders o
-      LEFT JOIN order_statuses os ON o.id = os.order_id
-      WHERE o.invoice_number ILIKE ${invoiceNumber}
-      ORDER BY os.status_order DESC
-      LIMIT 1
-    `;
+    // Read live from the Invoice-Generation production database. This is the
+    // source of truth for `status` (financial lifecycle) and `tracking_status`
+    // (physical fulfilment stage — order_received -> ... -> delivered), which
+    // uses the exact same 8-stage vocabulary as OrderStatusTracker.tsx expects.
+    const result = await invoiceDbPool.query(
+      `SELECT invoice_number, status, tracking_status, tracking_updated_at,
+              customer_name, document_type
+         FROM invoices
+        WHERE invoice_number ILIKE $1
+        ORDER BY created_at DESC
+        LIMIT 1`,
+      [invoiceNumber.trim()],
+    );
 
     if (result.rows.length === 0) {
       return NextResponse.json(
@@ -41,17 +38,20 @@ export const POST = async (request: NextRequest) => {
     return NextResponse.json({
       success: true,
       data: {
-        id: invoice.id,
         invoiceNumber: invoice.invoice_number,
-        status: invoice.tracking_status || 'Unknown',
+        // OrderStatusTracker.tsx renders the fulfilment timeline, so tracking_status
+        // is what drives the stepper. `status` (paid/confirmed/issued/etc.) is the
+        // separate financial/document lifecycle field, included in case you want to
+        // surface it too (e.g. "Paid" badge alongside the tracker).
+        status: invoice.tracking_status || 'order_received',
+        documentStatus: invoice.status,
+        documentType: invoice.document_type,
         updatedAt: invoice.tracking_updated_at,
         customerName: invoice.customer_name,
-        productName: invoice.product_name,
-        statusOrder: invoice.status_order || 0,
       },
     });
   } catch (error) {
-    console.error('[v0] Error fetching invoice:', error);
+    console.error('[v0] Error fetching invoice from Invoice-Generation DB:', error);
     return NextResponse.json(
       { error: 'Failed to fetch invoice status' },
       { status: 500 }
