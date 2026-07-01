@@ -86,7 +86,7 @@ export default function OrderStatusPage() {
                   <div className="relative">
                     <Input
                       type="text"
-                      placeholder="e.g., INV-20260613-12 or SO-20260614-1"
+                      placeholder="e.g., INV-001"
                       value={invoiceNumber}
                       onChange={(e) => setInvoiceNumber(e.target.value)}
                       className="pl-12 h-12 text-base border-2 border-gray-200 focus:border-green-500 focus:ring-2 focus:ring-green-500/20"
@@ -108,10 +108,16 @@ export default function OrderStatusPage() {
                 </Button>
               </form>
 
-              {/* Error Message */}
+              {/* Error Message with Available Invoices */}
               {error && searched && (
-                <div className="mt-6 p-4 bg-red-50 border border-red-200 rounded-lg">
-                  <p className="text-red-700 font-medium text-center">{error}</p>
+                <div className="mt-6 space-y-4">
+                  <div className="p-4 bg-red-50 border border-red-200 rounded-lg">
+                    <p className="text-red-700 font-medium text-center">{error}</p>
+                  </div>
+                  <div className="p-4 bg-blue-50 border border-blue-200 rounded-lg">
+                    <p className="text-blue-700 font-medium mb-2">✓ Valid Invoice Examples:</p>
+                    <p className="text-blue-600 text-sm">Try searching with: <span className="font-bold text-blue-700">INV-001</span></p>
+                  </div>
                 </div>
               )}
             </div>
