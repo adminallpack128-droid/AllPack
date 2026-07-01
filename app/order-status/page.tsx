@@ -149,21 +149,7 @@ export default function OrderStatusPage() {
               </div>
 
               {/* Order Status Tracker */}
-              <OrderStatusTracker status={invoiceData.status} />
-
-              {/* Last Updated */}
-              <div className="text-center p-6 bg-blue-50 rounded-xl border border-blue-200">
-                <p className="text-sm text-gray-600">Last Updated</p>
-                <p className="text-lg font-semibold text-gray-900 mt-1">
-                  {new Date(invoiceData.updatedAt).toLocaleDateString('en-IN', {
-                    year: 'numeric',
-                    month: 'long',
-                    day: 'numeric',
-                    hour: '2-digit',
-                    minute: '2-digit',
-                  })}
-                </p>
-              </div>
+              <OrderStatusTracker status={invoiceData.status} updatedAt={invoiceData.updatedAt} />
 
               {/* Help Section */}
               <div className="bg-gradient-to-r from-orange-50 to-yellow-50 rounded-xl border border-orange-200 p-8">
