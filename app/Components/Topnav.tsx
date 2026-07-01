@@ -215,6 +215,10 @@ export default function Topnav() {
       name: "Contact",
       href: "/contact",
     },
+    {
+      name: "Order Status",
+      href: "/order-status",
+    },
   ];
 
   useEffect(() => {
