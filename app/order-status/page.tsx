@@ -72,7 +72,7 @@ export default function OrderStatusPage() {
 
             {/* Subtitle */}
             <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-              Enter your invoice number to check the current status of your package
+              Enter your Sale Order number to check the current status of your package
             </p>
           </div>
 
@@ -82,12 +82,12 @@ export default function OrderStatusPage() {
               <form onSubmit={handleSearch} className="space-y-6">
                 <div className="relative">
                   <label className="block text-sm font-semibold text-gray-700 mb-3">
-                    Invoice Number
+                    Sale Order Number
                   </label>
                   <div className="relative">
                     <Input
                       type="text"
-                      placeholder="e.g., INV-001"
+                      placeholder="e.g., SO-001"
                       value={invoiceNumber}
                       onChange={(e) => setInvoiceNumber(e.target.value)}
                       className="pl-12 h-12 text-base border-2 border-gray-200 focus:border-green-500 focus:ring-2 focus:ring-green-500/20"
@@ -96,8 +96,7 @@ export default function OrderStatusPage() {
                     <FaSearch className="absolute left-4 top-1/2 transform -translate-y-1/2 text-gray-400 w-5 h-5" />
                   </div>
                   <p className="text-xs text-gray-500 mt-2">
-                    You can find your invoice number in your order confirmation invoice
-                  </p>
+Use the Sale Order Number from your invoice to track your order.                  </p>
                 </div>
 
                 <Button
@@ -191,10 +190,10 @@ export default function OrderStatusPage() {
             <div className="text-center space-y-6">
               <div className="text-6xl">📦</div>
               <h2 className="text-2xl font-bold text-gray-900">
-                Enter Your Invoice Number
+                Enter Your Sale Order Number
               </h2>
               <p className="text-gray-600 text-lg">
-                Start tracking your order by searching for your invoice number above
+                Start tracking your order by searching for your Sale Order number above
               </p>
             </div>
           </div>
