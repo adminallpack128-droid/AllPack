@@ -12,11 +12,20 @@ export const POST = async (request: NextRequest) => {
       );
     }
 
-    // Search for invoice in the database
+    // Search for order by invoice number and get its latest status
     const result = await sql`
-      SELECT id, invoice_number, tracking_status, tracking_updated_at 
-      FROM invoices 
-      WHERE invoice_number ILIKE $1
+      SELECT 
+        o.id,
+        o.invoice_number,
+        os.status_name as tracking_status,
+        os.completed_at as tracking_updated_at,
+        o.customer_name,
+        o.product_name,
+        os.status_order
+      FROM orders o
+      LEFT JOIN order_statuses os ON o.id = os.order_id
+      WHERE o.invoice_number ILIKE ${invoiceNumber}
+      ORDER BY os.status_order DESC
       LIMIT 1
     `;
 
@@ -34,12 +43,15 @@ export const POST = async (request: NextRequest) => {
       data: {
         id: invoice.id,
         invoiceNumber: invoice.invoice_number,
-        status: invoice.tracking_status,
+        status: invoice.tracking_status || 'Unknown',
         updatedAt: invoice.tracking_updated_at,
+        customerName: invoice.customer_name,
+        productName: invoice.product_name,
+        statusOrder: invoice.status_order || 0,
       },
     });
   } catch (error) {
-    console.error('Error fetching invoice:', error);
+    console.error('[v0] Error fetching invoice:', error);
     return NextResponse.json(
       { error: 'Failed to fetch invoice status' },
       { status: 500 }
