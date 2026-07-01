@@ -9,11 +9,12 @@ interface OrderStatusTrackerProps {
 
 const STAGES = [
   { key: 'order_received', name: 'Order Received' },
-  { key: 'cylinder_creation_in_progress', name: 'Cylinder Creation In Progress' },
-  { key: 'cylinder_completion_done', name: 'Cylinder Completion Done' },
-  { key: 'processing', name: 'Processing' },
+  { key: 'cylinder_init', name: 'Cylinder Init' },
+  { key: 'cylinder_created', name: 'Cylinder Created' },
+  { key: 'printing', name: 'Printing' },
+  { key: 'stitching', name: 'Stitching' },
+  { key: 'quality_inspection', name: 'Quality Inspection' },
   { key: 'packed', name: 'Packed' },
-  { key: 'shipped', name: 'Shipped' },
   { key: 'out_for_delivery', name: 'Out for Delivery' },
   { key: 'delivered', name: 'Delivered' },
 ];

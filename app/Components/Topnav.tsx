@@ -216,7 +216,7 @@ export default function Topnav() {
       href: "/contact",
     },
     {
-      name: "Order Status",
+      name: "🏷️ Track Order",
       href: "/order-status",
     },
   ];

@@ -8,6 +8,7 @@ import { FaSearch, FaBox } from 'react-icons/fa';
 
 interface InvoiceData {
   invoiceNumber: string;
+  customerName?: string | null;
   status: string;
   updatedAt: string;
 }
@@ -137,6 +138,12 @@ export default function OrderStatusPage() {
                     <p className="text-sm text-gray-600 font-medium">Invoice Number</p>
                     <p className="text-2xl md:text-3xl font-bold text-gray-900 mt-1">
                       {invoiceData.invoiceNumber}
+                    </p>
+                  </div>
+                  <div>
+                    <p className="text-sm text-gray-600 font-medium">Customer Name</p>
+                    <p className="text-2xl md:text-3xl font-bold text-gray-900 mt-1">
+                      {invoiceData.customerName || 'N/A'}
                     </p>
                   </div>
                   <div className="flex items-center space-x-2">
